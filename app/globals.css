@@ -240,7 +240,7 @@ body {
 
 /* Mobile Menu Button */
 .mobile-menu-btn {
-  display: block;
+  display: none; /* Hidden by default, only show on mobile */
   padding: 8px;
   border-radius: 8px;
   background: #ffffff;
@@ -1371,25 +1371,89 @@ body {
 }
 @media (min-width: 768px) {
   .mobile-menu-btn {
-    display: none;
+    display: none; /* Hide mobile menu button on desktop */
   }
   
   .mobile-menu {
-    display: none;
+    display: none; /* Hide mobile menu on desktop */
+  }
+  
+  /* Show desktop navigation on desktop */
+  .nav-list {
+    display: flex !important;
   }
 }
 
 @media (max-width: 767px) {
   .nav-list {
-    display: none;
+    display: none !important; /* Hide desktop navigation on mobile */
+  }
+  
+  .mobile-menu-btn {
+    display: block !important; /* Show mobile menu button on mobile */
   }
   
   .navbar-container {
-    padding: 0 20px;
+    padding: 0 16px;
   }
   
   .navbar-content {
-    padding: 0 10px;
+    padding: 0 8px;
+  }
+  
+  /* Fix mobile menu positioning */
+  .mobile-menu {
+    display: block !important;
+    position: absolute;
+    top: 70px; /* Adjusted for smaller navbar on mobile */
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 9998;
+  }
+  
+  .mobile-nav-list {
+    padding: 16px 0;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .mobile-nav-link {
+    display: block;
+    padding: 16px 24px;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .mobile-nav-link:hover {
+    background-color: #f9fafb;
+    color: #16a34a;
+  }
+  
+  .mobile-nav-link.active {
+    background-color: #16a34a;
+    color: #ffffff;
+  }
+  
+  /* Logo adjustments for mobile */
+  .logo-main-text {
+    font-size: 1.5rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.45rem;
+    letter-spacing: 1px;
+  }
+  
+  .flag {
+    width: 16px;
+    height: 12px;
   }
 }
 
@@ -3785,5 +3849,1266 @@ body {
 
   .sitemap-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   COMPREHENSIVE RESPONSIVE DESIGN
+   All Devices - Mobile, Tablet, Mac/Desktop
+   ======================================== */
+
+/* Extra Large Desktop/Mac Screens */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1600px;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  .services-title,
+  .advantages-title,
+  .lifecycle-title,
+  .case-studies-title {
+    font-size: 3rem;
+  }
+  
+  .sitemap-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Large Desktop/Mac Screens */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .services-title,
+  .advantages-title,
+  .lifecycle-title,
+  .case-studies-title {
+    font-size: 2.8rem;
+  }
+}
+
+/* Standard Desktop */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .stages-container {
+    gap: 80px;
+  }
+}
+
+/* Small Desktop/Large Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: 0 24px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .stages-container {
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+  }
+  
+  .tags-container {
+    max-width: 100%;
+  }
+  
+  .sitemap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .case-studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet Portrait */
+@media (min-width: 640px) and (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .services-title,
+  .advantages-title,
+  .lifecycle-title,
+  .case-studies-title {
+    font-size: 2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+  
+  .stages-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .stage-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .lifecycle-description {
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .tags-container {
+    max-width: 100%;
+  }
+  
+  .word-cloud {
+    width: calc(100vw - 40px);
+  }
+  
+  .sitemap-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Large */
+@media (min-width: 480px) and (max-width: 639px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .services-title,
+  .advantages-title,
+  .lifecycle-title,
+  .case-studies-title {
+    font-size: 1.8rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .service-card {
+    padding: 16px;
+    min-height: auto;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .stages-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .stage-circle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .stage-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .lifecycle-description {
+    width: 95%;
+    max-width: 350px;
+  }
+  
+  .description-content {
+    padding: 16px;
+  }
+  
+  .description-title {
+    font-size: 1.1rem;
+  }
+  
+  .description-text {
+    font-size: 0.9rem;
+  }
+  
+  .outputs-list {
+    font-size: 0.85rem;
+  }
+  
+  .tags-container {
+    max-width: 100%;
+  }
+  
+  .word-cloud {
+    width: calc(100vw - 30px);
+  }
+  
+  .tag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  
+  .tag.small {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+  
+  .tag.large {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  .sitemap-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .sitemap-card {
+    padding: 20px 16px;
+  }
+  
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trust-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .trust-video {
+    height: 200px;
+  }
+  
+  .logo-section {
+    padding: 30px 0;
+  }
+  
+  .logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .logo-item {
+    padding: 16px 8px;
+  }
+  
+  .logo-item img {
+    height: 30px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 479px) {
+  .container {
+    padding: 0 8px; /* Reduced padding for very small screens */
+  }
+  
+  /* Hero Section Mobile */
+  .hero {
+    min-height: 70vh; /* Reduced height for mobile */
+    padding: 60px 0;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+  
+  /* Services Section Mobile */
+  .services-section {
+    padding: 40px 0;
+  }
+  
+  .services-title,
+  .advantages-title,
+  .lifecycle-title,
+  .case-studies-title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+  
+  .services-subtitle,
+  .advantages-subtitle,
+  .lifecycle-subtitle,
+  .case-studies-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .service-card {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+  }
+  
+  .service-icon-image {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .service-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .service-description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  /* Advantages Section Mobile */
+  .advantages-section {
+    padding: 40px 8px;
+  }
+  
+  .tags-container {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+  
+  .word-cloud {
+    width: calc(100vw - 16px);
+    height: auto;
+    min-height: 400px;
+  }
+  
+  .tag {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    margin: 2px;
+  }
+  
+  .tag.small {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+  
+  .tag.large {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  
+  .tag.highlight {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+  
+  /* Lifecycle Section Mobile */
+  .lifecycle-section {
+    padding: 40px 0;
+  }
+  
+  .stages-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 16px;
+  }
+  
+  .stage-circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .stage-image {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .stage-name {
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+  
+  .lifecycle-description {
+    width: 95%;
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .description-content {
+    padding: 16px;
+  }
+  
+  .description-title {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  
+  .description-text {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .outputs-title {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  
+  .outputs-list {
+    font-size: 0.75rem;
+  }
+  
+  .output-item {
+    padding: 6px 10px;
+    margin-bottom: 6px;
+  }
+  
+  /* Case Studies Section Mobile */
+  .case-studies-section {
+    padding: 40px 0;
+  }
+  
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  /* Trust/Videos Section Mobile */
+  .trust-section {
+    padding: 40px 8px;
+  }
+  
+  .trust-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .trust-video {
+    height: 180px;
+    border-radius: 8px;
+  }
+  
+  /* Logo Section Mobile */
+  .logo-section {
+    padding: 30px 0;
+  }
+  
+  .logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .logo-item {
+    padding: 12px 8px;
+  }
+  
+  .logo-item img {
+    height: 20px;
+  }
+  
+  .logo-item-name {
+    font-size: 0.7rem;
+    margin-top: 6px;
+  }
+  
+  /* Sitemap Section Mobile */
+  .sitemap-section {
+    padding: 40px 8px;
+  }
+  
+  .sitemap-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  
+  .sitemap-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 24px;
+  }
+  
+  .sitemap-logo {
+    margin-bottom: 30px;
+  }
+  
+  .logo-main-text {
+    font-size: 1.8rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .sitemap-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .sitemap-card {
+    padding: 16px 12px;
+  }
+  
+  .card-title {
+    font-size: 0.95rem;
+  }
+  
+  .card-number {
+    font-size: 0.8rem;
+  }
+  
+  .card-arrow {
+    font-size: 1rem;
+  }
+  
+  /* CTA Buttons Mobile */
+  .cta-button,
+  .services-cta-button,
+  .advantages-button,
+  .lifecycle-button,
+  .case-studies-button {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    min-width: 180px;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .services-cta,
+  .advantages-cta,
+  .lifecycle-cta,
+  .case-studies-cta {
+    margin-top: 40px;
+  }
+  
+  /* Navigation Mobile */
+  .navbar {
+    height: 60px;
+  }
+  
+  .logo-main-text {
+    font-size: 1.4rem;
+  }
+  
+  .logo-tagline {
+    font-size: 0.4rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .flag {
+    width: 14px;
+    height: 10px;
+  }
+  
+  .mobile-menu-btn {
+    padding: 6px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mobile-menu-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .mobile-nav-link {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Footer Mobile */
+  .footer-content {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .footer-text {
+    font-size: 0.75rem;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .footer-link {
+    font-size: 0.8rem;
+  }
+  
+  /* Section spacing mobile */
+  section {
+    margin-bottom: 20px;
+  }
+  
+  /* Typography mobile */
+  h1, h2, h3 {
+    line-height: 1.2;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+  
+  /* Images mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Scroll improvements */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ========================================
+   ORIENTATION RESPONSIVE
+   ======================================== */
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .stages-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .stage-wrapper {
+    flex: 0 0 calc(33.333% - 20px);
+  }
+  
+  .lifecycle-description {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+  }
+}
+
+/* ========================================
+   HIGH DPI/RETINA DISPLAYS
+   ======================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .service-icon-image,
+  .stage-image,
+  .logo-item img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (Optional)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* Add dark mode styles here if needed in future */
+}
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   MOBILE-FIRST RESPONSIVE OVERRIDE
+   This overrides ALL previous styles for proper mobile responsiveness
+   ======================================== */
+
+/* Base Mobile Styles (Apply to all screens first) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 0 16px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Hide Desktop Navigation on Mobile */
+@media (max-width: 767px) {
+  .nav-test,
+  .nav-list {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+  }
+  
+  .mobile-menu {
+    display: block !important;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 9999;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  
+  .mobile-nav-list {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .mobile-nav-link {
+    display: block !important;
+    padding: 16px 20px !important;
+    color: #374151 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 16px !important;
+    font-weight: 500;
+  }
+  
+  .mobile-nav-link:hover {
+    background: #f9fafb !important;
+    color: #16a34a !important;
+  }
+}
+
+/* Navbar Mobile */
+@media (max-width: 767px) {
+  .navbar {
+    height: 60px !important;
+  }
+  
+  .navbar-content {
+    padding: 0 16px !important;
+    height: 60px !important;
+  }
+  
+  .logo-container {
+    flex: 1;
+  }
+  
+  .logo-main-text {
+    font-size: 1.5rem !important;
+  }
+  
+  .logo-tagline {
+    font-size: 0.4rem !important;
+  }
+  
+  .flag {
+    width: 14px !important;
+    height: 10px !important;
+  }
+}
+
+/* Hero Section Mobile */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 60vh !important;
+    padding: 80px 0 40px !important;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* Services Section Mobile */
+@media (max-width: 767px) {
+  .services-section {
+    padding: 40px 0 !important;
+  }
+  
+  .services-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .services-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 32px !important;
+  }
+  
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .service-card {
+    padding: 20px !important;
+    text-align: center !important;
+  }
+  
+  .service-icon {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .service-icon-image {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  
+  .service-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .service-description {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Logo Section Mobile */
+@media (max-width: 767px) {
+  .logo-section {
+    padding: 40px 0 !important;
+  }
+  
+  .logo-section-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .logo-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+  
+  .logo-item {
+    padding: 16px 12px !important;
+    text-align: center !important;
+  }
+  
+  .logo-item img {
+    height: 25px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .logo-item-name {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Lifecycle Section Mobile */
+@media (max-width: 767px) {
+  .lifecycle-section {
+    padding: 40px 0 !important;
+  }
+  
+  .lifecycle-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .lifecycle-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 32px !important;
+  }
+  
+  .stages-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+    padding: 0 16px !important;
+  }
+  
+  .stage-wrapper {
+    text-align: center !important;
+  }
+  
+  .stage-circle {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .stage-image {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .stage-name {
+    font-size: 0.9rem !important;
+    margin-top: 8px !important;
+  }
+  
+  .lifecycle-description {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 350px !important;
+    z-index: 1000 !important;
+  }
+  
+  .description-content {
+    padding: 20px !important;
+  }
+  
+  .description-title {
+    font-size: 1rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .description-text {
+    font-size: 0.85rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .outputs-list {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Advantages Section Mobile */
+@media (max-width: 767px) {
+  .advantages-section {
+    padding: 40px 16px !important;
+  }
+  
+  .advantages-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .advantages-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 32px !important;
+  }
+  
+  .tags-container {
+    width: 100% !important;
+    padding: 0 8px !important;
+  }
+  
+  .word-cloud {
+    width: calc(100vw - 32px) !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+  
+  .tag {
+    font-size: 0.7rem !important;
+    padding: 4px 8px !important;
+    margin: 2px !important;
+  }
+  
+  .tag.small {
+    font-size: 0.6rem !important;
+    padding: 3px 6px !important;
+  }
+  
+  .tag.large {
+    font-size: 0.8rem !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* Trust/Videos Section Mobile */
+@media (max-width: 767px) {
+  .trust-section {
+    padding: 40px 16px !important;
+  }
+  
+  .trust-heading {
+    font-size: 1.8rem !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .trust-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .trust-video {
+    height: 200px !important;
+    border-radius: 8px !important;
+  }
+}
+
+/* Case Studies Section Mobile */
+@media (max-width: 767px) {
+  .case-studies-section {
+    padding: 40px 0 !important;
+  }
+  
+  .case-studies-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .case-studies-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 32px !important;
+  }
+  
+  .case-studies-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* Sitemap Section Mobile */
+@media (max-width: 767px) {
+  .sitemap-section {
+    padding: 40px 16px !important;
+  }
+  
+  .sitemap-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .sitemap-subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 32px !important;
+  }
+  
+  .sitemap-logo {
+    margin-bottom: 32px !important;
+  }
+  
+  .logo-main-text {
+    font-size: 2rem !important;
+  }
+  
+  .logo-tagline {
+    font-size: 0.5rem !important;
+  }
+  
+  .sitemap-content {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .sitemap-section-block {
+    padding: 20px !important;
+  }
+  
+  .section-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .sitemap-link {
+    font-size: 0.85rem !important;
+    padding: 8px 0 !important;
+  }
+}
+
+/* CTA Buttons Mobile */
+@media (max-width: 767px) {
+  .cta-button,
+  .services-cta-button,
+  .advantages-button,
+  .lifecycle-button,
+  .case-studies-button {
+    width: 100% !important;
+    max-width: 300px !important;
+    padding: 14px 24px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .services-cta,
+  .advantages-cta,
+  .lifecycle-cta,
+  .case-studies-cta {
+    margin-top: 32px !important;
+  }
+}
+
+/* Footer Mobile */
+@media (max-width: 767px) {
+  .sitemap-footer {
+    padding: 20px !important;
+  }
+  
+  .footer-content {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem !important;
+  }
+  
+  .footer-links {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .footer-link {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px !important;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .services-title,
+  .advantages-title,
+  .lifecycle-title,
+  .case-studies-title,
+  .sitemap-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .logo-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  .service-card {
+    padding: 16px !important;
+  }
+  
+  .stage-circle {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  .stage-image {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+/* Ensure mobile menu is visible */
+@media (max-width: 767px) {
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: white !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    width: 44px !important;
+    height: 44px !important;
+    cursor: pointer !important;
+  }
+  
+  .mobile-menu-btn:hover {
+    background: #f9fafb !important;
+    border-color: #16a34a !important;
   }
 }
