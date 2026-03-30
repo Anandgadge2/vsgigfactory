@@ -3582,9 +3582,9 @@ body {
 .case-studies-title {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #1f2937;
+  color: #1a1a1a;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, #1f2937 0%, #16a34a 100%);
+  background: #1a1a1a;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -6565,21 +6565,52 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 50px;
   margin: 50px 80px;
+  align-items: stretch;
 }
 
 /* Card */
 .bim-card {
   background: #ffffff;
   border-radius: 16px;
-  overflow: visible;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bim-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
 }
 
 .bim-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transform: translateY(-10px);
+  box-shadow: 
+    0 20px 40px -10px rgba(22, 163, 74, 0.15),
+    0 8px 16px -8px rgba(22, 163, 74, 0.1);
+  border-color: #16a34a;
+}
+
+.bim-card:hover::before {
+  opacity: 1;
+}
+
+.bim-card:hover .bim-card-image img {
+  transform: scale(1.05);
 }
 
 /* Image */
@@ -6587,19 +6618,27 @@ body {
   height: 200px;
   background: #e5e7eb;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .bim-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
 /* Content */
 .bim-card-content {
   padding: 25px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .bim-card-content h3 {
@@ -6607,6 +6646,11 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
   color: #111827;
+  transition: color 0.3s ease;
+}
+
+.bim-card:hover .bim-card-content h3 {
+  color: #16a34a;
 }
 
 .bim-card-content p {
@@ -6648,11 +6692,15 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
 }
 
 .learn-btn:hover {
-  background:#16a34a ;
+  background: #15803d;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
 }
 
 /* Back Button */

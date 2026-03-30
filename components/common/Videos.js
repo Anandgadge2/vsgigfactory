@@ -14,7 +14,7 @@ const Trust = () => {
     {
       id: 2,
       name: "Puneet Arora - AMS Project Consultants",
-      videoId: "dQw4w9WgXcQ"
+      videoId: "sC1WwWJkLAI?si=q4xHvLEguOl_CrJy"
     },
     {
       id: 3,
@@ -79,19 +79,37 @@ const Trust = () => {
       </div>
 
       {/* MODAL */}
-      {activeModal && (
-        <div className="modal" onClick={() => setActiveModal(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close-btn" onClick={() => setActiveModal(null)}>
-              &times;
-            </span>
-            <iframe
-              src={`https://youtu.be/duSdzRMFY8I?si=ehwAtC5066tRMFSv${activeModal}?autoplay=1`}
-              allowFullScreen
-            />
+      {activeModal && (() => {
+        // Helper to extract clean video ID regardless of whether user provided full URL or just ID
+        let videoId = activeModal;
+        if (activeModal.includes('youtube.com/watch')) {
+          const urlParams = new URLSearchParams(activeModal.split('?')[1]);
+          videoId = urlParams.get('v') || activeModal.split('?')[0];
+        } else if (activeModal.includes('youtu.be/')) {
+          videoId = activeModal.split('youtu.be/')[1].split('?')[0];
+        } else if (activeModal.includes('youtube.com/embed/')) {
+          videoId = activeModal.split('youtube.com/embed/')[1].split('?')[0];
+        } else {
+          videoId = activeModal.split('?')[0]; // simple ID, strip query params
+        }
+
+        return (
+          <div className="modal" onClick={() => setActiveModal(null)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <span className="close-btn" onClick={() => setActiveModal(null)}>
+                &times;
+              </span>
+              <iframe
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                title="YouTube Video Player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ width: '100%', height: '500px', border: 'none' }}
+              />
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </section>
   )
 }
