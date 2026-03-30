@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
 import Hero from '../components/common/Hero'
@@ -15,6 +15,7 @@ import ContactModal from '../components/common/ContactModal'
 
 const Home = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const [serviceToOpen, setServiceToOpen] = useState(null)
 
   const openContactModal = () => {
     setIsContactModalOpen(true)
@@ -23,6 +24,18 @@ const Home = () => {
   const closeContactModal = () => {
     setIsContactModalOpen(false)
   }
+
+  // Listen for service modal open events
+  useEffect(() => {
+    const handleOpenServiceModal = (event) => {
+      setServiceToOpen(event.detail)
+    }
+
+    window.addEventListener('openServiceModal', handleOpenServiceModal)
+    return () => {
+      window.removeEventListener('openServiceModal', handleOpenServiceModal)
+    }
+  }, [])
   
   return (
     <main>
@@ -33,7 +46,7 @@ const Home = () => {
       <LogoSection />
 
       {/* Services Section */}
-      <Services onContactClick={openContactModal} />
+      <Services onContactClick={openContactModal} serviceToOpen={serviceToOpen} />
 
       {/* Lifecycle Section */}
       <Lifecycle onContactClick={openContactModal} />

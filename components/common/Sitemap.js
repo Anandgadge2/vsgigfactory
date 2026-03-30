@@ -7,7 +7,7 @@ const Sitemap = () => {
       links: [
         { name: "About Us", url: "/about" },
         { name: "Projects", url: "/projects" },
-        { name: "Case Studies", url: "/case-studies" }
+        { name: "Case Studies", url: "/#case-studies" }
       ]
     }
   ]
@@ -16,12 +16,12 @@ const Sitemap = () => {
     {
       title: "Services",
       links: [
-        { name: "2D Services", url: "/services-details#2d" },
-        { name: "3D Services", url: "/services-details#3d" },
-        { name: "4D Services", url: "/services-details#4d" },
-        { name: "PP&C Services", url: "/services-details#pp-c" },
-        { name: "BOQ Services", url: "/services-details#boq" },
-        { name: "Audit Services", url: "/services-details#audit" }
+        { name: "2D Services", url: "/#service-modal-section-2d" },
+        { name: "3D Services", url: "/#service-modal-section-3d" },
+        { name: "4D Services", url: "/#service-modal-section-4d" },
+        { name: "PP&C Services", url: "/#service-modal-section-pp-c" },
+        { name: "BOQ Services", url: "/#service-modal-section-boq" },
+        { name: "Audit Services", url: "/#service-modal-section-audit" }
       ]
     }
   ]
@@ -55,34 +55,34 @@ const Sitemap = () => {
     <section className="sitemap-section">
       <div className="container">
         <div className="sitemap-header">
-          <h2 className="sitemap-title">Site Map</h2>
-          <p className="sitemap-subtitle">
-            Complete overview of website structure and navigation
-          </p>
-        </div>
-
-        {/* Logo Section - Only Once with Full Logo */}
-        <div className="sitemap-logo">
-          <div className="logo-main-text">
-            <span className="logo-gig">Gig</span>
-            <span className="logo-factory">factory</span>
-            <div className="flags-container">
-              {/* India Flag */}
-              <svg className="flag" viewBox="0 0 24 16" fill="none">
-                <rect width="24" height="16" fill="#FF9933"/>
-                <rect y="5.33" width="24" height="5.33" fill="white"/>
-                <rect y="10.67" width="24" height="5.33" fill="#138808"/>
-                <circle cx="12" cy="8" r="2" fill="#000080"/>
-              </svg>
-              {/* UK Flag */}
-              <svg className="flag" viewBox="0 0 24 16" fill="none">
-                <rect width="24" height="16" fill="#012169"/>
-                <path d="M0 0L24 16M24 0L0 16" stroke="white" strokeWidth="2.67"/>
-                <path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" strokeWidth="1.33"/>
-                <path d="M12 0V16M0 8H24" stroke="white" strokeWidth="4"/>
-                <path d="M12 0V16M0 8H24" stroke="#C8102E" strokeWidth="2.67"/>
-              </svg>
+          <div className="sitemap-logo">
+            <div className="logo-main-text">
+              <span className="logo-gig">Gig</span>
+              <span className="logo-factory">factory</span>
+              <div className="flags-container">
+                {/* India Flag */}
+                <svg className="flag" viewBox="0 0 24 16" fill="none">
+                  <rect width="24" height="16" fill="#FF9933"/>
+                  <rect y="5.33" width="24" height="5.33" fill="white"/>
+                  <rect y="10.67" width="24" height="5.33" fill="#138808"/>
+                  <circle cx="12" cy="8" r="2" fill="#000080"/>
+                </svg>
+                {/* UK Flag */}
+                <svg className="flag" viewBox="0 0 24 16" fill="none">
+                  <rect width="24" height="16" fill="#012169"/>
+                  <path d="M0 0L24 16M24 0L0 16" stroke="white" strokeWidth="2.67"/>
+                  <path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" strokeWidth="1.33"/>
+                  <path d="M12 0V16M0 8H24" stroke="white" strokeWidth="4"/>
+                  <path d="M12 0V16M0 8H24" stroke="#C8102E" strokeWidth="2.67"/>
+                </svg>
+              </div>
             </div>
+          </div>
+          <div className="sitemap-title-section">
+            <h2 className="sitemap-title">Site Map</h2>
+            <p className="sitemap-subtitle">
+              Complete overview of website structure and navigation
+            </p>
           </div>
         </div>
 

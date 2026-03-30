@@ -14,8 +14,8 @@ const AboutUs = () => {
     <section className="about-us-section">
       {/* Header - No Container */}
       <div className="about-header-simple">
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
-          <button onClick={handleBackClick} className="back-button">
+        <div style={{ textAlign: 'center', marginBottom: '20px', position: 'relative' }}>
+          <button onClick={handleBackClick} className="back-button" style={{ position: 'absolute', left: '40px', top: '0' }}>
             ← Back
           </button>
           <h1 className="about-title">About Gigfactory</h1>

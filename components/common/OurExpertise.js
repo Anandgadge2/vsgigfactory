@@ -1,12 +1,43 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useState, useEffect, useRef } from 'react'
 
 const OurExpertise = () => {
   const router = useRouter()
+  const [selectedServiceId, setSelectedServiceId] = useState(null)
+  const modalContentRef = useRef(null)
 
   const handleBackClick = () => {
     router.back()
+  }
+
+  const handleServiceClick = (serviceTitle) => {
+    // Map service titles to service IDs
+    const serviceMapping = {
+      'Architectural Design': '2d',
+      '3D Modeling': '3d', 
+      '4D/5D Construction Simulation': '4d',
+      'Scan to BIM': '2d',
+      'Construction Documentation': '2d',
+      'Constructability Review': 'audit',
+      'Clash Coordination': '3d',
+      'Value Engineering': 'pp-c',
+      'Quantity Takeoff': 'boq'
+    }
+    
+    const serviceId = serviceMapping[serviceTitle] || '2d'
+    
+    // Navigate to home page and open service modal
+    router.push('/')
+    setTimeout(() => {
+      const event = new CustomEvent('openServiceModal', { detail: serviceId })
+      window.dispatchEvent(event)
+    }, 100)
+  }
+
+  const closeModal = () => {
+    setSelectedServiceId(null)
   }
 
   const services = [
@@ -25,7 +56,7 @@ const OurExpertise = () => {
     {
       title: "4D/5D Construction Simulation",
       description: "Time and cost simulation for construction planning and project management optimization",
-      image: "/images/service3.jpg",
+      video: "/public/assets/4D_video.mp4",
       features: ["Construction Sequencing", "Cost Analysis", "Resource Planning"]
     },
     {
@@ -84,7 +115,21 @@ const OurExpertise = () => {
             <div key={index} className="bim-card">
               {/* Image */}
               <div className="bim-card-image">
-                <img src={service.image} alt={service.title} />
+                {service.video ? (
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="bim-video"
+                    style={{ width: '100%', height: '200px', objectFit: 'cover' }}
+                  >
+                    <source src={service.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img src={service.image} alt={service.title} />
+                )}
               </div>
 
               {/* Content */}
@@ -146,7 +191,21 @@ const OurExpertise = () => {
             <div key={index} className="bim-card">
               {/* Image */}
               <div className="bim-card-image">
-                <img src={service.image} alt={service.title} />
+                {service.video ? (
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="bim-video"
+                    style={{ width: '100%', height: '200px', objectFit: 'cover' }}
+                  >
+                    <source src={service.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img src={service.image} alt={service.title} />
+                )}
               </div>
 
               {/* Content */}
@@ -164,7 +223,7 @@ const OurExpertise = () => {
                 </ul>
 
                 {/* Button */}
-                <button className="learn-btn">
+                <button className="learn-btn" onClick={() => handleServiceClick(service.title)}>
                   LEARN MORE →
                 </button>
               </div>
@@ -219,7 +278,21 @@ const OurExpertise = () => {
             <div key={index} className="bim-card">
               {/* Image */}
               <div className="bim-card-image">
-                <img src={service.image} alt={service.title} />
+                {service.video ? (
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="bim-video"
+                    style={{ width: '100%', height: '200px', objectFit: 'cover' }}
+                  >
+                    <source src={service.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img src={service.image} alt={service.title} />
+                )}
               </div>
 
               {/* Content */}
@@ -237,7 +310,7 @@ const OurExpertise = () => {
                 </ul>
 
                 {/* Button */}
-                <button className="learn-btn">
+                <button className="learn-btn" onClick={() => handleServiceClick(service.title)}>
                   LEARN MORE →
                 </button>
               </div>

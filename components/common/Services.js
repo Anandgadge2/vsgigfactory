@@ -3,10 +3,17 @@
 import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-const Services = ({ onContactClick }) => {
+const Services = ({ onContactClick, serviceToOpen }) => {
   const router = useRouter()
   const [selectedServiceId, setSelectedServiceId] = useState(null)
   const modalContentRef = useRef(null)
+
+  // Open modal when serviceToOpen is provided
+  useEffect(() => {
+    if (serviceToOpen) {
+      setSelectedServiceId(serviceToOpen)
+    }
+  }, [serviceToOpen])
 
   const servicesData = [
     {

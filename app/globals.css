@@ -4645,32 +4645,35 @@ body {
    ======================================== */
 
 .sitemap-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   background: #c8facf;
 }
 
 /* HEADER */
 .sitemap-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.sitemap-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  gap: 40px;
 }
 
 .sitemap-subtitle {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #6b7280;
+}
+
+.sitemap-title-section {
+  text-align: center;
+  flex: 1;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 /* LOGO */
 .sitemap-logo {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .logo-main-text {
@@ -4696,16 +4699,16 @@ body {
 .sitemap-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  gap: 25px;
   max-width: 1100px;
-  margin: 0 auto 60px;
+  margin: 0 auto 20px;
 }
 
 /* CARD DESIGN */
 .sitemap-card {
   background: #ffffff;
   border-radius: 16px;
-  padding: 30px 25px;
+  padding: 20px 20px;
   text-decoration: none;
   border: 1px solid #e5e7eb;
 
@@ -4778,7 +4781,7 @@ body {
 .sitemap-footer {
   text-align: center;
   border-top: 1px solid #e5e7eb;
-  padding-top: 20px;
+  padding-top: 10px;
   color: #6b7280;
   font-size: 0.85rem;
 }
@@ -5179,12 +5182,12 @@ body {
   }
   
   .service-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 8px;
   }
   
   .service-description {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     line-height: 1.4;
   }
   
@@ -5199,9 +5202,9 @@ body {
   }
   
   .word-cloud {
-    width: calc(100vw - 16px);
+    width: calc(100vw - 32px);
     height: auto;
-    min-height: 400px;
+    min-height: 300px;
   }
   
   .tag {
@@ -5230,11 +5233,26 @@ body {
     padding: 40px 0;
   }
   
+  .lifecycle-title {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .lifecycle-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+  
   .stages-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     padding: 0 16px;
+  }
+  
+  .stage-wrapper {
+    text-align: center;
   }
   
   .stage-circle {
@@ -5248,38 +5266,36 @@ body {
   }
   
   .stage-name {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     margin-top: 8px;
   }
   
   .lifecycle-description {
-    width: 95%;
-    max-width: 300px;
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+    z-index: 1000;
   }
   
   .description-content {
-    padding: 16px;
+    padding: 20px;
   }
   
   .description-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 12px;
   }
   
   .description-text {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin-bottom: 16px;
   }
   
-  .outputs-title {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-  }
-  
   .outputs-list {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
   
   .output-item {
@@ -6389,18 +6405,18 @@ body {
 .back-button {
   display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #ffffff;
   border: 2px solid #16a34a;
   border-radius: 8px;
   color: #16a34a;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 100;
 }
@@ -7084,7 +7100,7 @@ body {
   border-radius: 14px;
   padding: 40px 20px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
 .expert-title {

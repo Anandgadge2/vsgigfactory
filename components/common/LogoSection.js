@@ -13,6 +13,18 @@ const LogoSection = () => {
     { name: 'Mastercard', image: '/assets/mastercard.png' },
     { name: 'denkall', image: '/assets/denkall.png' },
     { name: 'Mudon', image: '/assets/mudon.jpg' },
+    { name: 'Claramont', image: '/assets/claramont.jpg' },
+    { name: 'gulf islamic', image: '/assets/gulf islamic.jpg' },
+    { name: 'jacobs', image: '/assets/jacobs.png' },
+    { name: 'jmbaxi', image: '/assets/jmbaxi.png' },
+    { name: 'natash', image: '/assets/natash.png' },
+    { name: 'orchid', image: '/assets/orchid.png' },
+    { name: 'peninsula', image: '/assets/peninsula.png' },
+    { name: 'skillbind', image: '/assets/skillbind.png' },
+    { name: 'westbridge', image: '/assets/westbridge.png' },
+    { name: 'Mastercard', image: '/assets/mastercard.png' },
+    { name: 'denkall', image: '/assets/denkall.png' },
+    { name: 'Mudon', image: '/assets/mudon.jpg' },
   ]
 
   return (
