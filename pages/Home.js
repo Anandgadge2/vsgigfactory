@@ -28,7 +28,7 @@ const Home = () => {
   // Listen for service modal open events
   useEffect(() => {
     const handleOpenServiceModal = (event) => {
-      setServiceToOpen(event.detail)
+      setServiceToOpen(event.detail.serviceId)
     }
 
     window.addEventListener('openServiceModal', handleOpenServiceModal)

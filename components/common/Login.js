@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Sitemap from './Sitemap'
 
 const Login = () => {
@@ -9,10 +10,13 @@ const Login = () => {
     name: '',
     email: '',
     phone: '',
+    city: '',
+    state: '',
     expertise: '',
     experience: '',
     company: '',
-    message: ''
+    message: '',
+    driveLink: ''
   })
 
   const culturePillars = [
@@ -54,10 +58,13 @@ const Login = () => {
       name: '',
       email: '',
       phone: '',
+      city: '',
+      state: '',
       expertise: '',
       experience: '',
       company: '',
-      message: ''
+      message: '',
+      driveLink: ''
     })
     setShowExpertForm(false)
   }
@@ -81,6 +88,26 @@ const Login = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="core-link"
+              style={{
+                color: '#000000',
+                textDecoration: 'none',
+                fontWeight: '700',
+                fontSize: 'inherit',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                display: 'inline-block',
+                position: 'relative'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = '#ffffff';
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.textShadow = '0 2px 4px rgba(0, 0, 0, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = '#000000';
+                e.target.style.transform = 'scale(1)';
+                e.target.style.textShadow = 'none';
+              }}
             >
               CORE
             </a>
@@ -183,6 +210,32 @@ const Login = () => {
                     />
                   </div>
                 </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>City *</label>
+                    <input
+                      type="text"
+                      name="city"
+                      value={formData.city}
+                      onChange={handleFormChange}
+                      required
+                      placeholder="Enter your city"
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label>State *</label>
+                    <input
+                      type="text"
+                      name="state"
+                      value={formData.state}
+                      onChange={handleFormChange}
+                      required
+                      placeholder="Enter your state"
+                    />
+                  </div>
+                </div>
               </div>
 
               {/* Professional Information Section */}
@@ -238,8 +291,28 @@ const Login = () => {
                     value={formData.message}
                     onChange={handleFormChange}
                     placeholder="Share your experience, skills, and why you'd like to join Gigfactory as an expert..."
-                    rows="4"
+                    rows="6"
                   />
+                </div>
+                
+                <div className="form-group">
+                  <label>Drive Link (CV/Resume/Certificates)</label>
+                  <input
+                    type="url"
+                    name="driveLink"
+                    value={formData.driveLink}
+                    onChange={handleFormChange}
+                    placeholder="Share your Google Drive for CV, resume, and certificates"
+                  />
+                  <small style={{ 
+                    color: '#64748b', 
+                    fontSize: '0.875rem', 
+                    marginTop: '4px',
+                    display: 'block',
+                    fontStyle: 'italic'
+                  }}>
+                    Please share a link where we can access your CV, resume, and certificates
+                  </small>
                 </div>
               </div>
 

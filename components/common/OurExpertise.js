@@ -222,11 +222,7 @@ const OurExpertise = () => {
                   ))}
                 </ul>
 
-                {/* Button */}
-                <button className="learn-btn" onClick={() => handleServiceClick(service.title)}>
-                  LEARN MORE →
-                </button>
-              </div>
+                              </div>
             </div>
           ))}
         </div>
@@ -309,11 +305,7 @@ const OurExpertise = () => {
                   ))}
                 </ul>
 
-                {/* Button */}
-                <button className="learn-btn" onClick={() => handleServiceClick(service.title)}>
-                  LEARN MORE →
-                </button>
-              </div>
+                              </div>
             </div>
           ))}
         </div>

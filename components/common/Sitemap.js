@@ -1,6 +1,33 @@
 'use client'
 
+import { useState } from 'react'
+
 const Sitemap = () => {
+  const [showServiceModal, setShowServiceModal] = useState(false)
+  const [selectedService, setSelectedService] = useState(null)
+
+  const handleServiceClick = (serviceName) => {
+    // Map service names to service IDs
+    const serviceMapping = {
+      '2D Services': '2d',
+      '3D Services': '3d', 
+      '4D Services': '4d',
+      'PP&C Services': 'pp-c',
+      'BOQ Services': 'boq',
+      'Audit Services': 'audit'
+    }
+    
+    const serviceId = serviceMapping[serviceName]
+    if (serviceId) {
+      setSelectedService(serviceId)
+      setShowServiceModal(true)
+      // Dispatch custom event to open service modal on home page
+      window.dispatchEvent(new CustomEvent('openServiceModal', { 
+        detail: { serviceId } 
+      }))
+    }
+  }
+
   const leftSections = [
     {
       title: "Quick Links",
@@ -16,12 +43,12 @@ const Sitemap = () => {
     {
       title: "Services",
       links: [
-        { name: "2D Services", url: "/#service-modal-section-2d" },
-        { name: "3D Services", url: "/#service-modal-section-3d" },
-        { name: "4D Services", url: "/#service-modal-section-4d" },
-        { name: "PP&C Services", url: "/#service-modal-section-pp-c" },
-        { name: "BOQ Services", url: "/#service-modal-section-boq" },
-        { name: "Audit Services", url: "/#service-modal-section-audit" }
+        { name: "2D Services", isService: true },
+        { name: "3D Services", isService: true },
+        { name: "4D Services", isService: true },
+        { name: "PP&C Services", isService: true },
+        { name: "BOQ Services", isService: true },
+        { name: "Audit Services", isService: true }
       ]
     }
   ]
@@ -99,7 +126,7 @@ const Sitemap = () => {
                       key={linkIndex}
                       href={link.url}
                       className="sitemap-link"
-                      target={link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel') ? '_blank' : '_self'}
+                      target={link.url && (link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel')) ? '_blank' : '_self'}
                     >
                       {link.name}
                     </a>
@@ -116,14 +143,14 @@ const Sitemap = () => {
                 <h3 className="section-title">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
-                    <a
+                    <button
                       key={linkIndex}
-                      href={link.url}
-                      className="sitemap-link"
-                      target={link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel') ? '_blank' : '_self'}
+                      onClick={() => handleServiceClick(link.name)}
+                      className="sitemap-link service-link"
+                      style={{ cursor: 'pointer', textAlign: 'left', background: 'none', border: 'none', padding: '8px 0', width: '100%' }}
                     >
                       {link.name}
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -141,7 +168,7 @@ const Sitemap = () => {
                       key={linkIndex}
                       href={link.url}
                       className="sitemap-link"
-                      target={link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel') ? '_blank' : '_self'}
+                      target={link.url && (link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel')) ? '_blank' : '_self'}
                     >
                       {link.name}
                     </a>
@@ -162,7 +189,7 @@ const Sitemap = () => {
                       key={linkIndex}
                       href={link.url}
                       className="sitemap-link"
-                      target={link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel') ? '_blank' : '_self'}
+                      target={link.url && (link.url.startsWith('http') || link.url.startsWith('mailto') || link.url.startsWith('tel')) ? '_blank' : '_self'}
                     >
                       {link.name}
                     </a>
