@@ -2574,26 +2574,60 @@ body {
 }
 
 .stages-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 40px 120px;
-  align-items: start;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
-/* Make cards 1 and 5 larger to match 2, 3, 4 */
-.stage-wrapper:nth-child(1),
-.stage-wrapper:nth-child(5) {
-  min-height: 600px;
+.stages-row {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  gap: 120px; /* Increased row gap */
+  width: 100%;
 }
 
-.stage-wrapper:nth-child(2),
-.stage-wrapper:nth-child(3),
-.stage-wrapper:nth-child(4) {
-  min-height: 300px;
+.first-row {
+  justify-content: center;
+  position: relative;
+}
+
+.first-row .stage-wrapper:first-child {
+  margin-right: 40px; /* Move first circle to the left */
+}
+
+.first-row .stage-wrapper:last-child {
+  margin-left: 40px; /* Move third circle to the right */
+}
+
+.second-row {
+  justify-content: center;
+  position: relative;
+  transition: transform 0.4s ease; /* Smooth transition for movement */
+}
+
+.second-row.shift-down {
+  transform: translateY(200px); /* Reduced from 280px to 200px */
+}
+
+.second-row::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, transparent, #16a34a, transparent);
+  top: -80px;
+  transition: transform 0.4s ease; /* Animate the connecting line */
+}
+
+.second-row.shift-down::before {
+  transform: translateX(-50%) translateY(200px); /* Updated to match 200px shift */
 }
 
 .stage-wrapper {
@@ -2602,8 +2636,8 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 220px;
-  min-height: 300px;
+  max-width: 280px;
+  min-height: 400px;
   justify-self: center;
 }
 
@@ -2615,11 +2649,11 @@ body {
 }
 
 .stage-circle {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background-color: #f3f4f6;
-  border: 3px solid black;
+  background-color: transparent;
+  border: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2632,15 +2666,15 @@ body {
 
 .stage-circle:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(134, 239, 172, 0.4);
+  box-shadow: 0 12px 24px rgba(134, 239, 172, 0.4);
 }
 
 .stage-circle.active {
-  box-shadow: 0 8px 16px rgba(134, 239, 172, 0.5);
+  box-shadow: 0 12px 24px rgba(134, 239, 172, 0.5);
 }
 
 .stage-number {
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 4px;
@@ -2651,37 +2685,38 @@ body {
 }
 
 .stage-image {
-  width: 390px;
-  height: 390px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
   margin-bottom: 8px;
   position: relative;
   z-index: 1;
 }
 
 .stage-name {
-  margin-top: 16px;
-  font-size: 0.875rem;
-  font-weight: 600;
+  margin-top: 20px;
+  font-size: 1.125rem;
+  font-weight: 700;
   color: #374151;
-  max-width: 120px;
-  line-height: 1.2;
+  max-width: 160px;
+  line-height: 1.3;
+  text-align: center;
 }
 
 /* Description Box - Positioned below each circle */
 .lifecycle-description {
   position: absolute;
-  top: 240px; /* Increased to avoid overlapping */
+  top: 260px; /* Increased to avoid overlapping with second row */
   left: 50%;
   transform: translateX(-50%);
-  width: 260px;
-  min-height: 180px;
+  width: 300px; /* Increased width */
+  min-height: 220px; /* Increased height */
   background: #ffffff;
   border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 16px; /* Increased border radius */
+  padding: 20px; /* Increased padding */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); /* Increased shadow */
   z-index: 10;
   max-width: 90vw; /* Prevent overflow on mobile */
   visibility: hidden; /* Hide by default */
@@ -2726,28 +2761,28 @@ body {
 }
 
 .description-header {
-  margin-bottom: 12px;
+  margin-bottom: 16px; /* Increased margin */
   flex-shrink: 0;
 }
 
 .description-title {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.25rem; /* Increased from 1rem */
+  font-weight: 700; /* Increased from 600 */
   color: #1f2937;
 }
 
 .description-body {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px; /* Increased gap */
   flex: 1;
   overflow: hidden;
 }
 
 .description-text p {
-  font-size: 0.8rem;
+  font-size: 1rem; /* Increased from 0.8rem */
   color: #6b7280;
-  line-height: 1.5;
+  line-height: 1.6; /* Increased line height */
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2758,18 +2793,18 @@ body {
 
 .description-outputs {
   background-color: #ffffff;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 16px; /* Increased padding */
+  border-radius: 12px; /* Increased border radius */
   border: 1px solid #e5e7eb;
   flex: 1;
   overflow: hidden;
 }
 
 .outputs-title {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 1rem; /* Increased from 0.8rem */
+  font-weight: 700; /* Increased from 600 */
   color: #1f2937;
-  margin-bottom: 8px;
+  margin-bottom: 12px; /* Increased margin */
   flex-shrink: 0;
 }
 
@@ -2783,8 +2818,8 @@ body {
 .output-item {
   display: flex;
   align-items: center;
-  margin-bottom: 6px;
-  font-size: 0.7rem;
+  margin-bottom: 8px; /* Increased margin */
+  font-size: 0.9rem; /* Increased from 0.7rem */
   color: #374151;
   white-space: nowrap;
   overflow: hidden;
@@ -2798,20 +2833,20 @@ body {
 .output-bullet {
   color: #16a34a;
   font-weight: bold;
-  margin-right: 6px;
-  font-size: 0.75rem;
+  margin-right: 8px; /* Increased margin */
+  font-size: 0.875rem; /* Increased from 0.75rem */
   flex-shrink: 0;
 }
 
 /* CTA Button - Dynamic positioning below description */
 .lifecycle-cta {
   text-align: center;
-  margin-top: -200px; /* Below circles when no description */
+  margin-top: 20px; /* Positioned below the bottom circles */
   transition: margin-top 0.3s ease;
 }
 
 .lifecycle-cta.cta-shifted {
-  margin-top: 2px; /* Below description when it appears */
+  margin-top: 280px; /* Below description when it appears */
 }
 
 /* Advantages Section Styles */
@@ -3527,7 +3562,343 @@ body {
   }
 }
 
-/* Responsive Design for Logo and Services Sections */
+/* ===== COMPREHENSIVE MOBILE RESPONSIVE DESIGN ===== */
+
+/* Base Mobile Styles */
+@media (max-width: 768px) {
+  /* General Container */
+  .container {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .hero-button {
+    font-size: 0.875rem;
+    padding: 12px 24px;
+    min-width: 200px;
+  }
+  
+  /* Services Section */
+  .services-section {
+    padding: 60px 0;
+  }
+  
+  .services-title {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+  
+  .services-description {
+    font-size: 0.875rem;
+    margin-bottom: 40px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Logo Section */
+  .logo-section {
+    padding: 40px 0;
+  }
+  
+  .logo-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .logo-section-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Case Studies Section */
+  .case-studies-section {
+    padding: 60px 0;
+  }
+  
+  .case-studies-title {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+  
+  .case-studies-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 40px;
+  }
+  
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .case-study-card {
+    padding: 20px;
+  }
+  
+  /* Advantages Section */
+  .advantages-section {
+    padding: 60px 20px;
+  }
+  
+  .advantages-title {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+  
+  .advantages-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 40px;
+  }
+  
+  .word-cloud {
+    padding: 0 20px;
+    gap: 15px;
+  }
+  
+  .tag {
+    font-size: 0.75rem;
+    padding: 8px 16px;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .contact-title {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+  
+  .contact-description {
+    font-size: 0.875rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  /* Navigation */
+  .nav-container {
+    padding: 0 20px;
+  }
+  
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  
+  p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  
+  /* Buttons */
+  .btn {
+    font-size: 0.875rem;
+    padding: 12px 24px;
+  }
+  
+  /* Cards */
+  .card {
+    padding: 20px;
+  }
+  
+  /* Forms */
+  .form-input {
+    font-size: 0.875rem;
+    padding: 12px 16px;
+  }
+  
+  .form-button {
+    font-size: 0.875rem;
+    padding: 12px 24px;
+  }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+  /* Hero Section */
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 0.875rem;
+  }
+  
+  .hero-button {
+    font-size: 0.75rem;
+    padding: 10px 20px;
+    min-width: 160px;
+  }
+  
+  /* Services */
+  .services-title {
+    font-size: 1.5rem;
+  }
+  
+  .service-card {
+    padding: 16px;
+  }
+  
+  /* Case Studies */
+  .case-studies-title {
+    font-size: 1.5rem;
+  }
+  
+  .case-study-card {
+    padding: 16px;
+  }
+  
+  /* Advantages */
+  .advantages-title {
+    font-size: 1.5rem;
+  }
+  
+  .tag {
+    font-size: 0.625rem;
+    padding: 6px 12px;
+  }
+  
+  /* Contact */
+  .contact-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  h3 {
+    font-size: 1.125rem;
+  }
+  
+  p {
+    font-size: 0.75rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    font-size: 0.75rem;
+    padding: 10px 20px;
+  }
+  
+  /* Cards */
+  .card {
+    padding: 16px;
+  }
+  
+  /* Forms */
+  .form-input {
+    font-size: 0.75rem;
+    padding: 10px 14px;
+  }
+  
+  .form-button {
+    font-size: 0.75rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  /* Case Studies Grid */
+  .case-studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  /* Container */
+  .container {
+    padding: 0 30px;
+  }
+  
+  /* Hero */
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.375rem;
+  }
+}
 @media (max-width: 768px) {
   .logo-section {
     padding: 40px 0;
@@ -3630,42 +4001,57 @@ body {
 
 @media (max-width: 768px) {
   .lifecycle-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
   
   .lifecycle-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .lifecycle-subtitle {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
   
   .stages-container {
     flex-direction: column;
     align-items: center;
-    gap: 280px;
+    gap: 30px;
     padding: 0 20px;
+  }
+  
+  .stages-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+  }
+  
+  .first-row .stage-wrapper:first-child,
+  .first-row .stage-wrapper:last-child {
+    margin: 0;
   }
   
   .stage-wrapper {
     flex: 1;
     width: 100%;
-    max-width: 220px;
+    max-width: 200px;
   }
   
   .stage-circle {
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 220px;
+    border: none;
+    background-color: transparent;
   }
   
   .stage-number {
-    font-size: 1.875rem;
+    font-size: 1.25rem;
   }
   
   .stage-image {
-    width: 70px;
-    height: 70px;
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
   }
   
   .stage-name {
@@ -3673,12 +4059,12 @@ body {
   }
   
   .lifecycle-description {
-    width: 240px;
-    padding: 14px;
-    top: 180px;
+    width: 280px;
+    padding: 12px;
+    top: 200px;
     z-index: 100;
-    max-width: 80vw;
-    min-height: 220px;
+    max-width: 85vw;
+    min-height: 180px;
   }
   
   .description-title {
@@ -3686,24 +4072,24 @@ body {
   }
   
   .description-text p {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
   
   .description-outputs {
-    padding: 10px;
+    padding: 8px;
   }
   
   .outputs-title {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
   
   .output-item {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
   
   .lifecycle-button {
-    font-size: 1rem;
-    padding: 14px 28px;
+    font-size: 0.875rem;
+    padding: 12px 24px;
   }
 }
 
@@ -3715,6 +4101,8 @@ body {
   .stage-circle {
     width: 140px;
     height: 140px;
+    border: none;
+    background-color: transparent;
   }
   
   .stage-number {
@@ -3722,8 +4110,9 @@ body {
   }
   
   .stage-image {
-    width: 60px;
-    height: 60px;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
   }
   
   .stage-name {

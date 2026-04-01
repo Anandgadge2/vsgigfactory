@@ -98,51 +98,103 @@ const Lifecycle = ({ onContactClick }) => {
         <div className="lifecycle-stages">
           <Fragment key="stages-container">
           <div className="stages-container">
-            {stages.map((stage, index) => (
-              <div key={stage.id} className="stage-wrapper">
-                <div className="stage-content">
-                  <button
-                    className={`stage-circle ${activeStage === stage.id ? 'active' : ''}`}
-                    onClick={() => handleStageClick(stage.id)}
-                    onMouseEnter={() => handleStageHover(stage.id)}
-                    onMouseLeave={handleStageLeave}
-                  >
-                    <img src={stage.image} alt={stage.name} className="stage-image" />
-                  </button>
-                  <div className="stage-name">{stage.id}. {stage.name}</div>
-                  
-                  {/* Description Box - Positioned below each circle */}
-                  {shouldShowDescription(stage.id) && (
-                    <div key={`description-${stage.id}`} className={`lifecycle-description ${shouldShowDescription(stage.id) ? 'show' : ''}`}>
-                      <div className="description-arrow"></div>
-                      <div className="description-content">
-                        <div className="description-header">
-                          <h3 className="description-title">
-                            Stage {stage.id}: {stage.name}
-                          </h3>
-                        </div>
-                        <div className="description-body">
-                          <div className="description-text">
-                            <p>{stage.description}</p>
+            {/* First Row - 3 circles */}
+            <div className="stages-row first-row">
+              {stages.slice(0, 3).map((stage, index) => (
+                <div key={stage.id} className="stage-wrapper">
+                  <div className="stage-content">
+                    <button
+                      className={`stage-circle ${activeStage === stage.id ? 'active' : ''}`}
+                      onClick={() => handleStageClick(stage.id)}
+                      onMouseEnter={() => handleStageHover(stage.id)}
+                      onMouseLeave={handleStageLeave}
+                    >
+                      <img src={stage.image} alt={stage.name} className="stage-image" />
+                    </button>
+                    <div className="stage-name">{stage.id}. {stage.name}</div>
+                    
+                    {/* Description Box - Positioned below each circle */}
+                    {shouldShowDescription(stage.id) && (
+                      <div key={`description-${stage.id}`} className={`lifecycle-description ${shouldShowDescription(stage.id) ? 'show' : ''}`}>
+                        <div className="description-arrow"></div>
+                        <div className="description-content">
+                          <div className="description-header">
+                            <h3 className="description-title">
+                              Stage {stage.id}: {stage.name}
+                            </h3>
                           </div>
-                          <div className="description-outputs">
-                            <h4 className="outputs-title">Output:</h4>
-                            <ul className="outputs-list">
-                              {stage.outputs.map((output, index) => (
-                                <li key={index} className="output-item">
-                                  <span className="output-bullet">✓</span>
-                                  {output}
-                                </li>
-                              ))}
-                            </ul>
+                          <div className="description-body">
+                            <div className="description-text">
+                              <p>{stage.description}</p>
+                            </div>
+                            <div className="description-outputs">
+                              <h4 className="outputs-title">Output:</h4>
+                              <ul className="outputs-list">
+                                {stage.outputs.map((output, index) => (
+                                  <li key={index} className="output-item">
+                                    <span className="output-bullet">✓</span>
+                                    {output}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Second Row - 2 circles centered */}
+            <div className={`stages-row second-row ${activeStage && activeStage <= 3 ? 'shift-down' : ''}`}>
+              {stages.slice(3, 5).map((stage, index) => (
+                <div key={stage.id} className="stage-wrapper">
+                  <div className="stage-content">
+                    <button
+                      className={`stage-circle ${activeStage === stage.id ? 'active' : ''}`}
+                      onClick={() => handleStageClick(stage.id)}
+                      onMouseEnter={() => handleStageHover(stage.id)}
+                      onMouseLeave={handleStageLeave}
+                    >
+                      <img src={stage.image} alt={stage.name} className="stage-image" />
+                    </button>
+                    <div className="stage-name">{stage.id}. {stage.name}</div>
+                    
+                    {/* Description Box - Positioned below each circle */}
+                    {shouldShowDescription(stage.id) && (
+                      <div key={`description-${stage.id}`} className={`lifecycle-description ${shouldShowDescription(stage.id) ? 'show' : ''}`}>
+                        <div className="description-arrow"></div>
+                        <div className="description-content">
+                          <div className="description-header">
+                            <h3 className="description-title">
+                              Stage {stage.id}: {stage.name}
+                            </h3>
+                          </div>
+                          <div className="description-body">
+                            <div className="description-text">
+                              <p>{stage.description}</p>
+                            </div>
+                            <div className="description-outputs">
+                              <h4 className="outputs-title">Output:</h4>
+                              <ul className="outputs-list">
+                                {stage.outputs.map((output, index) => (
+                                  <li key={index} className="output-item">
+                                    <span className="output-bullet">✓</span>
+                                    {output}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </Fragment>
         </div>
