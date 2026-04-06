@@ -67,13 +67,14 @@ const CaseStudies = ({ onContactClick }) => {
   }
 
   return (
-    <section id="case-studies" className="case-studies-section">
-      <div className="container">
-        <div className="case-studies-header">
-          <h2 className="case-studies-title">Our Case Studies</h2>
-          <p className="case-studies-subtitle">
-            Real construction projects delivered with quality, precision, and efficiency.          </p>
-        </div>
+    <>
+      <section id="case-studies" className="case-studies-section">
+        <div className="container">
+          <div className="case-studies-header">
+            <h2 className="case-studies-title">Our Case Studies</h2>
+            <p className="case-studies-subtitle">
+              Real construction projects delivered with quality, precision, and efficiency.          </p>
+          </div>
 
         <div className="case-studies-grid">
           {caseStudies.map((study) => (
@@ -116,6 +117,7 @@ const CaseStudies = ({ onContactClick }) => {
         </div>
       </div>
     </section>
+    </>
   )
 }
 

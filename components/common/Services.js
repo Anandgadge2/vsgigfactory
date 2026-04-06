@@ -214,6 +214,12 @@ const Services = ({ onContactClick, serviceToOpen }) => {
               </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
+              <button className="know-more-button" onClick={(e) => {
+                e.stopPropagation();
+                handleServiceClick(service);
+              }}>
+                Know More →
+              </button>
             </div>
           ))}
         </div>

@@ -32,35 +32,35 @@ const Lifecycle = ({ onContactClick }) => {
     {
       id: 1,
       name: 'Initiation',
-      image: '/assets/initiation.png',
+      image: '/assets/Intiation Phase.png',
       description: 'Feasibility  &  concept  phase  planning',
       outputs: ['Project requirements', 'Stakeholder analysis', 'Initial scope definition', 'initial stage', 'project']
     },
     {
       id: 2,
       name: 'Pre-construction Planning',
-      image: '/assets/Preconstruction1.png',
+      image: '/assets/Preconstruction Phase.png',
       description: 'Detailed planning and resource allocation',
       outputs: ['Project schedule', 'Resource planning', 'Budget estimation', 'Risk assessment']
     },
     {
       id: 3,
       name: 'Designing Development',
-      image: '/assets/design development.png',
+      image: '/assets/Design Development Phase.png',
       description: 'Architectural and engineering design development',
       outputs: ['Design documents', 'Engineering specifications', 'Material selection', 'Compliance checks']
     },
     {
       id: 4,
       name: 'Execution & Monitoring',
-      image: '/assets/execution.png',
+      image: '/assets/Execution Phase.png',
       description: 'Construction execution and progress monitoring',
       outputs: ['Construction progress', 'Quality control', 'Timeline tracking', 'Budget management']
     },
     {
       id: 5,
       name: 'Handover',
-      image: '/assets/handover.png',
+      image: '/assets/Handover Phase.png',
       description: 'Project completion and client handover',
       outputs: ['Final inspection', 'Documentation', 'Training', 'Project closure', 'final stage']
     }

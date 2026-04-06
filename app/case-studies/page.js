@@ -3,11 +3,11 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '../../components/common/Header'
+import Sitemap from '../../components/common/Sitemap'
 
 const CaseStudiesPage = () => {
   console.log('CaseStudiesPage component loaded')
   const router = useRouter()
-  const [selectedCategory, setSelectedCategory] = useState('All')
   
   const caseStudies = [
     {
@@ -120,12 +120,6 @@ const CaseStudiesPage = () => {
     }
   ]
 
-  const categories = ['All', 'Commercial', 'Residential', 'Industrial', 'Healthcare', 'Educational', 'Infrastructure']
-
-  const filteredCaseStudies = selectedCategory === 'All' 
-    ? caseStudies 
-    : caseStudies.filter(study => study.category === selectedCategory)
-
   const handleViewProject = (studyId) => {
     router.push(`/case-studies/${studyId}`)
   }
@@ -143,24 +137,9 @@ const CaseStudiesPage = () => {
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="case-studies-filter">
-            <div className="filter-buttons">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-
           {/* Case Studies Grid */}
           <div className="case-studies-page-grid">
-            {filteredCaseStudies.map((study) => (
+            {caseStudies.map((study) => (
               <div key={study.id} className="case-study-page-card">
                 <div className="case-study-page-image">
                   <img src={study.image} alt={study.title} />
@@ -215,6 +194,9 @@ const CaseStudiesPage = () => {
           </div>
         </div>
       </main>
+      
+      {/* Sitemap Section */}
+      <Sitemap />
     </>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import Sitemap from './Sitemap.js'
 
 const Projects = () => {
   const router = useRouter()
@@ -40,13 +41,17 @@ const Projects = () => {
   ]
 
   return (
-    <section className="our-expertise-section">
-      {/* Header */}
-      <div className="expertise-header-simple">
-        <button onClick={handleBackClick} className="back-button">
-          ← Back
-        </button>
-        <h1 className="expertise-title">Projects</h1>
+    <>
+      <section className="our-expertise-section">
+        {/* Header */}
+        <div className="expertise-header-simple">
+          <button onClick={handleBackClick} className="back-button">
+            ← Back
+          </button>
+          <h1 className="expertise-title">Projects</h1>
+          <p className="expertise-subtitle">
+            Comprehensive construction projects showcasing our expertise and innovation in building solutions
+          </p>
         <p className="expertise-subtitle">
           Comprehensive construction projects showcasing our expertise and innovation in building solutions
         </p>
@@ -102,6 +107,10 @@ const Projects = () => {
         </div>
       </div>
     </section>
+    
+    {/* Sitemap Section */}
+    <Sitemap />
+    </>
   )
 }
 

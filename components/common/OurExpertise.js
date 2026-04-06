@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
+import Sitemap from './Sitemap.js'
 
 const OurExpertise = () => {
   const router = useRouter()
@@ -98,7 +99,8 @@ const OurExpertise = () => {
   ]
 
   return (
-    <section className="our-expertise-section">
+    <>
+      <section className="our-expertise-section">
       {/* Header */}
       <div className="expertise-header-simple">
         <h1 className="expertise-title">BIM Services</h1>
@@ -311,6 +313,10 @@ const OurExpertise = () => {
         </div>
       </div>  
     </section>
+    
+    {/* Sitemap Section */}
+    <Sitemap />
+    </>
   )
 }
 

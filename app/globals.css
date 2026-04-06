@@ -2138,11 +2138,33 @@ body {
 /* Logo Section Styles */
 .logo-section {
   padding: 60px 0;
-  background-color: #ffffff;
+  background-color: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
   overflow: hidden;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+}
+
+.logo-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logo-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.logo-section-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .logo-slider {
@@ -2172,14 +2194,20 @@ body {
   justify-content: center;
   height: 100px;
   width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .logo-image {
   max-height: 80px;
   max-width: 200px;
   object-fit: contain;
-  opacity: 0.8;
+  opacity: 1 !important;
   transition: all 0.3s ease;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .logo-image:hover {
@@ -2311,8 +2339,7 @@ body {
   justify-content: center;
   margin: 0 auto 24px auto;
   box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.08),
-    inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    0 4px 12px rgba(0, 0, 0, 0.08);
   position: relative;
   transition: all 0.4s ease;
   z-index: 1;
@@ -2323,8 +2350,7 @@ body {
   background: #ffffff;
   transform: none;
   box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.08),
-    inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .service-icon.stage-image {
@@ -2369,6 +2395,7 @@ body {
   color: #6b7280;
   line-height: 1.6;
   margin: 0;
+  flex-grow: 1;
 }
 
 .service-icon:hover .service-icon-image {
@@ -4812,6 +4839,70 @@ body {
     0 6px 0 #15803d,
     0 8px 15px rgba(22, 163, 74, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.know-more-section {
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+.know-more-button {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  box-shadow: 
+    0 6px 0 #15803d,
+    0 10px 20px rgba(22, 163, 74, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.know-more-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.know-more-button:hover {
+  background: linear-gradient(135deg, #15803d, #16a34a);
+  transform: translateY(2px);
+  box-shadow: 
+    0 4px 0 #15803d,
+    0 8px 15px rgba(22, 163, 74, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.know-more-button:hover::before {
+  left: 100%;
+}
+
+.know-more-button:active {
+  transform: translateY(4px);
+  box-shadow: 
+    0 2px 0 #15803d,
+    0 4px 8px rgba(22, 163, 74, 0.3),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design for Case Studies Section */
