@@ -26,7 +26,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Clear, buildable documentation that ensures smooth on-site execution.'
       ],
-      image: '/images/services/2d-service.jpg'
+      image: '/assets/s2d.png'
     },
     {
       id: '3d',
@@ -44,7 +44,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Accurate, clash-free, data-rich models ready for construction and lifecycle management.'
       ],
-      image: '/images/services/3do_img.png'
+      image: '/assets/3ds_img.png'
     },
     {
       id: '4d',
@@ -62,7 +62,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Improved timeline control, proactive issue resolution, and reduced execution risk.'
       ],
-      image: '/images/services/4d-service.jpg'
+      image: '/assets/4ds_img.png'
     },
     {
       id: 'pp-c',
@@ -80,7 +80,19 @@ const ServicesPageContent = () => {
       benefits: [
         'Better time management, improved coordination, and controlled project progression.'
       ],
-      image: '/images/services/ppc-service.jpg'
+      difference: [
+        { traditional: 'Manual planning', our: 'Digital optimization' },
+        { traditional: 'Reactive problem solving', our: 'Proactive risk management' },
+        { traditional: 'Siloed operations', our: 'Integrated coordination' },
+        { traditional: 'Traditional approach', our: 'Our PP&C methodology' }
+      ],
+      valueAdd: [
+        'Enhanced project visibility through real-time tracking',
+        'Reduced delays via predictive scheduling',
+        'Cost savings through optimized resource allocation',
+        'Improved stakeholder communication and reporting'
+      ],
+      image: '/assets/spp&c.png'
     },
     {
       id: 'boq',
@@ -99,7 +111,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Improved cost accuracy, reduced financial ambiguity, and controlled budget execution.'
       ],
-      image: '/images/services/boq-service.jpg'
+      image: '/assets/sboq.png'
     },
     {
       id: 'audit',
@@ -117,7 +129,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Risk reduction, improved accountability, and higher stakeholder confidence.'
       ],
-      image: '/images/services/audit-service.jpg'
+      image: '/assets/saudit.png'
     }
   ]
 
@@ -139,122 +151,162 @@ const ServicesPageContent = () => {
     router.push(`/services?service=${serviceId}`)
   }
 
+  const handleBackClick = () => {
+    router.back()
+  }
+
   return (
     <>
-      <main className="services-page">
-        <div className="container">
-          {/* Page Header */}
-          <div className="services-page-header">
-            <h1 className="services-page-title">Our Services</h1>
-            <p className="services-page-subtitle">
-              Comprehensive construction management solutions tailored to your project needs
-            </p>
+      <main className="services-details-section">
+        {/* Header with Back Button */}
+        <div className="services-details-header">
+          <div style={{ textAlign: 'center', marginBottom: '20px', position: 'relative' }}>
+            <button onClick={handleBackClick} className="back-button" style={{ position: 'absolute', left: '40px', top: '0' }}>
+              ← Back
+            </button>
+            <h1 className="services-details-title">Our Services</h1>
           </div>
+        </div>
 
-          {/* Services Sections */}
-          <div className="services-container">
+        {/* Services Navigation */}
+        <div className="services-nav">
+          <h2 className="nav-title">Services</h2>
+          <div className="nav-links">
             {servicesData.map((service) => (
-              <div
+              <button
                 key={service.id}
-                id={`service-${service.id}`}
-                className={`service-section ${activeService === service.id ? 'active' : ''}`}
+                className={`nav-link ${activeService === service.id ? 'active' : ''}`}
+                onClick={() => handleServiceClick(service.id)}
               >
-                <div className="service-content">
-                  <div className="service-info">
-                    <h2 className="service-title">{service.title}</h2>
-                    <p className="service-description">{service.detailedDescription}</p>
+                {service.title}
+              </button>
+            ))}
+          </div>
+        </div>
 
-                    {/* Conditional rendering based on service type */}
-                    {service.id === '3d' ? (
-                      // 3D Services: Image section instead of features
-                      <div className="service-image-section">
-                        <img 
-                          src={service.image} 
-                          alt={service.title}
-                          className="service-image-large"
-                        />
-                      </div>
-                    ) : service.id === '4d' ? (
-                      // 4D Services: Image section instead of features
-                      <div className="service-image-section">
-                        <img 
-                          src={service.image} 
-                          alt={service.title}
-                          className="service-image-large"
-                        />
-                      </div>
-                    ) : (
-                      // Other services: Features section
-                      <div className="service-features">
-                        <h3 className="features-title">Our {service.title} Include</h3>
-                        <ul className="features-list">
-                          {service.features.map((feature, index) => (
-                            <li key={index} className="feature-item">
-                              <span className="feature-icon">●</span>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+        {/* Services Content */}
+        <div className="services-content">
+          {servicesData.map((service) => (
+            <section
+              key={service.id}
+              id={`service-${service.id}`}
+              className={`service-section ${activeService === service.id ? 'active' : ''}`}
+            >
+              <div className="service-header">
+                <h2 className="service-title">{service.title}</h2>
+                <div className="service-divider"></div>
+              </div>
+              <div className="service-content">
+                <p className="service-description">{service.detailedDescription}</p>
 
-                    {/* Benefits/Output */}
-                    <div className="service-benefits">
-                      <h3 className="benefits-title">Output</h3>
-                      <ul className="benefits-list">
-                        {service.benefits.map((benefit, index) => (
-                          <li key={index} className="benefit-item">
-                            <span className="benefit-icon">★</span>
-                            {benefit}
-                          </li>
+                {/* Conditional rendering based on service type */}
+                {service.id === '3d' ? (
+                  // 3D Services: Image section instead of features
+                  <div className="service-image-section">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="service-image-large"
+                    />
+                  </div>
+                ) : service.id === '4d' ? (
+                  // 4D Services: Image section instead of features
+                  <div className="service-image-section">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="service-image-large"
+                    />
+                  </div>
+                ) : service.id === 'pp-c' ? (
+                  // PP&C Services: Difference Table and Value Add
+                  <>
+                    <div className="service-difference">
+                      <h3 className="section-subtitle">Difference</h3>
+                      <table className="difference-table">
+                        <thead>
+                          <tr>
+                            <th>Traditional Practice</th>
+                            <th>BIM Practice</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="traditional-cell">Manual planning</td>
+                            <td>Digital optimization</td>
+                          </tr>
+                          <tr>
+                            <td className="traditional-cell">Reactive problem solving</td>
+                            <td>Proactive risk management</td>
+                          </tr>
+                          <tr>
+                            <td className="traditional-cell">Siloed operations</td>
+                            <td>Integrated coordination</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="service-value-add">
+                      <h3 className="section-subtitle">Value Add</h3>
+                      <ul>
+                        {service.valueAdd.map((item, index) => (
+                          <li key={index} className="benefit-item">{item}</li>
                         ))}
                       </ul>
                     </div>
-
-                    {/* 3D Services: Additional image section below output */}
-                    {service.id === '3d' && (
-                      <div className="service-image-section">
-                        <img 
-                          src={service.image} 
-                          alt={service.title}
-                          className="service-image-large"
-                        />
-                      </div>
-                    )}
+                  </>
+                ) : (
+                  // Other services: Features section
+                  <div className="service-features">
+                    <h3 className="section-subtitle">Our {service.title} Include</h3>
+                    <ul className="feature-list">
+                      {service.features.map((feature, index) => (
+                        <li key={index} className="feature-item">
+                          <span className="feature-bullet">●</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+                )}
 
-                  <div className="service-visual">
-                    <div className="service-image-placeholder">
-                      <img 
-                        src={service.image} 
-                        alt={service.title}
-                        className="service-image"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextElementSibling.style.display = 'block';
-                        }}
-                      />
-                      <div className="service-icon-large" style={{display: 'none'}}>
-                        <span className="service-initial">{service.title.charAt(0)}</span>
-                      </div>
-                      <p className="service-image-caption">{service.title}</p>
-                    </div>
-                  </div>
+                {/* Benefits/Output */}
+                <div className="service-benefits">
+                  <h3 className="section-subtitle">Output</h3>
+                  <ul className="benefit-list">
+                    {service.benefits.map((benefit, index) => (
+                      <li key={index} className="benefit-item">
+                        <span className="benefit-bullet">★</span>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-            ))}
-          </div>
 
-          {/* CTA Section */}
-          <div className="services-cta">
-            <h2 className="cta-title">Ready to Get Started?</h2>
-            <p className="cta-description">
-              Contact us today to discuss how our services can benefit your project
-            </p>
-            <button className="cta-button" onClick={() => router.push('/contact')}>
-              Get In Touch →
-            </button>
-          </div>
+                {/* 3D Services: Additional image section below output */}
+                {service.id === '3d' && (
+                  <div className="service-image-section">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="service-image-large"
+                    />
+                  </div>
+                )}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="services-details-cta">
+          <h2 className="cta-title">Ready to Get Started?</h2>
+          <p className="cta-description">
+            Contact us today to discuss how our services can benefit your project
+          </p>
+          <button className="cta-button" onClick={() => router.push('/contact')}>
+            Get In Touch →
+          </button>
         </div>
       </main>
     </>
@@ -265,7 +317,7 @@ export default function ServicesPage() {
   return (
     <Suspense
       fallback={
-        <main className="services-page" aria-busy="true" />
+        <main className="services-details-section" aria-busy="true" />
       }
     >
       <ServicesPageContent />

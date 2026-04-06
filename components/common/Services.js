@@ -175,7 +175,8 @@ const Services = ({ onContactClick, serviceToOpen }) => {
   ]
 
   const handleServiceClick = (service) => {
-    setSelectedServiceId(service.id)
+    // Navigate to services page with specific service ID
+    router.push(`/services?service=${service.id}`)
   }
 
   const closeModal = () => {
