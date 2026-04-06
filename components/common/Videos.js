@@ -2,79 +2,83 @@
 
 import { useState } from 'react'
 
-const Trust = () => {
+const Videos = () => {
   const [activeModal, setActiveModal] = useState(null)
 
   const videos = [
     {
       id: 1,
-      name: "Gigfactory Company Video",
+      name: "Puneet Arora - AMS Project Consultants",
       videoId: "cU8iEKLeqvc?si=8pqIXKYRktopX4q8"
     },
     {
       id: 2,
-      name: "Puneet Arora - AMS Project Consultants",
-      videoId: "sC1WwWJkLAI?si=q4xHvLEguOl_CrJy"
+      name: "Harshad Rajadhyax - Sandersons",
+      videoId: "qJLOReEmQE0?si=Za1t6SjBSyNdgp1N"
     },
     {
       id: 3,
-      name: "Harshad Rajadhyax - Sandersons",
-      videoId: "dQw4w9WgXcQ"
+      name: "Yayati Kene | Real Estate",
+      videoId: "oaIkiqXfBqI?si=BY0LOl5_iXUr-KHz"
     },
     {
       id: 4,
-      name: "Yayati Kene | Real Estate",
-      videoId: "dQw4w9WgXcQ"
-    },
-    {
-      id: 5,
       name: "Ashish | Construction Expert",
-      videoId: "dQw4w9WgXcQ"
+      videoId: "sC1WwWJkLAI?si=q4xHvLEguOl_CrJy"
     }
   ]
 
   return (
-    <section className="trust-section">
-      <div className="trust-container">
+    <section className="videos-section">
+      <div className="videos-container">
 
-        <h2 className="trust-heading">
-          Trusted by hundreds of Construction Industry Professionals
-        </h2>
-
-        {/* VIDEO SLIDER */}
-        <div className="trust-slider">
-          {videos.map((video) => (
-            <div key={video.id} className="trust-card">
-
-              <div
-                className="video-box"
-                onClick={() => setActiveModal(video.videoId)}
-              >
-                <div className="play-btn">▶</div>
-              </div>
-
-              <div className="video-name">
-                {video.name}
-              </div>
-
-            </div>
-          ))}
+        {/* Header */}
+        <div className="videos-header">
+          <h2 className="videos-title">Trusted by hundreds of Construction Industry Professionals</h2>
         </div>
 
-        {/* Progress bar */}
-        <div className="slider-progress">
-          <div className="progress-fill"></div>
+        {/* Video Slider with Horizontal Scroll */}
+        <div className="videos-slider-container">
+          <div className="videos-slider">
+            {videos.map((video) => (
+              <div key={video.id} className="video-card">
+                <div
+                  className="video-thumbnail"
+                  onClick={() => setActiveModal(video.videoId)}
+                >
+                  <div className="play-overlay">
+                    <div className="play-button">▶</div>
+                  </div>
+                  <img
+                    src={`https://img.youtube.com/vi/${video.videoId.split('?')[0]}/hqdefault.jpg`}
+                    alt={video.name}
+                    className="video-image"
+                  />
+                </div>
+                <div className="video-info">
+                  <h4 className="video-title">{video.name}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+
+
 
         {/* Description */}
-        <p className="trust-desc">
-          At Gigfactory, our success is measured by the confidence our clients place in us.
-          Across 10+ million sq.ft. of delivered projects, we have partnered with developers,
-          contractors, and consultants to bring clarity, coordination, and intelligence
-          to complex construction projects.
-        </p>
-
-        <h3 className="trust-footer">Insights & Industry Knowledge</h3>
+        <div className="videos-description">
+          <p>
+            At Gigfactory, we pride ourselves on delivering exceptional BIM and construction solutions.
+            Our video testimonials showcase real projects and client experiences across various sectors.
+          </p>
+        </div>
+        {/* Insights & Industry Knowledge Section */}
+        <div className="videos-middle-section">
+          <div className="video-highlight insights-section">
+            <h3>Insights & Industry Knowledge</h3>
+            <p>Deep expertise in BIM technology and construction processes enables us to deliver innovative solutions.</p>
+          </div>
+        </div>
 
       </div>
 
@@ -94,7 +98,7 @@ const Trust = () => {
         }
 
         return (
-          <div className="modal" onClick={() => setActiveModal(null)}>
+          <div className="video-modal" onClick={() => setActiveModal(null)}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <span className="close-btn" onClick={() => setActiveModal(null)}>
                 &times;
@@ -114,4 +118,4 @@ const Trust = () => {
   )
 }
 
-export default Trust
+export default Videos
