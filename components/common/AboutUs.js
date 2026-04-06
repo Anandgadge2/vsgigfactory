@@ -7,6 +7,25 @@ import Sitemap from './Sitemap.js'
 const AboutUs = () => {
   const router = useRouter()
 
+  const culturePillars = [
+    {
+      title: "Intelligence -Driven Thinking",
+      description: "We embrace creativity and forward-thinking solutions"
+    },
+    {
+      title: "Collaboration Over Silos", 
+      description: "We work together to achieve exceptional results"
+    },
+    {
+      title: "Ownership & Accountability",
+      description: "We uphold the highest standards of ethics and transparency"
+    },
+    {
+      title: "Continuous Learning & Growth",
+      description: "We strive for outstanding quality in everything we do"
+    }
+  ]
+
   const handleBackClick = () => {
     router.back()
   }
@@ -76,21 +95,31 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* Content from Image */}
-            <div className="about-section">
-              <div className="section-content">
-                <p className="about-text">
-                  Company Inc - U70109MH2022PTC385108<br />
-                  STARTUP INDIA Regd - DIPP115525<br />
-                  GST - 27AAJCG8593Q1ZG<br />
-                  UDYAM - UDYAM-MH-33-0504399
-                </p>
-              </div>
+            {/* ===== CULTURE TEXT ===== */}
+            <div className="culture-text">
+              <h3>Building Intelligence. Growing Together.</h3>
+              <p>At Gigfactory, culture is not just about where we work — it's about how we think, collaborate, and build</p>
+            </div>
+
+            {/* ===== OUR CULTURE PILLARS HEADING ===== */}
+            <div className="culture-pillars-heading">
+              <h2>Our Culture Pillars</h2>
+            </div>
+
+            {/* ===== CULTURE PILLARS GRID ===== */}
+            <div className="culture-pillars-grid">
+              {culturePillars.map((pillar, index) => (
+                <div key={index} className="culture-pillar">
+                  <div className="pillar-number">{index + 1}</div>
+                  <h3 className="pillar-title">{pillar.title}</h3>
+                  <p className="pillar-description">{pillar.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* Sitemap Section */}
       <Sitemap />
     </>

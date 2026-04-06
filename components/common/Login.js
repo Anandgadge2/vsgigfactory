@@ -124,6 +124,26 @@ const Login = () => {
   return (
     <div className="login-page">
 
+      {/* ===== APPLY CARDS SECTION ===== */}
+      <div className="expert-card">
+        <p className="expert-title">
+          Interested in becoming a Gigfactory Expert?
+        </p>
+
+        <p className="expert-subtitle">
+          Submit your profile and explore freelance opportunities with us
+        </p>
+
+        <div className="expert-buttons-container">
+          <button className="expert-btn" onClick={handleExpertBtnClick}>
+            Apply as an Expert
+          </button>
+          <button className="expert-btn" onClick={handleFreelancerBtnClick}>
+            Apply as a Freelancer
+          </button>
+        </div>
+      </div>
+
       {/* ===== MAIN LOGIN CARD ===== */}
       <div className="login-card">
 
@@ -177,25 +197,6 @@ const Login = () => {
             <button type="submit">LOG IN</button>
           </form>
         </div>
-      </div>
-
-
-      {/* ===== SECOND CARD ===== */}
-      <div className="expert-card">
-        <p className="expert-title">
-          Interested in becoming a Gigfactory Expert?
-        </p>
-
-        <p className="expert-subtitle">
-          Submit your profile and explore freelance opportunities with us
-        </p>
-
-        <button className="expert-btn" onClick={handleExpertBtnClick}>
-          Apply as an Expert
-        </button>
-        <button className="expert-btn" onClick={handleFreelancerBtnClick}>
-          Apply as a Freelancer
-        </button>
       </div>
 
       {/* ===== EXPERT APPLICATION FORM MODAL ===== */}
