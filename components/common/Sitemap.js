@@ -82,34 +82,39 @@ const Sitemap = () => {
     <section className="sitemap-section">
       <div className="container">
         <div className="sitemap-header">
-          <div className="sitemap-logo">
-            <div className="logo-main-text">
-              <span className="logo-gig">Gig</span>
-              <span className="logo-factory">factory</span>
-              <div className="flags-container">
-                {/* India Flag */}
-                <svg className="flag" viewBox="0 0 24 16" fill="none">
-                  <rect width="24" height="16" fill="#FF9933"/>
-                  <rect y="5.33" width="24" height="5.33" fill="white"/>
-                  <rect y="10.67" width="24" height="5.33" fill="#138808"/>
-                  <circle cx="12" cy="8" r="2" fill="#000080"/>
-                </svg>
-                {/* UK Flag */}
-                <svg className="flag" viewBox="0 0 24 16" fill="none">
-                  <rect width="24" height="16" fill="#012169"/>
-                  <path d="M0 0L24 16M24 0L0 16" stroke="white" strokeWidth="2.67"/>
-                  <path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" strokeWidth="1.33"/>
-                  <path d="M12 0V16M0 8H24" stroke="white" strokeWidth="4"/>
-                  <path d="M12 0V16M0 8H24" stroke="#C8102E" strokeWidth="2.67"/>
-                </svg>
+          <div className="sitemap-title-section">
+            <div className="logo-container">
+              <div className="logo-text">
+                <div className="logo-main">
+                  <span className="logo-gig">Gig</span>
+                  <span className="logo-factory">factory</span>
+                  <div className="logo-flags">
+                    <svg className="flag-icon" viewBox="0 0 24 16" fill="none">
+                      <rect width="24" height="16" fill="#FF9933"/>
+                      <rect y="5.33" width="24" height="5.33" fill="white"/>
+                      <rect y="10.67" width="24" height="5.33" fill="#138808"/>
+                      <circle cx="12" cy="8" r="2" fill="#000080"/>
+                    </svg>
+                    <svg className="flag-icon" viewBox="0 0 24 16" fill="none">
+                      <rect width="24" height="16" fill="#012169"/>
+                      <path d="M0 0L24 16M24 0L0 16" stroke="white" strokeWidth="2.67"/>
+                      <path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" strokeWidth="1.33"/>
+                      <path d="M12 0V16M0 8H24" stroke="white" strokeWidth="4"/>
+                      <path d="M12 0V16M0 8H24" stroke="#C8102E" strokeWidth="2.67"/>
+                    </svg>
+                  </div>
+                </div>
+                <div className="logo-tagline">
+                  Technology Enabled Platform
+                </div>
               </div>
             </div>
-          </div>
-          <div className="sitemap-title-section">
-            <h2 className="sitemap-title">Site Map</h2>
-            <p className="sitemap-subtitle">
-              Complete overview of website structure and navigation
-            </p>
+            <div className="sitemap-heading-center">
+              <h2 className="sitemap-title">Site Map</h2>
+              <p className="sitemap-subtitle">
+                Complete overview of website structure and navigation
+              </p>
+            </div>
           </div>
         </div>
 
@@ -203,14 +208,16 @@ const Sitemap = () => {
         {/* Footer */}
         <div className="sitemap-footer">
           <div className="footer-content">
-            <div className="footer-info">
-              <p className="footer-text">
-                © 2024 Gigfactory. All rights reserved.
-              </p>
-              <div className="footer-links">
-                <a href="/privacy" className="footer-link">Privacy Policy</a>
-                <a href="/terms" className="footer-link">Terms of Service</a>
-                <a href="/cookies" className="footer-link">Cookie Policy</a>
+            <div className="footer-center">
+              <div className="footer-info">
+                <p className="footer-text">
+                  © 2024 Gigfactory. All rights reserved.
+                </p>
+                <div className="footer-links">
+                  <a href="/privacy" className="footer-link">Privacy Policy</a>
+                  <a href="/terms" className="footer-link">Terms of Service</a>
+                  <a href="/cookies" className="footer-link">Cookie Policy</a>
+                </div>
               </div>
             </div>
           </div>
