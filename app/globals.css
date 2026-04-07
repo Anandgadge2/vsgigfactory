@@ -15,19 +15,155 @@ body {
 }
 
 /* ========================================
+   HERO LOGO SECTION STYLES
+   ======================================== */
+
+.hero-logo-section {
+  padding: 20px 0;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.hero-logo-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.hero-logo-track {
+  display: flex;
+  animation: hero-scroll 30s linear infinite;
+  will-change: transform;
+  gap: 50px;
+  width:max-content; /* Double width for continuous scroll */
+}
+
+@keyframes hero-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-logo-item {
+  flex: 0 0 auto;
+  min-width: 130px;
+  max-width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 3px 0;
+}
+
+.hero-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+  transition: all 0.3s ease;
+  border: none;
+  height: auto;
+  width: 100%;
+}
+
+.hero-logo-container:hover {
+  transform: scale(1.05);
+  background: transparent;
+}
+
+.hero-logo-image {
+  max-height: 80px;
+  max-width: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.logo-placeholder {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #374151;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   INDIVIDUAL LOGO SIZING
+   ======================================== */
+
+/* Individual logo size controls - Edit these to change specific logo sizes */
+.logo-tcs { max-height: 150px; max-width: 220px; }
+.logo-ey { max-height: 80px; max-width: 180px; }
+.logo-atkins { max-height: 110px; max-width: 200px; }
+.logo-cynosure { max-height: 105px; max-width: 190px; }
+.logo-adani { max-height: 115px; max-width: 210px; }
+.logo-emaar { max-height: 110px; max-width: 200px; }
+.logo-labindia { max-height: 105px; max-width: 190px; }
+.logo-lt { 
+  max-height: 120px; 
+  max-width: 220px; 
+  background: transparent !important;
+  padding: 5px !important;
+  object-fit: contain !important;
+}
+.logo-salesforce { max-height: 210px; max-width: 200px; }
+.logo-schneider { max-height: 110px; max-width: 200px; }
+.logo-mastercard { max-height: 105px; max-width: 190px; }
+.logo-denkall { max-height: 180px; max-width: 180px; }
+.logo-mudon { max-height: 110px; max-width: 200px; }
+.logo-claramont { max-height: 105px; max-width: 190px; }
+.logo-gulf-islamic { max-height: 115px; max-width: 210px; }
+.logo-jacobs { max-height: 110px; max-width: 200px; }
+.logo-jmbaxi { max-height: 105px; max-width: 190px; }
+.logo-natash { max-height: 130px; max-width: 200px; }
+.logo-orchid { max-height: 110px; max-width: 200px; }
+.logo-peninsula { max-height: 105px; max-width: 190px; }
+.logo-skillbind { max-height: 100px; max-width: 180px; }
+.logo-westbridge { max-height: 115px; max-width: 210px; }
+.logo-ascenders { max-height: 110px; max-width: 200px; }
+.logo-dh { max-height: 100px; max-width: 180px; }
+.logo-freespanz { max-height: 105px; max-width: 220px; }
+.logo-gilly { max-height: 110px; max-width: 220px; }
+.logo-imagegrafix { max-height: 100px; max-width: 180px; }
+.logo-mmoser { max-height: 235px; max-width: 210px; }
+.logo-oarchilos { max-height: 180px; max-width: 200px; }
+.logo-turnkey { max-height: 100px; max-width: 180px; }
+.logo-au { max-height: 115px; max-width: 210px; }
+.logo-edifice { max-height: 180px; max-width: 180px; }
+.logo-suresh-babu-and-partners { max-height: 105px; max-width: 190px; }
+.logo-designworks { max-height: 110px; max-width: 200px; }
+.logo-tge { max-height: 100px; max-width: 180px; }
+.logo-gbarchitect { max-height: 105px; max-width: 190px; }
+.logo-sanderson { max-height: 110px; max-width: 200px; }
+.logo-hosmac { max-height: 100px; max-width: 180px; }
+
+/* ========================================
    NAVBAR STYLES
    ======================================== */
 
 .navbar {
-  background-color: #ffffff; /* Same as advantages section */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  box-shadow: none;
   border-bottom: 3px solid #16a34a;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999 !important; /* Higher z-index */
-  display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   height: 90px !important;
@@ -1239,8 +1375,7 @@ body {
   font-weight: 600;
   color: #16a34a;
   margin-bottom: 20px;
-  border-bottom: 2px solid #16a34a;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   text-align: left;
 }
 
@@ -1279,18 +1414,18 @@ body {
   font-size: 0.95rem;
   padding: 8px 16px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.6);
+  background: transparent;
   border: 1px solid rgba(22, 163, 74, 0.1);
   font-weight: 500;
   cursor: default;
 }
 
 .sitemap-footer {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
+  background: transparent;
+  border-radius: 0;
+  padding: 20px 0;
+  box-shadow: none;
+  border: none;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -2523,9 +2658,23 @@ body {
   min-width: 200px;
 }
 
-.hero-button span,
-.services-cta-button span,
-.case-studies-button span,
+
+.hero-button::after,
+.services-cta-button::after,
+.case-studies-button::after,
+.advantages-button::after,
+.lifecycle-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px; /* 3D shadow effect */
+  width: 100%;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark shadow */
+  filter: blur(2px);
+}
+
 .advantages-button span,
 .lifecycle-button span {
   position: relative;
@@ -4889,61 +5038,34 @@ body {
 }
 
 .know-more-button {
-  background: linear-gradient(135deg, #16a34a, #22c55e);
+  background: #16a34a;
   color: #ffffff;
   border: none;
-  border-radius: 50px;
-  padding: 14px 28px;
+  border-radius: 999px;
+  padding: 12px 24px;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.25s ease, color 0.25s ease;
   margin-top: 20px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 140px;
-  box-shadow: 
-    0 6px 0 #15803d,
-    0 10px 20px rgba(22, 163, 74, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  transform: translateY(0);
-  position: relative;
-  overflow: hidden;
+  box-shadow: none;
+  transform: none;
+  position: static;
+  overflow: visible;
   letter-spacing: 0.5px;
 }
 
-.know-more-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
-}
-
 .know-more-button:hover {
-  background: linear-gradient(135deg, #15803d, #16a34a);
-  transform: translateY(2px);
-  box-shadow: 
-    0 4px 0 #15803d,
-    0 8px 15px rgba(22, 163, 74, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-}
-
-.know-more-button:hover::before {
-  left: 100%;
+  background: #15803d;
 }
 
 .know-more-button:active {
-  transform: translateY(4px);
-  box-shadow: 
-    0 2px 0 #15803d,
-    0 4px 8px rgba(22, 163, 74, 0.3),
-    inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: #0f7b2e;
 }
 
 /* Responsive Design for Case Studies Section */
@@ -9219,15 +9341,8 @@ body {
 .videos-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: black;
-  margin-bottom: 20px;
-  background: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
-}
-
+    color: #111827;
+    margin-bottom: 20px;
 .videos-subtitle {
   font-size: 1.25rem;
   color: #6b7280;
@@ -10477,14 +10592,12 @@ body {
 .login-sitemap-section {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  margin-top: 40px;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
 /* Use the same sitemap styles as home page */
-.login-sitemap-section .sitemap-section {
-  padding: 0 0 40px 0;
-  background: #c8facf;
+.login-sitemap-section .sitemap-page {
   position: relative;
   margin-bottom: 0;
   width: 100%;
@@ -10586,9 +10699,7 @@ body {
 
 .login-sitemap-section .sitemap-footer {
   text-align: center;
-  border-top: 1px solid #e5e7eb;
   padding-top: 10px;
-  color: #6b7280;
   font-size: 0.85rem;
 }
 
@@ -10614,12 +10725,13 @@ body {
 /* Sitemap Responsive Design */
 @media (max-width: 768px) {
   .login-sitemap-section {
-    margin-top: 40px;
+    margin-top: 0;
     padding: 0 15px;
   }
   
-  .login-sitemap-section .sitemap-section {
-    padding: 40px 20px;
+  .login-sitemap-section .sitemap-page {
+    margin-bottom: 0;
+    width: 100%;
   }
   
   .login-sitemap-section .sitemap-title {
@@ -10631,7 +10743,7 @@ body {
     gap: 30px;
   }
   
-  .login-sitemap-section .sitemap-section-block {
+  .login-sitemap-section .sitemap-block {
     padding: 25px 20px;
   }
   
@@ -12672,7 +12784,7 @@ body {
    SITEMAP STYLES - Matching Design Reference
    ======================================== */
 
-.sitemap-section {
+.sitemap-page {
   padding: 60px 0;
   background-image: url('/assets/sitemap-bg.png');
   background-size: cover;
@@ -12691,7 +12803,7 @@ body {
   align-items: center;
   width: 100%;
   position: relative;
-  padding-left: 18x; /* Make space for logo on the left */
+  padding-left: 18px; /* Make space for logo on the left */
 }
 
 .logo-container {
@@ -12787,7 +12899,8 @@ body {
 .sitemap-left,
 .sitemap-middle-left,
 .sitemap-middle-right,
-.sitemap-right {
+.sitemap-right,
+.sitemap-block {
   background: transparent;
   border-radius: 0;
   padding: 0;
@@ -12795,14 +12908,25 @@ body {
   border: none;
 }
 
-.section-title {
+.sitemap-content .section-title {
+  position: relative;
   font-size: 1.25rem;
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 20px;
-  border-bottom: 2px solid #16a34a;
-  padding-bottom: 8px;
-  text-align: left;
+  padding-bottom: 12px;
+}
+
+.sitemap-content .section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #000000;
+  border-radius: 2px;
+  transform: none;
 }
 
 .section-links {
@@ -12910,7 +13034,7 @@ body {
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
-  .sitemap-section {
+  .sitemap-page {
     padding: 40px 15px;
   }
   
@@ -13276,6 +13400,8 @@ body {
   }
   
   .difference-table td:last-child::after {
+    content: "";
+    position: absolute;
     width: 20px;
     height: 20px;
     font-size: 12px;

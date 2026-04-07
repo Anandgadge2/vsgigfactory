@@ -111,7 +111,7 @@ const CaseStudies = ({ onContactClick }) => {
 
         <div className="case-studies-cta">
           <p>Ready to move your project forward?</p>
-          <button onClick={onContactClick} className="case-studies-button">
+          <button onClick={onContactClick} className="hero-button">
             <span>Let's Connect →</span>            
           </button>
         </div>

@@ -1,9 +1,9 @@
 /* ========================================
-   SITEMAP STYLES - Matching Design Reference
+   SITEMAP STYLES - Clean Text Overlay
    ======================================== */
 
 .sitemap-section {
-  padding: 60px 0;
+  padding: 80px 20px;
   background-image: url('/assets/sitemap-bg.png');
   background-size: cover;
   background-position: center;
@@ -12,273 +12,111 @@
   min-height: 100vh;
 }
 
+/* Header Section */
 .sitemap-header {
+  background: transparent;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.sitemap-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.sitemap-subtitle {
-  font-size: 1.125rem;
-  color: #6b7280;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.logo-container {
-  margin-bottom: 30px;
-}
-
-.logo-text {
-  text-align: center;
-}
-
-.logo-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 5px;
-}
-
-.logo-gig {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #16a34a;
-  letter-spacing: -0.02em;
-}
-
-.logo-factory {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  letter-spacing: -0.02em;
-}
-
-.logo-flags {
-  display: flex;
-  gap: 4px;
-  margin-left: 8px;
-}
-
-.flag-icon {
-  width: 20px;
-  height: 14px;
-}
-
-.logo-tagline {
-  font-size: 0.550rem;
-  color: #6b7280;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.sitemap-title-section {
-  text-align: center;
-}
-
-.sitemap-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.sitemap-subtitle {
-  font-size: 1.125rem;
-  color: #6b7280;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
+/* Main Content Grid */
 .sitemap-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 60px auto;
 }
 
+/* Removing any box/container styling */
 .sitemap-left,
 .sitemap-middle-left,
 .sitemap-middle-right,
 .sitemap-right {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(22, 163, 74, 0.2);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
+/* Section Titles with Black Line */
 .section-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #1f2937;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #16a34a;
-  padding-bottom: 8px;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
   text-align: left;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-decoration: underline !important;
+  text-decoration-color: #000000 !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
 }
 
+/* Links Styling */
 .section-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .sitemap-link {
   color: #374151;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 400;
-  transition: color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
   display: block;
-  padding: 4px 0;
+  padding: 8px 0;
+  border-bottom: 2px solid #000000; /* Black underline for all links */
 }
 
 .sitemap-link:hover {
   color: #16a34a;
+  transform: translateX(5px); /* Subtle nudge on hover */
+  border-bottom: 2px solid #16a34a; /* Change underline color on hover */
 }
 
-.service-link {
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  padding: 4px 0;
-  width: 100%;
-}
-
+/* Footer Section cleanup */
 .sitemap-footer {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(22, 163, 74, 0.2);
+  background: transparent;
+  border: none;
+  padding: 40px 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-info {
-  text-align: center;
-}
-
-.footer-text {
-  color: #6b7280;
-  font-size: 0.875rem;
-  margin: 0 0 8px 0;
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.footer-link {
-  color: #16a34a;
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.footer-link:hover {
-  color: #22c55e;
-}
-
 /* ========================================
-   RESPONSIVE DESIGN FOR SITEMAP
+   RESPONSIVE DESIGN
    ======================================== */
 
-/* Tablet Responsive Design */
+/* Tablet */
 @media (max-width: 1024px) {
   .sitemap-content {
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
-  }
-  
-  .sitemap-left,
-  .sitemap-middle-left,
-  .sitemap-middle-right,
-  .sitemap-right {
-    padding: 20px;
+    gap: 40px;
+    padding: 0 20px;
   }
 }
 
-/* ========================================
-   RESPONSIVE DESIGN FOR SITEMAP
-   ======================================== */
-
-/* Mobile Responsive Design */
+/* Mobile */
 @media (max-width: 768px) {
   .sitemap-section {
-    padding: 40px 15px;
-  }
-  
-  .sitemap-title {
-    font-size: 2rem;
+    padding: 40px 20px;
   }
   
   .sitemap-content {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 30px;
   }
-  
-  .sitemap-left,
-  .sitemap-middle-left,
-  .sitemap-middle-right,
-  .sitemap-right {
-    padding: 20px;
-  }
-  
+
   .section-title {
-    font-size: 1.125rem;
-  }
-  
-  .sitemap-link {
-    font-size: 0.875rem;
-  }
-  
-  .footer-links {
-    gap: 16px;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .logo-gig,
-  .logo-factory {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 }
-
-/* ========================================
-   END OF SITEMAP CSS STYLES
-   ======================================== */

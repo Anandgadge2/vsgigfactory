@@ -187,7 +187,7 @@ const CaseStudiesPage = () => {
             <p>Let's discuss how we can bring your vision to life with our expertise.</p>
             <button 
               onClick={() => window.location.href = '/contact'}
-              className="case-studies-page-cta-btn"
+              className="services-cta-button"
             >
               Start Your Project
             </button>
@@ -196,7 +196,9 @@ const CaseStudiesPage = () => {
       </main>
       
       {/* Sitemap Section */}
-      <Sitemap />
+      <div className="login-sitemap-section">
+        <Sitemap />
+      </div>
     </>
   )
 }

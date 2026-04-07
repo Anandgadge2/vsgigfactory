@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Sitemap from '../../components/common/Sitemap'
 
 const ServicesPageContent = () => {
   const router = useRouter()
@@ -307,6 +308,10 @@ const ServicesPageContent = () => {
           <button className="cta-button" onClick={() => router.push('/contact')}>
             Get In Touch →
           </button>
+        </div>
+
+        <div className="login-sitemap-section">
+          <Sitemap />
         </div>
       </main>
     </>

@@ -109,7 +109,9 @@ const Projects = () => {
     </section>
     
     {/* Sitemap Section */}
-    <Sitemap />
+    <div className="login-sitemap-section">
+      <Sitemap />
+    </div>
     </>
   )
 }

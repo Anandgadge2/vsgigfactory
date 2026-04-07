@@ -79,36 +79,10 @@ const Sitemap = () => {
   ]
 
   return (
-    <section className="sitemap-section">
+    <section className="sitemap-page">
       <div className="container">
         <div className="sitemap-header">
           <div className="sitemap-title-section">
-            <div className="logo-container">
-              <div className="logo-text">
-                <div className="logo-main">
-                  <span className="logo-gig">Gig</span>
-                  <span className="logo-factory">factory</span>
-                  <div className="logo-flags">
-                    <svg className="flag-icon" viewBox="0 0 24 16" fill="none">
-                      <rect width="24" height="16" fill="#FF9933"/>
-                      <rect y="5.33" width="24" height="5.33" fill="white"/>
-                      <rect y="10.67" width="24" height="5.33" fill="#138808"/>
-                      <circle cx="12" cy="8" r="2" fill="#000080"/>
-                    </svg>
-                    <svg className="flag-icon" viewBox="0 0 24 16" fill="none">
-                      <rect width="24" height="16" fill="#012169"/>
-                      <path d="M0 0L24 16M24 0L0 16" stroke="white" strokeWidth="2.67"/>
-                      <path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" strokeWidth="1.33"/>
-                      <path d="M12 0V16M0 8H24" stroke="white" strokeWidth="4"/>
-                      <path d="M12 0V16M0 8H24" stroke="#C8102E" strokeWidth="2.67"/>
-                    </svg>
-                  </div>
-                </div>
-                <div className="logo-tagline">
-                  Technology Enabled Platform
-                </div>
-              </div>
-            </div>
             <div className="sitemap-heading-center">
               <h2 className="sitemap-title">Site Map</h2>
               <p className="sitemap-subtitle">
@@ -123,7 +97,7 @@ const Sitemap = () => {
           {/* Left Side */}
           <div className="sitemap-left">
             {leftSections.map((section, index) => (
-              <div key={index} className="sitemap-section">
+              <div key={index} className="sitemap-block">
                 <h3 className="section-title">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
@@ -144,7 +118,7 @@ const Sitemap = () => {
           {/* Middle Left Side */}
           <div className="sitemap-middle-left">
             {middleLeftSections.map((section, index) => (
-              <div key={index} className="sitemap-section">
+              <div key={index} className="sitemap-block">
                 <h3 className="section-title">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
@@ -165,7 +139,7 @@ const Sitemap = () => {
           {/* Middle Right Side */}
           <div className="sitemap-middle-right">
             {middleRightSections.map((section, index) => (
-              <div key={index} className="sitemap-section">
+              <div key={index} className="sitemap-block">
                 <h3 className="section-title">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
@@ -186,7 +160,7 @@ const Sitemap = () => {
           {/* Right Side */}
           <div className="sitemap-right">
             {rightSections.map((section, index) => (
-              <div key={index} className="sitemap-section">
+              <div key={index} className="sitemap-block">
                 <h3 className="section-title">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (

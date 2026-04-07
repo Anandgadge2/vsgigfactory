@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Sitemap from './Sitemap'
 
 const ServicesDetails = () => {
   const router = useRouter()
@@ -280,6 +281,10 @@ const ServicesDetails = () => {
         </div>
       </div>
     </section>
+
+    <div className="login-sitemap-section">
+      <Sitemap />
+    </div>
   )
 }
 

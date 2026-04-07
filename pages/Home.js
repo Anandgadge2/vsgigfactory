@@ -61,7 +61,9 @@ const Home = () => {
       <CaseStudies onContactClick={openContactModal} />
 
       {/* Sitemap Section */}
-      <Sitemap />
+      <div className="login-sitemap-section">
+        <Sitemap />
+      </div>
 
       {/* Contact Modal */}
       <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />

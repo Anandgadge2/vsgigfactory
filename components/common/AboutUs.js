@@ -121,7 +121,9 @@ const AboutUs = () => {
       </section>
 
       {/* Sitemap Section */}
-      <Sitemap />
+      <div className="login-sitemap-section">
+        <Sitemap />
+      </div>
     </>
   )
 }
