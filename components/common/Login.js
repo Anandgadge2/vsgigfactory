@@ -149,7 +149,7 @@ const Login = () => {
 
         {/* LEFT SIDE */}
         <div className="login-left">
-          <h1>
+          <h1 style={{ width: '100%', textAlign: 'center', margin: 0 }}>
             <a 
               href="https://app.gigbimlabs.com/" 
               target="_blank" 
@@ -179,7 +179,7 @@ const Login = () => {
               CORE
             </a>
           </h1>
-          <p>Gigfactory's Execution Control Platform</p>
+          <p>Gigfactory Project Management Platform</p>
         </div>
 
         {/* RIGHT SIDE */}

@@ -9087,6 +9087,11 @@ body {
   max-width: 1400px;
   height: 600px;
   background: #fff;
+  background-image: url('/assets/sitemap-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -9097,11 +9102,12 @@ body {
 /* LEFT SIDE */
 .login-left {
   flex: 1;
-  background:#16a34a;
+  background-color: rgba(22, 163, 74, 0.65);
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 60px;
 }
 
@@ -9109,28 +9115,30 @@ body {
   font-size: 100px;
   color: black;
   margin-bottom: 10px;
-  margin-left: -20px;
-  margin-top: 0;
-  text-align: center;
+  margin: 0;
+  text-align: left;
+  margin-left: 20px;
 }
 
 .what-is-text {
   margin-bottom: -10px;
   font-size: 25px;
   margin-left: 0;
-  margin-left: 80px;
+  text-align: center;
 }
 
 .login-left p {
   color: white;
   font-size: 20px;
-  margin-left: 30px;
-  margin-top: -5px;
+  margin-left: 0;
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* RIGHT SIDE */
 .login-right {
   flex: 1;
+  background-color: rgba(240, 253, 244, 0.85);
   padding: 60px;
 }
 
@@ -10424,7 +10432,7 @@ body {
 /* ===== CULTURE TEXT ===== */
 .culture-text {
   text-align: center;
-  margin: 60px 0 40px 0;
+  margin: 12px 0 24px 0;
   padding: 0 20px;
 }
 
@@ -10448,7 +10456,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .culture-text {
-    margin: 40px 0 30px 0;
+    margin: 24px 0 24px 0;
     padding: 0 15px;
   }
   
@@ -10464,7 +10472,7 @@ body {
 /* ===== OUR CULTURE PILLARS HEADING ===== */
 .culture-pillars-heading {
   text-align: center;
-  margin: 40px 0 30px 0;
+  margin: 4px 0 24px 0;
   padding: 0 20px;
 }
 

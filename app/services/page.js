@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Sitemap from '../../components/common/Sitemap'
+import '../../services-details-styles.css'
 
 const ServicesPageContent = () => {
   const router = useRouter()
@@ -27,7 +28,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Clear, buildable documentation that ensures smooth on-site execution.'
       ],
-      image: '/assets/s2d.png'
+      image: '/assets/s_2d.png'
     },
     {
       id: '3d',
@@ -45,7 +46,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Accurate, clash-free, data-rich models ready for construction and lifecycle management.'
       ],
-      image: '/assets/3ds_img.png'
+      image: '/assets/s_3d.png'
     },
     {
       id: '4d',
@@ -63,7 +64,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Improved timeline control, proactive issue resolution, and reduced execution risk.'
       ],
-      image: '/assets/4ds_img.png'
+      image: '/assets/s_4d.png'
     },
     {
       id: 'pp-c',
@@ -93,7 +94,7 @@ const ServicesPageContent = () => {
         'Cost savings through optimized resource allocation',
         'Improved stakeholder communication and reporting'
       ],
-      image: '/assets/spp&c.png'
+      image: '/assets/s_planning.png'
     },
     {
       id: 'boq',
@@ -112,7 +113,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Improved cost accuracy, reduced financial ambiguity, and controlled budget execution.'
       ],
-      image: '/assets/sboq.png'
+      image: '/assets/s_BOQ.png'
     },
     {
       id: 'audit',
@@ -130,7 +131,7 @@ const ServicesPageContent = () => {
       benefits: [
         'Risk reduction, improved accountability, and higher stakeholder confidence.'
       ],
-      image: '/assets/saudit.png'
+      image: '/assets/s_audit.png'
     }
   ]
 
@@ -159,34 +160,40 @@ const ServicesPageContent = () => {
   return (
     <>
       <main className="services-details-section">
-        {/* Header with Back Button */}
+        {/* Header - Our Services Title */}
         <div className="services-details-header">
-          <div style={{ textAlign: 'center', marginBottom: '20px', position: 'relative' }}>
-            <button onClick={handleBackClick} className="back-button" style={{ position: 'absolute', left: '40px', top: '0' }}>
-              ← Back
+          <h1 className="services-details-title">Our Services</h1>
+        </div>
+
+        {/* Sidebar + Content Container */}
+        <div className="services-layout-container">
+          {/* Sidebar */}
+          <aside className="services-sidebar">
+            {/* Back Button Circle */}
+            <button 
+              onClick={handleBackClick} 
+              className="sidebar-back-button"
+              title="Go back"
+            >
+              ←
             </button>
-            <h1 className="services-details-title">Our Services</h1>
-          </div>
-        </div>
 
-        {/* Services Navigation */}
-        <div className="services-nav">
-          <h2 className="nav-title">Services</h2>
-          <div className="nav-links">
-            {servicesData.map((service) => (
-              <button
-                key={service.id}
-                className={`nav-link ${activeService === service.id ? 'active' : ''}`}
-                onClick={() => handleServiceClick(service.id)}
-              >
-                {service.title}
-              </button>
-            ))}
-          </div>
-        </div>
+            {/* Services List */}
+            <nav className="services-sidebar-nav">
+              {servicesData.map((service) => (
+                <button
+                  key={service.id}
+                  className={`sidebar-service-link ${activeService === service.id ? 'active' : ''}`}
+                  onClick={() => handleServiceClick(service.id)}
+                >
+                  {service.title}
+                </button>
+              ))}
+            </nav>
+          </aside>
 
-        {/* Services Content */}
-        <div className="services-content">
+          {/* Main Content Area */}
+          <div className="services-content">
           {servicesData.map((service) => (
             <section
               key={service.id}
@@ -220,33 +227,8 @@ const ServicesPageContent = () => {
                     />
                   </div>
                 ) : service.id === 'pp-c' ? (
-                  // PP&C Services: Difference Table and Value Add
+                  // PP&C Services: Value Add
                   <>
-                    <div className="service-difference">
-                      <h3 className="section-subtitle">Difference</h3>
-                      <table className="difference-table">
-                        <thead>
-                          <tr>
-                            <th>Traditional Practice</th>
-                            <th>BIM Practice</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td className="traditional-cell">Manual planning</td>
-                            <td>Digital optimization</td>
-                          </tr>
-                          <tr>
-                            <td className="traditional-cell">Reactive problem solving</td>
-                            <td>Proactive risk management</td>
-                          </tr>
-                          <tr>
-                            <td className="traditional-cell">Siloed operations</td>
-                            <td>Integrated coordination</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
                     <div className="service-value-add">
                       <h3 className="section-subtitle">Value Add</h3>
                       <ul>
@@ -255,6 +237,17 @@ const ServicesPageContent = () => {
                         ))}
                       </ul>
                     </div>
+
+                    {/* Image Section for PP&C */}
+                    {service.image && (
+                      <div className="service-image-section">
+                        <img 
+                          src={service.image} 
+                          alt={service.title}
+                          className="service-image-large"
+                        />
+                      </div>
+                    )}
                   </>
                 ) : (
                   // Other services: Features section
@@ -263,11 +256,22 @@ const ServicesPageContent = () => {
                     <ul className="feature-list">
                       {service.features.map((feature, index) => (
                         <li key={index} className="feature-item">
-                          <span className="feature-bullet">●</span>
+                          <span className="feature-bullet">✓</span>
                           {feature}
                         </li>
                       ))}
                     </ul>
+                  </div>
+                )}
+
+                {/* Image Section for all services */}
+                {(service.id === '2d' || service.id === 'boq' || service.id === 'audit') && (
+                  <div className="service-image-section">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="service-image-large"
+                    />
                   </div>
                 )}
 
@@ -277,26 +281,16 @@ const ServicesPageContent = () => {
                   <ul className="benefit-list">
                     {service.benefits.map((benefit, index) => (
                       <li key={index} className="benefit-item">
-                        <span className="benefit-bullet">★</span>
+                        <span className="benefit-bullet">✓</span>
                         {benefit}
                       </li>
                     ))}
                   </ul>
                 </div>
-
-                {/* 3D Services: Additional image section below output */}
-                {service.id === '3d' && (
-                  <div className="service-image-section">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="service-image-large"
-                    />
-                  </div>
-                )}
               </div>
             </section>
           ))}
+          </div>
         </div>
 
         {/* CTA Section */}
