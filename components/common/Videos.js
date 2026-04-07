@@ -29,12 +29,11 @@ const Videos = () => {
   ]
 
   return (
-    <section className="videos-section">
+    <section className="videos-section" style={{ scrollbarColor: '#000000', scrollbarWidth: 'thin' }}>
       <div className="videos-container">
-
-        {/* Header */}
-        <div className="videos-header">
-          <h2 className="videos-title">Trusted by hundreds of Construction Industry Professionals</h2>
+        {/* Heading */}
+        <div className="videos-heading" style={{ marginTop: '-40px' }}>
+          <h1 style={{ color: 'black', textAlign: 'center' }}>Trusted by hundreds of Construction Industry Professionals</h1>
         </div>
 
         {/* Video Slider with Horizontal Scroll */}
@@ -63,22 +62,15 @@ const Videos = () => {
           </div>
         </div>
 
-
-
         {/* Description */}
-        <div className="videos-description">
+        <div className="videos-description" style={{ marginTop: '-40px' }}>
           <p>
             At Gigfactory, we pride ourselves on delivering exceptional BIM and construction solutions.
             Our video testimonials showcase real projects and client experiences across various sectors.
           </p>
+          <h3>Insights & Industry Knowledge</h3>
         </div>
         {/* Insights & Industry Knowledge Section */}
-        <div className="videos-middle-section">
-          <div className="video-highlight insights-section">
-            <h3>Insights & Industry Knowledge</h3>
-            <p>Deep expertise in BIM technology and construction processes enables us to deliver innovative solutions.</p>
-          </div>
-        </div>
 
       </div>
 
@@ -108,8 +100,7 @@ const Videos = () => {
                 title="YouTube Video Player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                style={{ width: '100%', height: '500px', border: 'none' }}
-              />
+                style={{ width: '100%', height: '500px', border: 'none', scrollbarColor: '#000000', scrollbarWidth: 'thin' }} />
             </div>
           </div>
         );
