@@ -9341,8 +9341,11 @@ body {
 .videos-title {
   font-size: 2.5rem;
   font-weight: 800;
-    color: #111827;
-    margin-bottom: 20px;
+  color: #111827;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
 .videos-subtitle {
   font-size: 1.25rem;
   color: #6b7280;

@@ -194,9 +194,10 @@ const ServicesDetails = () => {
   }
 
   return (
-    <section className="services-details-section">
-      <div className="container">
-        {/* Header */}
+    <>
+      <section className="services-details-section">
+        <div className="container">
+          {/* Header */}
         <div className="services-details-header">
           <button onClick={handleBackClick} className="back-button">
             ← Back to Services
@@ -285,6 +286,7 @@ const ServicesDetails = () => {
     <div className="login-sitemap-section">
       <Sitemap />
     </div>
+  </>
   )
 }
 
