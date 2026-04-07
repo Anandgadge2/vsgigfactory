@@ -1,122 +1,584 @@
 /* ========================================
-   SITEMAP STYLES - Clean Text Overlay
+
+   SITEMAP STYLES - Matching Design Reference
+
    ======================================== */
 
+
+
 .sitemap-section {
-  padding: 80px 20px;
+
+  padding: 60px 0;
+
   background-image: url('/assets/sitemap-bg.png');
+
   background-size: cover;
+
   background-position: center;
+
   background-repeat: no-repeat;
+
   position: relative;
+
   min-height: 100vh;
+
 }
 
-/* Header Section */
+
+
 .sitemap-header {
+  position: relative;
   background: transparent;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 220px; /* keep logo space on the left */
+  padding-right: 220px;
 }
 
-/* Main Content Grid */
-.sitemap-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto 60px auto;
+.sitemap-logo-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
 }
 
-/* Removing any box/container styling */
-.sitemap-left,
-.sitemap-middle-left,
-.sitemap-middle-right,
-.sitemap-right {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-/* Section Titles with Black Line */
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 25px;
-  padding-bottom: 12px;
-  text-align: left;
-  position: relative;
-  display: inline-block;
+.sitemap-title-section {
   width: 100%;
-  text-decoration: underline !important;
-  text-decoration-color: #000000 !important;
-  text-decoration-thickness: 2px !important;
-  text-underline-offset: 4px !important;
+  max-width: 760px;
+  margin: 0 auto;
+  transform: translateX(-48px);
 }
 
-/* Links Styling */
-.section-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+
+
+.sitemap-title {
+
+  font-size: 2.5rem;
+
+  font-weight: 700;
+
+  color: #1f2937;
+
+  margin-bottom: 16px;
+
+  line-height: 1.2;
+
 }
+
+
+
+.sitemap-subtitle {
+
+  font-size: 1.125rem;
+
+  color: #6b7280;
+
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  line-height: 1.6;
+
+}
+
+
+
+.logo-container {
+
+  background: transparent;
+
+  margin-bottom: 30px;
+
+}
+
+
+
+.logo-text {
+
+  text-align: center;
+
+}
+
+
+
+.logo-main {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-bottom: 5px;
+
+}
+
+
+
+.logo-gig {
+
+  font-size: 2.5rem;
+
+  font-weight: 700;
+
+  color: #16a34a;
+
+  letter-spacing: -0.02em;
+
+}
+
+
+
+.logo-factory {
+
+  font-size: 2.5rem;
+
+  font-weight: 700;
+
+  color: #1f2937;
+
+  letter-spacing: -0.02em;
+
+}
+
+
+
+.logo-flags {
+
+  display: flex;
+
+  gap: 4px;
+
+  margin-left: 8px;
+
+}
+
+
+
+.flag-icon {
+
+  width: 20px;
+
+  height: 14px;
+
+}
+
+
+
+.logo-tagline {
+
+  font-size: 0.550rem;
+
+  color: #6b7280;
+
+  letter-spacing: 0.1em;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+}
+
+
+
+.sitemap-title-section {
+  text-align: center;
+  margin-left: -50px;
+}
+
+
+
+.sitemap-title {
+
+  font-size: 2.5rem;
+
+  font-weight: 700;
+
+  color: #1f2937;
+
+  margin-bottom: 16px;
+
+  line-height: 1.2;
+
+}
+
+
+
+.sitemap-subtitle {
+
+  font-size: 1.125rem;
+
+  color: #6b7280;
+
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  line-height: 1.6;
+
+}
+
+
+
+.sitemap-content {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  gap: 30px;
+
+  margin-bottom: 60px;
+
+  max-width: 1200px;
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+}
+
+
+
+.sitemap-left,
+
+.sitemap-middle-left,
+
+.sitemap-middle-right,
+
+.sitemap-right {
+
+  background: transparent;
+
+  border-radius: 0;
+
+  padding: 25px;
+
+  box-shadow: none;
+
+  border: none;
+
+}
+
+
+
+.section-title {
+
+  font-size: 1.25rem;
+
+  font-weight: 600;
+
+  color: #1f2937;
+
+  margin-bottom: 20px;
+
+ 
+
+  padding-bottom: 8px;
+
+  text-align: left;
+
+}
+
+
+
+.section-links {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+}
+
+
 
 .sitemap-link {
+
   color: #374151;
+
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+
+  font-size: 0.9rem;
+
+  font-weight: 400;
+
+  transition: color 0.2s ease;
+
   display: block;
-  padding: 8px 0;
-  border-bottom: 2px solid #000000; /* Black underline for all links */
+
+  padding: 4px 0;
+
 }
+
+
 
 .sitemap-link:hover {
+
   color: #16a34a;
-  transform: translateX(5px); /* Subtle nudge on hover */
-  border-bottom: 2px solid #16a34a; /* Change underline color on hover */
+
 }
 
-/* Footer Section cleanup */
-.sitemap-footer {
-  background: transparent;
+
+
+.service-link {
+
+  background: none;
+
   border: none;
-  padding: 40px 0;
-  max-width: 1200px;
-  margin: 0 auto;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: inherit;
+
+  color: inherit;
+
+  padding: 4px 0;
+
+  width: 100%;
+
 }
+
+
+
+.sitemap-footer {
+
+  background: transparent;
+
+  border-radius: 0;
+
+  padding: 25px;
+
+  box-shadow: none;
+
+  border: none;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+}
+
+
+
+.footer-content {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+}
+
+
+
+.footer-info {
+
+  text-align: center;
+
+}
+
+
+
+.footer-text {
+
+  color: #6b7280;
+
+  font-size: 0.875rem;
+
+  margin: 0 0 8px 0;
+
+}
+
+
+
+.footer-links {
+
+  display: flex;
+
+  gap: 20px;
+
+  justify-content: center;
+
+}
+
+
+
+.footer-link {
+
+  color: #16a34a;
+
+  text-decoration: none;
+
+  font-size: 0.875rem;
+
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+
+}
+
+
+
+.footer-link:hover {
+
+  color: #22c55e;
+
+}
+
+
 
 /* ========================================
-   RESPONSIVE DESIGN
+
+   RESPONSIVE DESIGN FOR SITEMAP
+
    ======================================== */
 
-/* Tablet */
+
+
+/* Tablet Responsive Design */
+
 @media (max-width: 1024px) {
+
   .sitemap-content {
+
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 0 20px;
+
+    gap: 25px;
+
   }
+
+  
+
+  .sitemap-left,
+
+  .sitemap-middle-left,
+
+  .sitemap-middle-right,
+
+  .sitemap-right {
+
+    padding: 20px;
+
+  }
+
 }
 
-/* Mobile */
+
+
+/* ========================================
+
+   RESPONSIVE DESIGN FOR SITEMAP
+
+   ======================================== */
+
+
+
+/* Mobile Responsive Design */
+
 @media (max-width: 768px) {
+
   .sitemap-section {
-    padding: 40px 20px;
+
+    padding: 40px 15px;
+
   }
+
   
-  .sitemap-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
+
+  .sitemap-title {
+
+    font-size: 2rem;
+
   }
+
+  
+
+  .sitemap-content {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+  }
+
+  
+
+  .sitemap-left,
+
+  .sitemap-middle-left,
+
+  .sitemap-middle-right,
+
+  .sitemap-right {
+
+    padding: 20px;
+
+  }
+
+  
 
   .section-title {
-    font-size: 1.25rem;
+
+    font-size: 1.125rem;
+
   }
+
+  
+
+  .sitemap-link {
+
+    font-size: 0.875rem;
+
+  }
+
+  
+
+  .footer-links {
+
+    gap: 16px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+  }
+
+  
+
+  .logo-gig,
+
+  .logo-factory {
+
+    font-size: 2rem;
+
+  }
+
 }
+
+
+
+/* ========================================
+
+   END OF SITEMAP CSS STYLES
+
+   ======================================== */
+
+
+
+

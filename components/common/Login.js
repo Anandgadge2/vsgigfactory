@@ -149,7 +149,6 @@ const Login = () => {
 
         {/* LEFT SIDE */}
         <div className="login-left">
-          <p className="what-is-text" style={{ color: 'white' }}>what is</p>
           <h1>
             <a 
               href="https://app.gigbimlabs.com/" 
