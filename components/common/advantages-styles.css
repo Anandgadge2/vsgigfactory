@@ -53,7 +53,7 @@
   color: #6b7280;
 }
 
-.word-cloud-container span:hover {
+.word-cloud-container span:not(.highlight):hover {
   transform: scale(1.1);
   z-index: 10;
   color: #16a34a;
