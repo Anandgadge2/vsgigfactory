@@ -41,6 +41,8 @@
 /* Header - Our Services Title */
 .services-details-header {
   width: 100%;
+  max-width: 1000px;   /* increase this value */
+  margin: 0 auto; 
   padding: 28px 26px;
   background: #ffffff;
   border: 1px solid #e5e7eb;
