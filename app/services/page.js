@@ -171,7 +171,10 @@ const ServicesPageContent = () => {
               >
                 ←
               </button>
-
+              
+              {/* Our Services Heading */}
+              <h3 className="sidebar-services-title">Our Services</h3>
+              
               {/* Services List */}
               <nav className="services-sidebar-nav">
                 {servicesData.map((service) => (
@@ -205,24 +208,41 @@ const ServicesPageContent = () => {
               <div className="service-content">
                 <p className="service-description">{service.detailedDescription}</p>
 
+                {/* Image Section for all services */}
+                <div className="service-image-section">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="service-image-large"
+                  />
+                </div>
+
                 {/* Conditional rendering based on service type */}
                 {service.id === '3d' ? (
-                  // 3D Services: Image section instead of features
-                  <div className="service-image-section">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="service-image-large"
-                    />
+                  // 3D Services: Features section (no image here since it's already above)
+                  <div className="service-features">
+                    <h3 className="section-subtitle">Our {service.title} Include</h3>
+                    <ul className="feature-list">
+                      {service.features.map((feature, index) => (
+                        <li key={index} className="feature-item">
+                          <span className="feature-bullet">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ) : service.id === '4d' ? (
-                  // 4D Services: Image section instead of features
-                  <div className="service-image-section">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="service-image-large"
-                    />
+                  // 4D Services: Features section (no image here since it's already above)
+                  <div className="service-features">
+                    <h3 className="section-subtitle">Our {service.title} Include</h3>
+                    <ul className="feature-list">
+                      {service.features.map((feature, index) => (
+                        <li key={index} className="feature-item">
+                          <span className="feature-bullet">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ) : service.id === 'pp-c' ? (
                   // PP&C Services: Value Add
@@ -235,17 +255,6 @@ const ServicesPageContent = () => {
                         ))}
                       </ul>
                     </div>
-
-                    {/* Image Section for PP&C */}
-                    {service.image && (
-                      <div className="service-image-section">
-                        <img 
-                          src={service.image} 
-                          alt={service.title}
-                          className="service-image-large"
-                        />
-                      </div>
-                    )}
                   </>
                 ) : (
                   // Other services: Features section
@@ -259,17 +268,6 @@ const ServicesPageContent = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                )}
-
-                {/* Image Section for all services */}
-                {(service.id === '2d' || service.id === 'boq' || service.id === 'audit') && (
-                  <div className="service-image-section">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="service-image-large"
-                    />
                   </div>
                 )}
 

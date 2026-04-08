@@ -244,6 +244,9 @@ const ServicesDetails = () => {
 
               <div className="service-features">
                 <h3 className="section-subtitle">Key Features</h3>
+                <div className="service-image-container">
+                  <img src={item.image} alt={`${item.title} Services`} className="service-image" />
+                </div>
                 <ul className="feature-list">
                   {item.features.map((feature, index) => (
                     <li key={index} className="feature-item">

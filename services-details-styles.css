@@ -99,6 +99,7 @@
   transform: scale(1.1);
 }
 
+
 /* Services Navigation List */
 .services-sidebar-nav {
   display: flex;
@@ -130,6 +131,17 @@
   color: white;
   box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
   font-weight: 600;
+}
+
+/* Sidebar Services Title */
+.sidebar-services-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 15px 0;
+  text-align: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Main Content Area */
@@ -226,6 +238,25 @@
   line-height: 1.6;
   margin: 0;
   font-size: 1rem;
+}
+
+/* Service Image Container */
+.service-image-container {
+  padding: 20px 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.service-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  max-height: 300px;
 }
 
 /* Sections */
