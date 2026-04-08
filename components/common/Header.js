@@ -27,7 +27,7 @@ const Header = () => {
       {/* Header Test with CSS Classes */}
       <div className="header-test">
         {/* Logo with CSS Classes */}
-        <div className="logo-wrapper">
+        <a href="/about" className="logo-wrapper">
           <div className="logo-content">
             <div className="logo-text-container">
               <div className="logo-main-text">
@@ -57,7 +57,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Navigation with CSS Classes */}
         <div className="nav-test">
@@ -72,7 +72,7 @@ const Header = () => {
       <div className="navbar-container">
         <div className="navbar-content">
           {/* Logo Section */}
-          <div className="logo-container">
+          <a href="/about" className="logo-container">
             <div className="logo-text">
               <div className="logo-main">
                 <span className="logo-gig">Gig</span>
@@ -99,7 +99,7 @@ const Header = () => {
                 Technology Enabled Platform
               </div>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="nav-list">
