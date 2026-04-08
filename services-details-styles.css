@@ -5,9 +5,23 @@
 /* Layout Container - Flex for Sidebar + Content */
 .services-layout-container {
   display: flex;
-  gap: 0;
+  gap: 30px;
   width: 100%;
   min-height: calc(100vh - 200px);
+  align-items: flex-start;
+}
+
+.services-body-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-main-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 /* Main Section */
@@ -27,18 +41,19 @@
 /* Header - Our Services Title */
 .services-details-header {
   width: 100%;
-  padding: 40px;
+  padding: 28px 26px;
   background: #ffffff;
-  text-align: center;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #e5e7eb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
 }
 
 .services-details-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #16a34a;
   margin: 0;
+  line-height: 1.1;
 }
 
 /* Sidebar */
@@ -51,7 +66,11 @@
   gap: 20px;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
-  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: max-content;
+  margin-left: -162px;
 }
 
 /* Circular Back Button */

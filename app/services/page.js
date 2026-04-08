@@ -160,41 +160,39 @@ const ServicesPageContent = () => {
   return (
     <>
       <main className="services-details-section">
-        {/* Header - Our Services Title */}
-        <div className="services-details-header">
-          <h1 className="services-details-title">Our Services</h1>
-        </div>
+        <div className="services-body-wrapper">
+          <div className="services-layout-container">
+            <aside className="services-sidebar">
+              {/* Back Button Circle */}
+              <button 
+                onClick={handleBackClick} 
+                className="sidebar-back-button"
+                title="Go back"
+              >
+                ←
+              </button>
 
-        {/* Sidebar + Content Container */}
-        <div className="services-layout-container">
-          {/* Sidebar */}
-          <aside className="services-sidebar">
-            {/* Back Button Circle */}
-            <button 
-              onClick={handleBackClick} 
-              className="sidebar-back-button"
-              title="Go back"
-            >
-              ←
-            </button>
+              {/* Services List */}
+              <nav className="services-sidebar-nav">
+                {servicesData.map((service) => (
+                  <button
+                    key={service.id}
+                    className={`sidebar-service-link ${activeService === service.id ? 'active' : ''}`}
+                    onClick={() => handleServiceClick(service.id)}
+                  >
+                    {service.title}
+                  </button>
+                ))}
+              </nav>
+            </aside>
 
-            {/* Services List */}
-            <nav className="services-sidebar-nav">
-              {servicesData.map((service) => (
-                <button
-                  key={service.id}
-                  className={`sidebar-service-link ${activeService === service.id ? 'active' : ''}`}
-                  onClick={() => handleServiceClick(service.id)}
-                >
-                  {service.title}
-                </button>
-              ))}
-            </nav>
-          </aside>
-
-          {/* Main Content Area */}
-          <div className="services-content">
-          {servicesData.map((service) => (
+            {/* Main Content Area */}
+            <div className="services-main-column">
+              <div className="services-details-header">
+                <h1 className="services-details-title">Our Services</h1>
+              </div>
+              <div className="services-content">
+            {servicesData.map((service) => (
             <section
               key={service.id}
               id={`service-${service.id}`}
@@ -290,19 +288,21 @@ const ServicesPageContent = () => {
               </div>
             </section>
           ))}
+            </div>
+
+            {/* CTA Section */}
+            <div className="services-details-cta">
+              <h2 className="cta-title">Ready to Get Started?</h2>
+              <p className="cta-description">
+                Contact us today to discuss how our services can benefit your project
+              </p>
+              <button className="cta-button" onClick={() => router.push('/contact')}>
+                Get In Touch →
+              </button>
+            </div>
           </div>
         </div>
-
-        {/* CTA Section */}
-        <div className="services-details-cta">
-          <h2 className="cta-title">Ready to Get Started?</h2>
-          <p className="cta-description">
-            Contact us today to discuss how our services can benefit your project
-          </p>
-          <button className="cta-button" onClick={() => router.push('/contact')}>
-            Get In Touch →
-          </button>
-        </div>
+      </div>
 
         <div className="login-sitemap-section">
           <Sitemap />
