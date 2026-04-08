@@ -1,28 +1,39 @@
 /* ========================================
-
    SITEMAP STYLES - Matching Design Reference
+  ======================================== */
 
-   ======================================== */
-
-
-
-.sitemap-section {
-
-  padding: 60px 0;
-
-  background-image: url('/assets/sitemap-bg.png');
-
-  background-size: cover;
-
-  background-position: center;
-
-  background-repeat: no-repeat;
-
-  position: relative;
-
-  min-height: 100vh;
-
+/* Force consistent sitemap styling across all pages */
+.sitemap-page,
+.login-sitemap-section .sitemap-page,
+.homepage .sitemap-page,
+.case-studies-page .sitemap-page,
+.expertise-page .sitemap-page,
+.projects-page .sitemap-page {
+  background-image: url('/assets/sitemap-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative !important;
+  min-height: 100vh !important;
+  padding: 60px 0 !important;
 }
+
+/* Ensure consistent container styling */
+.sitemap-page .container,
+.login-sitemap-section .sitemap-page .container,
+.homepage .sitemap-page .container,
+.case-studies-page .sitemap-page .container,
+.expertise-page .sitemap-page .container,
+.projects-page .sitemap-page .container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+.sitemap-section {
+  padding: 60px 0; background-image: url('/assets/sitemap-bg.png');
+  background-size: cover; background-position: center;
+  background-repeat: no-repeat; position: relative;
+  min-height: 100vh;}
 
 
 
@@ -319,27 +330,112 @@
 
 
 
+/* Force all sitemap links to have same very light color */
 .service-link {
-
-  background: none;
-
-  border: none;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  font-family: inherit;
-
-  font-size: inherit;
-
-  color: inherit;
-
-  padding: 4px 0;
-
-  width: 100%;
-
+  background: none !important;
+  border: none !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  color: #9ca3af !important;
+  padding: 4px 0 !important;
+  width: 100% !important;
+  text-decoration: none !important;
+  display: block !important;
+  transition: color 0.2s ease !important;
 }
+
+/* Force consistent service link hover across all pages */
+.service-link:hover {
+  color: #16a34a !important;
+  background: none !important;
+  text-decoration: none !important;
+}
+
+/* Force consistent service link styling - HOME PAGE BOLD/BLACK, OTHERS LIGHT */
+.login-sitemap-section .service-link,
+.case-studies-page .service-link,
+.expertise-page .service-link,
+.projects-page .service-link,
+.sitemap-page .service-link {
+  background: none !important;
+  border: none !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  color: #9ca3af !important;
+  padding: 4px 0 !important;
+  width: 100% !important;
+  text-decoration: none !important;
+  display: block !important;
+  transition: color 0.2s ease !important;
+}
+
+
+.login-sitemap-section .service-link:hover,
+.homepage .service-link:hover,
+.case-studies-page .service-link:hover,
+.expertise-page .service-link:hover,
+.projects-page .service-link:hover,
+.sitemap-page .service-link:hover {
+  color: #16a34a !important;
+  background: none !important;
+  text-decoration: none !important;
+}
+
+/* Also force all regular sitemap links to be very light */
+.sitemap-link {
+  color: #9ca3af !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  transition: color 0.2s ease !important;
+  display: block !important;
+  padding: 4px 0 !important;
+}
+
+.sitemap-link:hover {
+  color: #16a34a !important;
+}
+
+/* Force consistent sitemap link styling - HOME PAGE BOLD/BLACK, OTHERS LIGHT */
+.login-sitemap-section .sitemap-link,
+.case-studies-page .sitemap-link,
+.expertise-page .sitemap-link,
+.projects-page .sitemap-link,
+.sitemap-page .sitemap-link {
+  color: #9ca3af !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  transition: color 0.2s ease !important;
+  display: block !important;
+  padding: 4px 0 !important;
+}
+
+/* HOME PAGE - FORCE BOLD/BLACK SITEMAP LINKS */
+.homepage .sitemap-link {
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  transition: color 0.2s ease !important;
+  display: block !important;
+  padding: 4px 0 !important;
+}
+
+.login-sitemap-section .sitemap-link:hover,
+.case-studies-page .sitemap-link:hover,
+.expertise-page .sitemap-link:hover,
+.projects-page .sitemap-link:hover,
+.sitemap-page .sitemap-link:hover {
+  color: #16a34a !important;
+}
+
 
 
 

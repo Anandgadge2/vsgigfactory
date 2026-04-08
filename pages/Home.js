@@ -123,8 +123,9 @@ const Home = () => {
 
 
       {/* Sitemap Section */}
-
+    <div className="login-sitemap-section">
       <Sitemap />
+    </div>
 
 
 

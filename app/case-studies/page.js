@@ -18,7 +18,7 @@ const CaseStudiesPage = () => {
 
   const router = useRouter()
 
-  
+
 
   const caseStudies = [
 
@@ -298,7 +298,7 @@ const CaseStudiesPage = () => {
 
                   <p className="case-study-page-description">{study.description}</p>
 
-                  
+
 
                   <div className="case-study-page-meta">
 
@@ -342,9 +342,9 @@ const CaseStudiesPage = () => {
 
 
 
-                  <button 
+                  <button
 
-                    onClick={() => handleViewProject(study.id)} 
+                    onClick={() => handleViewProject(study.id)}
 
                     className="case-study-page-link"
 
@@ -372,7 +372,7 @@ const CaseStudiesPage = () => {
 
             <p>Let's discuss how we can bring your vision to life with our expertise.</p>
 
-            <button 
+            <button
 
               onClick={() => window.location.href = '/contact'}
 
@@ -390,12 +390,13 @@ const CaseStudiesPage = () => {
 
       </main>
 
-      
+
 
       {/* Sitemap Section */}
-
-      <Sitemap />
-
+      <div className="login-sitemap-section">
+        <Sitemap />
+      </div>
+      
     </>
 
   )

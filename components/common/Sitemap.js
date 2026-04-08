@@ -126,7 +126,6 @@ const Sitemap = () => {
                       key={linkIndex}
                       onClick={() => handleServiceClick(link.name)}
                       className="sitemap-link service-link"
-                      style={{ cursor: 'pointer', textAlign: 'left', background: 'none', border: 'none', padding: '8px 0', width: '100%' }}
                     >
                       {link.name}
                     </button>
