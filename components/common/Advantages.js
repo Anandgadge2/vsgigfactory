@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import './advantages-styles.css'
 
 const Advantages = ({ onContactClick }) => {
   const router = useRouter()
@@ -119,63 +120,61 @@ const Advantages = ({ onContactClick }) => {
           </p>
         </div>
 
-        {/* All Words Cloud */}
-        <div className="tags-container">
-          <div className="all-tags">
-            <span className="tag active">Improved accuracy</span>
-            <span className="tag active medium">Enhanced coordination</span>
-            <span className="tag active">Clarity in documentation</span>
-            <span className="tag active large">Standardized outputs</span>
-            <span className="tag active medium">Reduced errors</span>
-            <span className="tag active small">Faster reviews</span>
-            <span className="tag highlight" onClick={() => handleHighlightClick('Construction Smart')}>
-              Construction Smart
-            </span>
-            <span className="tag active">Better quality control</span>
-            <span className="tag active medium">Streamlined workflows</span>
-            <span className="tag active">Clear communication</span>
-            <span className="tag active">Improved collaboration</span>
-            <span className="tag active small">Error reduction</span>
-            <span className="tag active">Better decision making</span>
-            <span className="tag active large">Enhanced understanding</span>
-            <span className="tag highlight" onClick={() => handleHighlightClick('Intelligence')}>
-              Intelligence
-            </span>
-            <span className="tag active">Sequence planning</span>
-            <span className="tag active medium">Clash-Free Execution</span>
-            <span className="tag active large">Integrated Coordination</span>
-            <span className="tag active medium">Smart Collaboration</span>
-            <span className="tag active">Real-time monitoring</span>
-            <span className="tag active medium">Structured workflows</span>
-            <span className="tag highlight" onClick={() => handleHighlightClick('Reduce Rework')}>
-              Reduce Rework
-            </span>
-            <span className="tag active">Clear construction intent</span>
-            <span className="tag active small">Reduced design conflicts</span>
-            <span className="tag active large">Better interdisciplinary coordination</span>
-            <span className="tag active medium">Reduced bottlenecks</span>
-            <span className="tag active large">Improved compliance</span>
-            <span className="tag active medium">Risk mitigation strategies</span>
-            <span className="tag highlight" onClick={() => handleHighlightClick('Accelerate Delivery')}>
-              Accelerate Delivery
-            </span>
-            <span className="tag active">Data-driven operations</span>
-            <span className="tag active">Long-term cost savings</span>
-            <span className="tag active small">Asset performance tracking</span>
-            <span className="tag active large">Lifecycle optimization</span>
-            <span className="tag active medium">Digital continuity</span>
-            <span className="tag active">Strategic planning</span>
-            <span className="tag active large">Timeline optimization</span>
-            <span className="tag active">Quality assurance</span>
-            <span className="tag active medium">Reduced cost overruns</span>
-            <span className="tag active">Quantity validation</span>
-            <span className="tag active large">Procurement optimization</span>
-            <span className="tag active medium">Waste reduction</span>
-            <span className="tag active small">Cost forecasting</span><span className="tag highlight" onClick={() => handleHighlightClick('Optimize Cost')}>
-              Optimize Cost
-            </span>
-            <span className="tag active small">Accelerated delivery</span>            
-          </div>
+        {/* All Words Cloud - Positioned Layout */}
+        <div className="word-cloud-container">
+          <span className="word-improved-accuracy">Improved accuracy</span>
+          <span className="word-enhanced-coordination">Enhanced coordination</span>
+          <span className="word-clarity-documentation">Clarity in documentation</span>
+          <span className="word-standardized-outputs">Standardized outputs</span>
+          <span className="word-reduced-errors">Reduced errors</span>
+          <span className="word-faster-reviews">Faster reviews</span>
+          <span className="word-construction-smart highlight" onClick={() => handleHighlightClick('Construction Smart')}>
+            Construction Smart
+          </span>
+          <span className="word-better-quality">Better quality control</span>
+          <span className="word-streamlined-workflows">Streamlined workflows</span>
+          <span className="word-clear-communication">Clear communication</span>
+          <span className="word-improved-collaboration">Improved collaboration</span>
+          <span className="word-error-reduction">Error reduction</span>
+          <span className="word-better-decision">Better decision making</span>
+          <span className="word-enhanced-understanding">Enhanced understanding</span>
+          <span className="word-intelligence highlight" onClick={() => handleHighlightClick('Intelligence')}>
+            Intelligence
+          </span>
+          <span className="word-sequence-planning">Sequence planning</span>
+          <span className="word-clash-free">Clash-Free Execution</span>
+          <span className="word-integrated-coordination">Integrated Coordination</span>
+          <span className="word-smart-collaboration">Smart Collaboration</span>
+          <span className="word-realtime-monitoring">Real-time monitoring</span>
+          <span className="word-structured-workflows">Structured workflows</span>
+          <span className="word-reduce-rework highlight" onClick={() => handleHighlightClick('Reduce Rework')}>
+            Reduce Rework
+          </span>
+          <span className="word-clear-construction">Clear construction intent</span>
+          <span className="word-reduced-conflicts">Reduced design conflicts</span>
+          <span className="word-interdisciplinary-coordination">Better interdisciplinary coordination</span>
+          <span className="word-reduced-bottlenecks">Reduced bottlenecks</span>
+          <span className="word-improved-compliance">Improved compliance</span>
+          <span className="word-risk-mitigation">Risk mitigation strategies</span>
+          <span className="word-accelerate-delivery highlight" onClick={() => handleHighlightClick('Accelerate Delivery')}>
+            Accelerate Delivery
+          </span>
+          <span className="word-data-driven">Data-driven operations</span>
+          <span className="word-cost-savings">Long-term cost savings</span>
+          <span className="word-asset-tracking">Asset performance tracking</span>
+          <span className="word-lifecycle-optimization">Lifecycle optimization</span>
+          <span className="word-digital-continuity">Digital continuity</span>
+          <span className="word-strategic-planning">Strategic planning</span>
+          <span className="word-timeline-optimization">Timeline optimization</span>
+          <span className="word-quality-assurance">Quality assurance</span>
+          <span className="word-cost-overruns">Reduced cost overruns</span>
+          <span className="word-quantity-validation">Quantity validation</span>
+          <span className="word-procurement-optimization">Procurement optimization</span>
+          <span className="word-waste-reduction">Waste reduction</span>
+          <span className="word-cost-forecasting">Cost forecasting</span>
+          <span className="word-optimize-cost highlight" onClick={() => handleHighlightClick('Optimize Cost')}>
+            Optimize Cost
+          </span>
         </div>
 
         {/* CTA Button */}
