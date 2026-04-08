@@ -136,7 +136,7 @@ const Login = () => {
 
         <div className="expert-buttons-container">
           <button className="expert-btn" onClick={handleExpertBtnClick}>
-            Apply as an Expert
+            Apply as an Agency
           </button>
           <button className="expert-btn" onClick={handleFreelancerBtnClick}>
             Apply as a Freelancer
