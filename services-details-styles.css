@@ -288,7 +288,21 @@
 .benefit-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li,
+.benefit-list li {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li::before,
+.benefit-list li::before {
+  display: none;
 }
 
 /* Items */
@@ -296,22 +310,22 @@
 .benefit-item {
   display: flex;
   align-items: flex-start;
-  padding: 14px 16px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  padding: 8px 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
   transition: 0.25s;
   cursor: pointer;
 }
 
 .feature-item:hover,
 .benefit-item:hover {
-  background: #ecfdf5;
-  border-color: #22c55e;
-  transform: translateX(6px);
+  background: transparent;
+  border: none;
+  transform: none;
 }
 
-/* Bullets - Checkmark Circle */
+/* Bullets - Checkmark Circle with Animation */
 .feature-bullet,
 .benefit-bullet {
   color: white;
@@ -328,6 +342,12 @@
   font-weight: bold;
   min-width: 28px;
   border: 2px solid #16a34a;
+  transition: transform 0.6s ease;
+}
+
+.feature-item:hover .feature-bullet,
+.benefit-item:hover .benefit-bullet {
+  transform: rotate(360deg);
 }
 
 /* Text */

@@ -45,16 +45,10 @@ const Projects = () => {
       <section className="our-expertise-section">
         {/* Header */}
         <div className="expertise-header-simple">
-          <button onClick={handleBackClick} className="back-button">
-            ← Back
-          </button>
           <h1 className="expertise-title">Projects</h1>
           <p className="expertise-subtitle">
             Comprehensive construction projects showcasing our expertise and innovation in building solutions
           </p>
-        <p className="expertise-subtitle">
-          Comprehensive construction projects showcasing our expertise and innovation in building solutions
-        </p>
       </div>
 
       {/* Cards */}

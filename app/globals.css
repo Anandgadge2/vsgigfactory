@@ -2765,7 +2765,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 30px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
@@ -2799,23 +2799,7 @@ body {
 }
 
 .second-row.shift-down {
-  transform: translateY(200px); /* Reduced from 280px to 200px */
-}
-
-.second-row::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 40px;
-  background: linear-gradient(180deg, transparent, #16a34a, transparent);
-  top: -80px;
-  transition: transform 0.4s ease; /* Animate the connecting line */
-}
-
-.second-row.shift-down::before {
-  transform: translateX(-50%) translateY(200px); /* Updated to match 200px shift */
+  transform: translateY(50px); /* Much closer to top circles */
 }
 
 .stage-wrapper {
@@ -3294,11 +3278,7 @@ body {
 }
 
 .modal-accent {
-  width: 80px;
-  height: 6px;
-  background: #4ade80; /* Light green accent */
-  margin-top: 16px;
-  border-radius: 3px;
+  display: none;
 }
 
 .modal-body {
