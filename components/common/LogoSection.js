@@ -42,10 +42,6 @@ const LogoSection = () => {
     { name: 'HOSMAC', image: '/assets/HOSMAC.jpg' }
   ]
 
-  // Debug: Log total logos
-  console.log(`Total logos in array: ${logos.length}`)
-  console.log('Logo names:', logos.map(l => l.name))
-
   return (
     <section className="hero-logo-section">
       <div className="hero-logo-slider">
@@ -54,31 +50,24 @@ const LogoSection = () => {
             <div key={index} className="hero-logo-item">
               <div className="hero-logo-container">
                 {logo.image ? (
-                  <>
-                    <img 
-                      src={logo.image} 
-                      alt={logo.name} 
-                      className={`hero-logo-image logo-${logo.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
-                      onLoad={() => console.log(`Logo loaded: ${logo.name}`)}
-                      onError={(e) => {
-                        console.log(`Logo not found: ${logo.image}`)
-                        // Show placeholder instead of hiding
-                        e.target.style.display = 'none'
-                        const placeholder = e.target.nextElementSibling
-                        if (placeholder) {
-                          placeholder.style.display = 'flex'
-                        }
-                      }}
-                    />
-                    <div className="hero-logo-placeholder" style={{display: 'none'}}>
-                      <span className="hero-logo-text">{logo.name}</span>
-                    </div>
-                  </>
-                ) : (
-                  <div className="hero-logo-placeholder">
-                    <span className="hero-logo-text">{logo.name}</span>
-                  </div>
-                )}
+                  <img
+                    src={logo.image}
+                    alt={logo.name}
+                    className={`hero-logo-image logo-${logo.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
+                    onError={(e) => {
+                      console.warn(`Failed to load logo: ${logo.name}`);
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                    onLoad={(e) => {
+                      e.target.style.display = 'block';
+                    }}
+                    loading="lazy"
+                  />
+                ) : null}
+                <div className="hero-logo-placeholder" style={{ display: logo.image ? 'none' : 'flex' }}>
+                  <span className="hero-logo-text">{logo.name}</span>
+                </div>
               </div>
             </div>
           ))}
@@ -87,31 +76,24 @@ const LogoSection = () => {
             <div key={`duplicate-${index}`} className="hero-logo-item">
               <div className="hero-logo-container">
                 {logo.image ? (
-                  <>
-                    <img 
-                      src={logo.image} 
-                      alt={logo.name} 
-                      className={`hero-logo-image logo-${logo.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
-                      onLoad={() => console.log(`Logo loaded: ${logo.name}`)}
-                      onError={(e) => {
-                        console.log(`Logo not found: ${logo.image}`)
-                        // Show placeholder instead of hiding
-                        e.target.style.display = 'none'
-                        const placeholder = e.target.nextElementSibling
-                        if (placeholder) {
-                          placeholder.style.display = 'flex'
-                        }
-                      }}
-                    />
-                    <div className="hero-logo-placeholder" style={{display: 'none'}}>
-                      <span className="hero-logo-text">{logo.name}</span>
-                    </div>
-                  </>
-                ) : (
-                  <div className="hero-logo-placeholder">
-                    <span className="hero-logo-text">{logo.name}</span>
-                  </div>
-                )}
+                  <img
+                    src={logo.image}
+                    alt={logo.name}
+                    className={`hero-logo-image logo-${logo.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}
+                    onError={(e) => {
+                      console.warn(`Failed to load logo: ${logo.name}`);
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                    onLoad={(e) => {
+                      e.target.style.display = 'block';
+                    }}
+                    loading="lazy"
+                  />
+                ) : null}
+                <div className="hero-logo-placeholder" style={{ display: logo.image ? 'none' : 'flex' }}>
+                  <span className="hero-logo-text">{logo.name}</span>
+                </div>
               </div>
             </div>
           ))}

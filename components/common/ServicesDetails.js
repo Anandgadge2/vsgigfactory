@@ -196,27 +196,18 @@ const ServicesDetails = () => {
   return (
     <>
       <section className="services-details-section">
-        <div className="container">
-          {/* Header */}
-        <div className="services-details-header">
-          <button onClick={handleBackClick} className="back-button">
-            ← Back to Services
+        {/* Fixed Sidebar */}
+        <div className="services-sidebar">
+          <button onClick={handleBackClick} className="sidebar-back-button">
+            ←
           </button>
-          <h1 className="services-details-title">Construction Technology Services</h1>
-          <p className="services-details-subtitle">
-            Comprehensive services for modern construction projects
-          </p>
-        </div>
-
-        {/* Quick Navigation */}
-        <div className="services-nav">
-          <div className="nav-title">Quick Navigation:</div>
-          <div className="nav-links">
+          
+          <div className="sidebar-services-list">
             {servicesData.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleSectionClick(item.id)}
-                className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                className={`sidebar-service-link ${activeSection === item.id ? 'active' : ''}`}
               >
                 {item.title}
               </button>
@@ -224,8 +215,18 @@ const ServicesDetails = () => {
           </div>
         </div>
 
-        {/* Content Sections */}
-        <div className="services-content">
+        <div className="services-main-content">
+          <div className="container">
+            {/* Header */}
+            <div className="services-details-header">
+              <h1 className="services-details-title">Our Services</h1>
+              <p className="services-details-subtitle">
+                Comprehensive solutions for modern construction projects
+              </p>
+            </div>
+
+            {/* Content Sections */}
+            <div className="services-content">
           {servicesData.map((item) => (
             <section
               key={item.id}
@@ -280,13 +281,14 @@ const ServicesDetails = () => {
             </button>
           </div>
         </div>
-      </div>
-    </section>
+          </div>
+        </div>
+      </section>
 
-    <div className="login-sitemap-section">
-      <Sitemap />
-    </div>
-  </>
+      <div className="login-sitemap-section">
+        <Sitemap />
+      </div>
+    </>
   )
 }
 

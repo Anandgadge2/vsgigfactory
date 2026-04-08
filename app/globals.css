@@ -34,16 +34,16 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 80px;
+  justify-content: flex-start;
+  min-height: 100px;
 }
 
 .hero-logo-track {
   display: flex;
-  animation: hero-scroll 30s linear infinite;
+  animation: hero-scroll 40s linear infinite;
   will-change: transform;
-  gap: 50px;
-  width:max-content; /* Double width for continuous scroll */
+  gap: 40px;
+  width: max-content;
 }
 
 @keyframes hero-scroll {
@@ -51,46 +51,69 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 20px));
   }
 }
 
 .hero-logo-item {
   flex: 0 0 auto;
-  min-width: 130px;
-  max-width: 170px;
+  min-width: 160px;
+  max-width: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  padding: 3px 0;
+  padding: 8px 0;
 }
 
 .hero-logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 10px;
   background: transparent;
-  border-radius: 0;
+  border-radius: 8px;
   backdrop-filter: none;
   transition: all 0.3s ease;
   border: none;
-  height: auto;
+  height: 90px;
   width: 100%;
+  overflow: hidden;
 }
 
 .hero-logo-container:hover {
   transform: scale(1.05);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .hero-logo-image {
   max-height: 80px;
-  max-width: 200px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 4px;
   display: block;
+  filter: brightness(1) contrast(1.1);
+}
+
+.hero-logo-placeholder {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #374151;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-logo-text {
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .logo-placeholder {
@@ -107,54 +130,10 @@ body {
 }
 
 /* ========================================
-   INDIVIDUAL LOGO SIZING
+   INDIVIDUAL LOGO SIZING - REMOVED FOR UNIFORMITY
    ======================================== */
 
-/* Individual logo size controls - Edit these to change specific logo sizes */
-.logo-tcs { max-height: 150px; max-width: 220px; }
-.logo-ey { max-height: 80px; max-width: 180px; }
-.logo-atkins { max-height: 110px; max-width: 200px; }
-.logo-cynosure { max-height: 105px; max-width: 190px; }
-.logo-adani { max-height: 115px; max-width: 210px; }
-.logo-emaar { max-height: 110px; max-width: 200px; }
-.logo-labindia { max-height: 105px; max-width: 190px; }
-.logo-lt { 
-  max-height: 120px; 
-  max-width: 220px; 
-  background: transparent !important;
-  padding: 5px !important;
-  object-fit: contain !important;
-}
-.logo-salesforce { max-height: 210px; max-width: 200px; }
-.logo-schneider { max-height: 110px; max-width: 200px; }
-.logo-mastercard { max-height: 105px; max-width: 190px; }
-.logo-denkall { max-height: 180px; max-width: 180px; }
-.logo-mudon { max-height: 110px; max-width: 200px; }
-.logo-claramont { max-height: 105px; max-width: 190px; }
-.logo-gulf-islamic { max-height: 115px; max-width: 210px; }
-.logo-jacobs { max-height: 110px; max-width: 200px; }
-.logo-jmbaxi { max-height: 105px; max-width: 190px; }
-.logo-natash { max-height: 130px; max-width: 200px; }
-.logo-orchid { max-height: 110px; max-width: 200px; }
-.logo-peninsula { max-height: 105px; max-width: 190px; }
-.logo-skillbind { max-height: 100px; max-width: 180px; }
-.logo-westbridge { max-height: 115px; max-width: 210px; }
-.logo-ascenders { max-height: 110px; max-width: 200px; }
-.logo-dh { max-height: 100px; max-width: 180px; }
-.logo-freespanz { max-height: 105px; max-width: 220px; }
-.logo-gilly { max-height: 110px; max-width: 220px; }
-.logo-imagegrafix { max-height: 100px; max-width: 180px; }
-.logo-mmoser { max-height: 235px; max-width: 210px; }
-.logo-oarchilos { max-height: 180px; max-width: 200px; }
-.logo-turnkey { max-height: 100px; max-width: 180px; }
-.logo-au { max-height: 115px; max-width: 210px; }
-.logo-edifice { max-height: 180px; max-width: 180px; }
-.logo-suresh-babu-and-partners { max-height: 105px; max-width: 190px; }
-.logo-designworks { max-height: 110px; max-width: 200px; }
-.logo-tge { max-height: 100px; max-width: 180px; }
-.logo-gbarchitect { max-height: 105px; max-width: 190px; }
-.logo-sanderson { max-height: 110px; max-width: 200px; }
-.logo-hosmac { max-height: 100px; max-width: 180px; }
+/* All logos now use standardized sizing for smooth continuous animation */
 
 /* ========================================
    NAVBAR STYLES
@@ -2557,7 +2536,7 @@ body {
 .service-card .service-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: #1f2937;
   margin-bottom: 12px;
   transition: color 0.3s ease;
 }
@@ -2568,7 +2547,8 @@ body {
 
 .service-card .service-description {
   font-size: 1rem;
-  color: #6b7280;
+  color: #475569;
+  font-weight: 400 !important;
   line-height: 1.6;
   margin: 0;
   flex-grow: 1;
