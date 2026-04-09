@@ -27,7 +27,13 @@
 /* Main Section */
 .services-details-section {
   padding: 0;
-  background: #ffffff;
+  background: 
+    linear-gradient(135deg, rgba(245, 246, 248, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   min-height: 100vh;
   position: relative;
   display: flex;
