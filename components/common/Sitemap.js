@@ -85,9 +85,6 @@ const Sitemap = () => {
           <div className="sitemap-title-section">
             <div className="sitemap-heading-center">
               <h2 className="sitemap-title">Site Map</h2>
-              <p className="sitemap-subtitle">
-                Complete overview of website structure and navigation
-              </p>
             </div>
           </div>
         </div>
