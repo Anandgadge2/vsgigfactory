@@ -40,8 +40,10 @@ body {
 
 .hero-logo-track {
   display: flex;
-  animation: hero-scroll 40s linear infinite;
+  animation: hero-scroll 60s linear infinite;
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
   gap: 40px;
   width: max-content;
 }
@@ -51,7 +53,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 20px));
+    transform: translateX(-50%);
   }
 }
 
@@ -448,9 +450,15 @@ body {
 /* Modern Advantages Details Page Styles */
 .advantages-details-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
-  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   position: relative;
+  min-height: 100vh;
 }
 
 .advantages-details-section::before {
@@ -850,9 +858,15 @@ body {
 /* Modern Services Details Page Styles */
 .services-details-section {
   padding: 100px 0;
-  background: #ffffff;
-  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   position: relative;
+  min-height: 100vh;
 }
 
 .services-details-section::before {
@@ -1641,9 +1655,15 @@ body {
 /* Case Study Details Page Styles */
 .case-study-details-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
-  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   position: relative;
+  min-height: 100vh;
 }
 
 .case-study-details-section::before {
@@ -2364,7 +2384,10 @@ body {
 
 .logo-track {
   display: flex;
-  animation: scroll 30s linear infinite;
+  animation: scroll 45s linear infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
   width: fit-content;
 }
 
@@ -2438,7 +2461,13 @@ body {
 /* Services Section Styles */
 .services-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  background: 
+    linear-gradient(135deg, rgba(249, 250, 251, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -2769,7 +2798,14 @@ body {
 /* Lifecycle Section Styles */
 .lifecycle-section {
   padding: 80px 0;
-  background-color: #ffffff;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(248, 250, 252, 0.6) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .lifecycle-header {
@@ -4012,7 +4048,14 @@ body {
 /* Case Studies Page Styles */
 .case-studies-page {
   padding: 80px 0;
-  background-color: #ffffff;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .case-studies-page-header {
@@ -7647,7 +7690,14 @@ body {
 
 .about-us-section {
   padding: 20px 0;
-  background: #f5f6f8;
+  background: 
+    linear-gradient(135deg, rgba(245, 246, 248, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
   min-height: 100vh;
 }
 
@@ -7819,6 +7869,86 @@ body {
   font-size: 0.875rem;
   color: #6b7280;
   line-height: 1.5;
+}
+
+/* ========================================
+   EXPERTISE PAGE STYLES
+======================================== */
+
+.expertise-page {
+  padding: 80px 0;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Additional Expertise Page Variations */
+.expertise-main,
+.expertise-section,
+.expertise-wrapper {
+  padding: 80px 0;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ========================================
+   PROJECTS PAGE STYLES
+======================================== */
+
+.projects-page {
+  padding: 80px 0;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Additional Projects Page Variations */
+.projects-main,
+.projects-section,
+.projects-wrapper {
+  padding: 80px 0;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Our Expertise Section - Used by both OurExpertise.js and Projects.js */
+.our-expertise-section {
+  padding: 80px 0;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
 }
 
 /* ========================================
@@ -8153,9 +8283,14 @@ body {
 .expertise-content-section {
   margin-top: 60px;
   padding: 60px 40px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
   border: 1px solid #e5e7eb;
 }
 
@@ -8707,7 +8842,14 @@ body {
 /* ===== PAGE WRAPPER ===== */
 .login-page {
   min-height: 100vh;
-  background: #f5f6f8;
+  background: 
+    linear-gradient(135deg, rgba(245, 246, 248, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9325,8 +9467,15 @@ body {
 /* ===== VIDEOS PAGE STYLES ===== */
 .videos-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  background: 
+    linear-gradient(135deg, rgba(248, 250, 252, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   min-height: 100vh;
+  position: relative;
 }
 
 .videos-container {
@@ -9692,8 +9841,15 @@ body {
 /* ===== VIDEOS PAGE STYLES ===== */
 .videos-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  background: 
+    linear-gradient(135deg, rgba(248, 250, 252, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   min-height: 100vh;
+  position: relative;
 }
 
 .videos-container {

@@ -42,7 +42,7 @@ const Projects = () => {
 
   return (
     <>
-      <section className="our-expertise-section">
+      <section className="our-expertise-section projects-page">
         {/* Header */}
         <div className="expertise-header-simple">
           <h1 className="expertise-title">Projects</h1>
