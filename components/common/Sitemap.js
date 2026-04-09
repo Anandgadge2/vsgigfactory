@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 const Sitemap = () => {
+  const router = useRouter()
   const [showServiceModal, setShowServiceModal] = useState(false)
   const [selectedService, setSelectedService] = useState(null)
 
@@ -19,12 +21,7 @@ const Sitemap = () => {
     
     const serviceId = serviceMapping[serviceName]
     if (serviceId) {
-      setSelectedService(serviceId)
-      setShowServiceModal(true)
-      // Dispatch custom event to open service modal on home page
-      window.dispatchEvent(new CustomEvent('openServiceModal', { 
-        detail: { serviceId } 
-      }))
+      router.push(`/services?service=${serviceId}`)
     }
   }
 

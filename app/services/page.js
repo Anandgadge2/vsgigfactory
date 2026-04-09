@@ -2,8 +2,60 @@
 
 import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { motion } from 'framer-motion'
+import { CheckCircle } from 'lucide-react'
 import Sitemap from '../../components/common/Sitemap'
 import '../../services-details-styles.css'
+
+const FeatureItem = ({ text }) => {
+  const [isHovered, setIsHovered] = useState(false)
+
+  return (
+    <li 
+      className="feature-item"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <motion.div
+        animate={{
+          rotate: isHovered ? 360 : 0,
+          scale: isHovered ? 1.2 : 1,
+          opacity: isHovered ? 1 : 0.8,
+        }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className="feature-bullet"
+      >
+        <CheckCircle size={18} strokeWidth={3} />
+      </motion.div>
+      <span className="feature-text">{text}</span>
+    </li>
+  )
+}
+
+const BenefitItem = ({ text }) => {
+  const [isHovered, setIsHovered] = useState(false)
+
+  return (
+    <li 
+      className="benefit-item"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <motion.div
+        animate={{
+          rotate: isHovered ? 360 : 0,
+          scale: isHovered ? 1.2 : 1,
+          opacity: isHovered ? 1 : 0.8,
+        }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className="benefit-bullet"
+      >
+        <CheckCircle size={18} strokeWidth={3} />
+      </motion.div>
+      <span className="benefit-text">{text}</span>
+    </li>
+  )
+}
 
 const ServicesPageContent = () => {
   const router = useRouter()
@@ -15,7 +67,7 @@ const ServicesPageContent = () => {
       id: '2d',
       title: '2D Services',
       description: 'Comprehensive 2D drafting and documentation solutions for construction projects.',
-      detailedDescription: 'We provide precise, standards-compliant 2D drawings extracted from coordinated BIM models or developed independently.',
+      detailedDescription: 'We provide precise, standards-compliant 2D drawings extracted from coordinated BIM models or developed independently. Our solutions ensure that every detail of your construction project is documented with accuracy, facilitating seamless execution on-site and clear communication among all stakeholders.',
       features: [
         'GFC (Good for Construction) Drawings',
         'Working Drawings',
@@ -26,7 +78,9 @@ const ServicesPageContent = () => {
         'Layout & Interior Drafting Support'
       ],
       benefits: [
-        'Clear, buildable documentation that ensures smooth on-site execution.'
+        'Clear, buildable documentation that ensures smooth on-site execution.',
+        'Compliance with international drafting standards and local regulations.',
+        'High-precision scaling and layering for coordinated multi-disciplinary reviews.'
       ],
       image: '/assets/s_2d.png'
     },
@@ -34,7 +88,7 @@ const ServicesPageContent = () => {
       id: '3d',
       title: '3D Services',
       description: 'Advanced 3D modeling and visualization for enhanced project understanding.',
-      detailedDescription: 'We create coordinated, execution-ready BIM models across disciplines with precision and scalability.',
+      detailedDescription: 'We create coordinated, execution-ready BIM models across disciplines with precision and scalability. Our 3D modeling services provide a comprehensive digital representation of your project, allowing for better visualization, clash detection, and coordination before any physical work begins.',
       features: [
         '3D Architectural Modeling',
         'Photorealistic Rendering',
@@ -44,7 +98,9 @@ const ServicesPageContent = () => {
         'Lighting Analysis'
       ],
       benefits: [
-        'Accurate, clash-free, data-rich models ready for construction and lifecycle management.'
+        'Accurate, clash-free, data-rich models ready for construction and lifecycle management.',
+        'Enhanced stakeholder engagement through high-quality visual walkthroughs.',
+        'Improved decision-making by visualizing spatial relationships and material choices early.'
       ],
       image: '/assets/s_3d.png'
     },
@@ -52,7 +108,7 @@ const ServicesPageContent = () => {
       id: '4d',
       title: '4D Services',
       description: 'Time-based 4D simulation integrating 3D models with project schedules.',
-      detailedDescription: 'Our 4D services add the dimension of time to your 3D models, enabling powerful construction sequencing and project timeline visualization. Perfect for complex project management.',
+      detailedDescription: 'Our 4D services add the dimension of time to your 3D models, enabling powerful construction sequencing and project timeline visualization. This proactive approach helps in identifying scheduling conflicts and optimizing resource allocation throughout the project lifecycle.',
       features: [
         'Construction Sequencing',
         'Timeline Visualization',
@@ -62,7 +118,9 @@ const ServicesPageContent = () => {
         'Resource Planning'
       ],
       benefits: [
-        'Improved timeline control, proactive issue resolution, and reduced execution risk.'
+        'Improved timeline control, proactive issue resolution, and reduced execution risk.',
+        'Clear communication of the construction sequence to field teams and clients.',
+        'Better logistics and safety planning by visualizing workspace availability over time.'
       ],
       image: '/assets/s_4d.png'
     },
@@ -70,7 +128,7 @@ const ServicesPageContent = () => {
       id: 'pp-c',
       title: 'PP&C Services',
       description: 'Project Planning, Programming & Control for comprehensive project management.',
-      detailedDescription: 'We support structured planning to enhance coordination and execution clarity.',
+      detailedDescription: 'We support structured planning to enhance coordination and execution clarity. Our PP&C services ensure that every phase of your project is meticulously planned and monitored, providing the transparency and control needed to meet deadlines and budget constraints.',
       features: [
         'Project Planning',
         'Programming & Scheduling',
@@ -80,13 +138,9 @@ const ServicesPageContent = () => {
         'Progress Reporting'
       ],
       benefits: [
-        'Better time management, improved coordination, and controlled project progression.'
-      ],
-      difference: [
-        { traditional: 'Manual planning', our: 'Digital optimization' },
-        { traditional: 'Reactive problem solving', our: 'Proactive risk management' },
-        { traditional: 'Siloed operations', our: 'Integrated coordination' },
-        { traditional: 'Traditional approach', our: 'Our PP&C methodology' }
+        'Better time management, improved coordination, and controlled project progression.',
+        'Real-time visibility into project health and early warning of potential delays.',
+        'Strategic resource management to maximize efficiency and minimize waste.'
       ],
       valueAdd: [
         'Enhanced project visibility through real-time tracking',
@@ -100,7 +154,7 @@ const ServicesPageContent = () => {
       id: 'boq',
       title: 'BOQ Services',
       description: 'Detailed Bill of Quantities preparation for accurate cost estimation.',
-      detailedDescription: 'We deliver accurate cost and quantity support to enhance financial transparency and procurement alignment',
+      detailedDescription: 'We deliver accurate cost and quantity support to enhance financial transparency and procurement alignment. Our BOQ services provide a detailed and precise breakdown of materials, labor, and equipment needed, ensuring accurate bidding and effective cost control.',
       features: [
         'Quantity Take-Off',
         'BOQ Preparation',
@@ -111,7 +165,9 @@ const ServicesPageContent = () => {
         'Subcontractor Billing Verification',
       ],
       benefits: [
-        'Improved cost accuracy, reduced financial ambiguity, and controlled budget execution.'
+        'Improved cost accuracy, reduced financial ambiguity, and controlled budget execution.',
+        'Transparent procurement process with detailed quantity justifications.',
+        'Streamlined payment certification and variation management.'
       ],
       image: '/assets/s_BOQ.png'
     },
@@ -119,7 +175,7 @@ const ServicesPageContent = () => {
       id: 'audit',
       title: 'Audit Services',
       description: 'Comprehensive project audit and quality assurance services.',
-      detailedDescription: 'We ensure compliance, transparency, and technical accuracy across project stages.',
+      detailedDescription: 'We ensure compliance, transparency, and technical accuracy across project stages. Our audit services provide an independent review of design documentation, quantities, and on-site changes to safeguard project quality and financial integrity.',
       features: [
         'Audit & Validation',
         'Design Audit and Peer Review',
@@ -129,7 +185,9 @@ const ServicesPageContent = () => {
         'Documentation Compliance Review'
       ],
       benefits: [
-        'Risk reduction, improved accountability, and higher stakeholder confidence.'
+        'Risk reduction, improved accountability, and higher stakeholder confidence.',
+        'Verification of construction quality against design specifications.',
+        'Fair and accurate settlement of accounts through rigorous verification.'
       ],
       image: '/assets/s_audit.png'
     }
@@ -203,86 +261,48 @@ const ServicesPageContent = () => {
             >
               <div className="service-header">
                 <h2 className="service-title">{service.title}</h2>
-                <div className="service-divider"></div>
               </div>
-              <div className="service-content">
-                <p className="service-description">{service.detailedDescription}</p>
-
-                {/* Image Section for all services */}
-                <div className="service-image-section">
+              
+              <div className="service-main-row">
+                <div className="service-image-side">
                   <img 
                     src={service.image} 
                     alt={service.title}
                     className="service-image-large"
                   />
                 </div>
+                <div className="service-text-side">
+                  <p className="service-detailed-description">{service.detailedDescription}</p>
+                </div>
+              </div>
 
-                {/* Conditional rendering based on service type */}
-                {service.id === '3d' ? (
-                  // 3D Services: Features section (no image here since it's already above)
-                  <div className="service-features">
-                    <h3 className="section-subtitle">Our {service.title} Include</h3>
-                    <ul className="feature-list">
-                      {service.features.map((feature, index) => (
-                        <li key={index} className="feature-item">
-                          <span className="feature-bullet">✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : service.id === '4d' ? (
-                  // 4D Services: Features section (no image here since it's already above)
-                  <div className="service-features">
-                    <h3 className="section-subtitle">Our {service.title} Include</h3>
-                    <ul className="feature-list">
-                      {service.features.map((feature, index) => (
-                        <li key={index} className="feature-item">
-                          <span className="feature-bullet">✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : service.id === 'pp-c' ? (
-                  // PP&C Services: Value Add
-                  <>
-                    <div className="service-value-add">
-                      <h3 className="section-subtitle">Value Add</h3>
-                      <ul>
-                        {service.valueAdd.map((item, index) => (
-                          <li key={index} className="benefit-item">{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </>
-                ) : (
-                  // Other services: Features section
-                  <div className="service-features">
-                    <h3 className="section-subtitle">Our {service.title} Include</h3>
-                    <ul className="feature-list">
-                      {service.features.map((feature, index) => (
-                        <li key={index} className="feature-item">
-                          <span className="feature-bullet">✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              <div className="service-features">
+                <h3 className="section-subtitle">Our {service.title} Include</h3>
+                <ul className="feature-list">
+                  {service.features.map((feature, index) => (
+                    <FeatureItem key={index} text={feature} />
+                  ))}
+                </ul>
+              </div>
 
-                {/* Benefits/Output */}
-                <div className="service-benefits">
-                  <h3 className="section-subtitle">Output</h3>
-                  <ul className="benefit-list">
-                    {service.benefits.map((benefit, index) => (
-                      <li key={index} className="benefit-item">
-                        <span className="benefit-bullet">✓</span>
-                        {benefit}
-                      </li>
+              {service.id === 'pp-c' && service.valueAdd && (
+                <div className="service-features" style={{ paddingTop: 0 }}>
+                  <h3 className="section-subtitle">Value Add</h3>
+                  <ul className="feature-list">
+                    {service.valueAdd.map((item, index) => (
+                      <FeatureItem key={index} text={item} />
                     ))}
                   </ul>
                 </div>
+              )}
+
+              <div className="service-benefits">
+                <h3 className="section-subtitle">Output</h3>
+                <ul className="benefit-list">
+                  {service.benefits.map((benefit, index) => (
+                    <BenefitItem key={index} text={benefit} />
+                  ))}
+                </ul>
               </div>
             </section>
           ))}
