@@ -27,7 +27,7 @@
 /* Main Section */
 .services-details-section {
   padding: 0;
-  background: 
+  background:
     linear-gradient(135deg, rgba(245, 246, 248, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
     url('/assets/Web.Wallpaper.desktop.png');
   background-size: cover;
@@ -47,8 +47,9 @@
 /* Header - Our Services Title */
 .services-details-header {
   width: 100%;
-  max-width: 1000px;   /* increase this value */
-  margin: 0 auto; 
+  max-width: 1000px;
+  /* increase this value */
+  margin: 0 auto;
   padding: 28px 26px;
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -245,7 +246,7 @@
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -335,7 +336,8 @@
 .section-subtitle {
   font-weight: 700;
   margin-bottom: 20px;
-  color: #000000; /* Black font for "Our services include" */
+  color: #000000;
+  /* Black font for "Our services include" */
   font-size: 1.25rem;
   letter-spacing: -0.01em;
 }
@@ -427,7 +429,8 @@ h3.section-subtitle::after {
   border-radius: 14px;
   margin-bottom: 12px;
   transition: all 0.3s ease;
-  cursor: default; /* Not a button */
+  cursor: default;
+  /* Not a button */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
@@ -481,7 +484,8 @@ h3.section-subtitle::after {
 }
 
 /* Visibility */
-.feature-list, .benefit-list {
+.feature-list,
+.benefit-list {
   display: flex;
   flex-direction: column;
   list-style: none;
