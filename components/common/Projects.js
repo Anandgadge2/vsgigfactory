@@ -46,9 +46,6 @@ const Projects = () => {
         {/* Header */}
         <div className="expertise-header-simple">
           <h1 className="expertise-title">Projects</h1>
-          <p className="expertise-subtitle">
-            Comprehensive construction projects showcasing our expertise and innovation in building solutions
-          </p>
       </div>
 
       {/* Cards */}

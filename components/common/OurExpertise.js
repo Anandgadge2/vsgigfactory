@@ -104,9 +104,6 @@ const OurExpertise = () => {
         {/* Header */}
         <div className="expertise-header-simple">
           <h1 className="expertise-title">BIM Services</h1>
-          <p className="expertise-subtitle">
-            Comprehensive Building Information Modeling solutions for modern construction
-          </p>
         </div>
 
 
@@ -155,9 +152,6 @@ const OurExpertise = () => {
 
         <div className="expertise-header-simple">
           <h1 className="expertise-title">BIM Consulting</h1>
-          <p className="expertise-subtitle">
-            Strategic BIM implementation and consulting services for construction excellence
-          </p>
         </div>
 
 
@@ -232,9 +226,6 @@ const OurExpertise = () => {
 
         <div className="expertise-header-simple">
           <h1 className="expertise-title">Other Services</h1>
-          <p className="expertise-subtitle">
-            Comprehensive architectural and engineering support services for complete project delivery
-          </p>
         </div>
 
 
