@@ -6,7 +6,6 @@ import Sitemap from './Sitemap'
 const Login = () => {
   const [showExpertForm, setShowExpertForm] = useState(false)
   const [showFreelancerForm, setShowFreelancerForm] = useState(false)
-  const [isApplyBoxOpen, setIsApplyBoxOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -125,42 +124,22 @@ const Login = () => {
     <div className="login-page">
 
       {/* ===== APPLY CARDS SECTION ===== */}
-      <div className="login-header-apply">
-        <button 
-          className={`apply-header-btn ${isApplyBoxOpen ? 'hidden' : ''}`}
-          onClick={() => setIsApplyBoxOpen(true)}
-        >
-          Apply
-        </button>
-      </div>
+      <div className="expert-card">
+        <p className="expert-title">
+          Interested in becoming a Gigfactory Expert?
+        </p>
 
-      <div className={`apply-slider-container ${isApplyBoxOpen ? 'open' : ''}`}>
-        <div className="expert-card">
-          <p className="expert-title">
-            Interested in becoming a Gigfactory Expert?
-          </p>
+        <p className="expert-subtitle">
+          Submit your profile and explore freelance opportunities with us
+        </p>
 
-          <p className="expert-subtitle">
-            Submit your profile and explore freelance opportunities with us
-          </p>
-
-          <div className="expert-buttons-container">
-            <button className="expert-btn" onClick={handleExpertBtnClick}>
-              Apply as an Agency
-            </button>
-            <button className="expert-btn" onClick={handleFreelancerBtnClick}>
-              Apply as a Freelancer
-            </button>
-          </div>
-
-          {/* Up arrow close button at the bottom */}
-          <div className="close-apply-slider" onClick={() => setIsApplyBoxOpen(false)}>
-            <button className="close-arrow-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 15l-6-6-6 6"/>
-              </svg>
-            </button>
-          </div>
+        <div className="expert-buttons-container">
+          <button className="expert-btn" onClick={handleExpertBtnClick}>
+            Apply as an Agency
+          </button>
+          <button className="expert-btn" onClick={handleFreelancerBtnClick}>
+            Apply as a Freelancer
+          </button>
         </div>
       </div>
 

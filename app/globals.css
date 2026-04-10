@@ -90,9 +90,15 @@ body {
 
   backface-visibility: hidden;
 
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+
   gap: 40px;
 
   width: max-content;
+
+  position: relative;
 
 }
 
@@ -133,6 +139,14 @@ body {
   flex-shrink: 0;
 
   padding: 8px 0;
+
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
 
 }
 
@@ -4816,7 +4830,13 @@ body {
 
   will-change: transform;
 
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+
   width: fit-content;
+
+  position: relative;
 
 }
 
@@ -4835,6 +4855,14 @@ body {
   justify-content: center;
 
   min-width: 200px;
+
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+
+  -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
 
 }
 
@@ -18832,7 +18860,7 @@ body {
 
   margin: 40px auto;
 
-  background: #fff;
+  background: rgba(240, 253, 244, 0.85);
 
   border-radius: 20px;
 
