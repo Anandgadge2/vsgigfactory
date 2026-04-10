@@ -5553,33 +5553,13 @@ body {
 
 
 .sitemap-content {
-
-
-
-  display: grid;
-
-
-
-  grid-template-columns: repeat(4, 1fr);
-
-
-
-  gap: 40px;
-
-
-
-  max-width: 1200px;
-
-
-
-  margin: 0 auto;
-
-
-
-  padding: 0 20px;
-
-
-
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 10px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 10px !important;
+  margin-bottom: 5px !important;
 }
 
 
@@ -5661,33 +5641,12 @@ body {
 
 
 .section-title {
-
-
-
-  font-size: 1.25rem;
-
-
-
-  font-weight: 600;
-
-
-
-  color: #16a34a;
-
-
-
-  margin-bottom: 20px;
-
-
-
-  padding-bottom: 8px;
-
-
-
-  text-align: left;
-
-
-
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #16a34a !important;
+  margin-bottom: 4px !important;
+  padding-bottom: 2px !important;
+  text-align: left !important;
 }
 
 
@@ -5697,21 +5656,9 @@ body {
 
 
 .section-links {
-
-
-
-  display: flex;
-
-
-
-  flex-direction: column;
-
-
-
-  gap: 12px;
-
-
-
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
 }
 
 
@@ -5721,49 +5668,18 @@ body {
 
 
 .sitemap-link {
-
-
-
-  color: #374151;
-
-
-
-  text-decoration: none;
-
-
-
-  font-size: 0.95rem;
-
-
-
-  padding: 8px 0 8px 20px;
-
-
-
-  border-radius: 0;
-
-
-
-  transition: all 0.3s ease;
-
-
-
-  background: transparent;
-
-
-
-  border: none;
-
-
-
-  width: 100%;
-
-
-
-  text-align: left;
-
-
-
+  color: #374151 !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  padding: 1px 0 1px 10px !important;
+  border-radius: 0 !important;
+  transition: all 0.3s ease !important;
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  text-align: left !important;
+  line-height: 1.1 !important;
+  margin: 0 !important;
 }
 
 
@@ -5849,50 +5765,19 @@ body {
 
 
   cursor: default;
-
-
-
 }
-
-
-
-
-
-
 
 .sitemap-footer {
-
-
-
-  background: transparent;
-
-
-
-  border-radius: 0;
-
-
-
-  padding: 20px 0;
-
-
-
-  box-shadow: none;
-
-
-
-  border: none;
-
-
-
-  max-width: 1200px;
-
-
-
-  margin: 0 auto;
-
-
-
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 6px 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #e5e7eb !important;
+  margin: 10px auto !important;
+  width: 100% !important;
+  max-width: 1200px !important;
 }
+
 
 
 
@@ -23119,21 +23004,9 @@ margin-top: -20px;
 
 
 .sitemap-section {
-
-
-
-  padding: 80px 0;
-
-
-
+  padding: 5px 0 !important;
   background: #c8facf;
-
-
-
   position: relative;
-
-
-
 }
 
 
@@ -23143,17 +23016,8 @@ margin-top: -20px;
 
 
 .sitemap-header {
-
-
-
   text-align: center;
-
-
-
-  margin-bottom: 48px;
-
-
-
+  margin-bottom: 10px;
 }
 
 
@@ -23223,29 +23087,11 @@ margin-top: -20px;
 
 
 .sitemap-grid {
-
-
-
   display: grid;
-
-
-
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-
-
-  gap: 48px;
-
-
-
+  gap: 15px;
   max-width: 1200px;
-
-
-
   margin: 0 auto;
-
-
-
 }
 
 
@@ -52076,10 +51922,7 @@ body {
 
 
 .sitemap-page {
-
-
-
-  padding: 60px 0;
+  padding: 5px 0 !important;
 
 
 
@@ -52112,17 +51955,8 @@ body {
 
 
 .sitemap-header {
-
-
-
-  text-align: center;
-
-
-
-  margin-bottom: 50px;
-
-
-
+  text-align: center !important;
+  margin-bottom: 2px !important;
 }
 
 
@@ -52821,16 +52655,7 @@ body {
 
 }
 
-
-
-
-
-
-
 .footer-content {
-
-
-
   display: flex;
 
 
