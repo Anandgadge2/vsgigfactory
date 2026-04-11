@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 const Hero = ({ onContactClick }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
-  
+
   const slides = [
     {
       id: 1,
@@ -12,7 +12,7 @@ const Hero = ({ onContactClick }) => {
     },
     {
       id: 2,
-      image: '/assets/2.png'
+      image: '/assets/hero2.png'
     },
     {
       id: 3,
@@ -59,7 +59,7 @@ const Hero = ({ onContactClick }) => {
               Global Capability Center for Construction Services
             </h1>
             <p className="hero-description">
-              Technology-enabled platform for integrated BIM planning, designing & engineering. 
+              Technology-enabled platform for integrated BIM planning, designing & engineering.
               Project reference across 10+ Million Sqft.
             </p>
             <button onClick={onContactClick} className="hero-button">
