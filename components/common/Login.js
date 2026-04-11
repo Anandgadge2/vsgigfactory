@@ -37,7 +37,7 @@ const Login = () => {
       description: "We embrace creativity and forward-thinking solutions"
     },
     {
-      title: "Collaboration Over Silos", 
+      title: "Collaboration Over Silos",
       description: "We work together to achieve exceptional results"
     },
     {
@@ -130,7 +130,7 @@ const Login = () => {
         </p>
 
         <p className="expert-subtitle">
-          Submit your profile and explore freelance opportunities with us
+          Submit your profile and explore opportunities with us
         </p>
 
         <div className="expert-buttons-container">
@@ -149,9 +149,9 @@ const Login = () => {
         {/* LEFT SIDE */}
         <div className="login-left">
           <h1 style={{ width: '100%', textAlign: 'center', margin: 0 }}>
-            <a 
-              href="https://app.gigbimlabs.com/" 
-              target="_blank" 
+            <a
+              href="https://app.gigbimlabs.com/"
+              target="_blank"
               rel="noopener noreferrer"
               className="core-link"
               style={{
@@ -205,7 +205,7 @@ const Login = () => {
               <h2>Apply as Gigfactory Expert</h2>
               <button className="close-form-btn" onClick={closeForm}>&times;</button>
             </div>
-            
+
             <form className="expert-form" onSubmit={handleFormSubmit}>
               {/* Personal Information Section */}
               <div className="form-section">
@@ -222,7 +222,7 @@ const Login = () => {
                       placeholder="Enter your full name"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Email Address *</label>
                     <input
@@ -248,7 +248,7 @@ const Login = () => {
                       placeholder="Enter your phone number"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Company/Organization</label>
                     <input
@@ -273,7 +273,7 @@ const Login = () => {
                       placeholder="Enter your city"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>State *</label>
                     <input
@@ -311,7 +311,7 @@ const Login = () => {
                       <option value="other">Other</option>
                     </select>
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Years of Experience *</label>
                     <select
@@ -344,7 +344,7 @@ const Login = () => {
                     rows="6"
                   />
                 </div>
-                
+
                 <div className="form-group">
                   <label>Drive Link (CV/Resume/Certificates)</label>
                   <input
@@ -354,9 +354,9 @@ const Login = () => {
                     onChange={handleFormChange}
                     placeholder="Share your Google Drive for CV, resume, and certificates"
                   />
-                  <small style={{ 
-                    color: '#64748b', 
-                    fontSize: '0.875rem', 
+                  <small style={{
+                    color: '#64748b',
+                    fontSize: '0.875rem',
                     marginTop: '4px',
                     display: 'block',
                     fontStyle: 'italic'
@@ -387,7 +387,7 @@ const Login = () => {
               <h2>Apply as a Freelancer</h2>
               <button className="close-form-btn" onClick={closeFreelancerForm}>&times;</button>
             </div>
-            
+
             <form className="expert-form" onSubmit={handleFreelancerFormSubmit}>
               {/* Personal Information Section */}
               <div className="form-section">
@@ -404,7 +404,7 @@ const Login = () => {
                       placeholder="Enter your full name"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Email Address *</label>
                     <input
@@ -430,7 +430,7 @@ const Login = () => {
                       placeholder="Enter your phone number"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Portfolio Website</label>
                     <input
@@ -455,7 +455,7 @@ const Login = () => {
                       placeholder="Enter your city"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>State *</label>
                     <input
@@ -496,7 +496,7 @@ const Login = () => {
                       <option value="other">Other</option>
                     </select>
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Years of Experience *</label>
                     <select
@@ -529,7 +529,7 @@ const Login = () => {
                     rows="6"
                   />
                 </div>
-                
+
                 <div className="form-group">
                   <label>Portfolio/Work Samples Link</label>
                   <input
@@ -539,9 +539,9 @@ const Login = () => {
                     onChange={handleFreelancerFormChange}
                     placeholder="Share your Google Drive, Behance, or portfolio link"
                   />
-                  <small style={{ 
-                    color: '#64748b', 
-                    fontSize: '0.875rem', 
+                  <small style={{
+                    color: '#64748b',
+                    fontSize: '0.875rem',
                     marginTop: '4px',
                     display: 'block',
                     fontStyle: 'italic'

@@ -1,0 +1,185 @@
+/* ========================================
+   PRIVACY POLICY PAGE - PREMIUM UI
+   ======================================== */
+
+.privacy-page {
+  padding: 0;
+  background:
+    linear-gradient(135deg, rgba(245, 246, 248, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
+    url('/assets/Web.Wallpaper.desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+}
+
+.privacy-page .container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.privacy-header {
+  background: white;
+  padding: 40px;
+  border-radius: 20px 20px 0 0;
+  border: 1px solid #e5e7eb;
+  border-bottom: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.privacy-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #16a34a;
+}
+
+.privacy-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.updated-date {
+  font-size: 0.95rem;
+  color: #16a34a;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Content Area - Glassmorphism */
+.privacy-content {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 50px;
+  border-radius: 0 0 20px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
+  color: #374151;
+}
+
+.privacy-content h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.privacy-content h2::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #16a34a;
+  border-radius: 2px;
+}
+
+.privacy-content p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.privacy-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.privacy-content li {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(22, 163, 74, 0.1);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.privacy-content li:hover {
+  transform: translateX(5px);
+  background: white;
+  border-color: #16a34a;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.1);
+}
+
+.privacy-content li::before {
+  content: '✓';
+  color: #16a34a;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+/* Advertisement Section Styling */
+.privacy-content h2:last-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 40px;
+}
+
+/* Contact Info Highlight */
+.privacy-content p:has(br) {
+  background: #f0fdf4;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #16a34a;
+  color: #065f46;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-page .container {
+    margin: 20px auto;
+  }
+
+  .privacy-header {
+    padding: 30px 20px;
+  }
+
+  .privacy-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .privacy-content {
+    padding: 30px 20px;
+  }
+
+  .privacy-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .privacy-content ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}

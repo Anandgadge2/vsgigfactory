@@ -246,7 +246,8 @@ body {
 
 
   max-width: 220px;
-  margin-right: 40px; /* fix loop glitch */
+  margin-right: 40px;
+  /* fix loop glitch */
 
 
 
@@ -46947,7 +46948,7 @@ body {
 
   .hero-title {
 
-
+    font-family: 'Times New Roman', Times, serif;
 
     font-size: 2.5rem;
 
