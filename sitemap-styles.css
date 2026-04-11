@@ -204,6 +204,7 @@
   line-height: 1.1 !important;
   letter-spacing: -0.02em !important;
   word-spacing: -0.05em !important;
+  border-bottom: none !important;
 }
 
 
@@ -249,14 +250,56 @@
 
 
 
-.section-title {
-  font-size: 1.1rem !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-  margin-bottom: 4px !important;
-  padding-bottom: 2px !important;
-  text-align: left !important;
+/* ============================================================
+   FINAL FORCE REMOVAL OF ALL SITEMAP DIVIDER LINES
+   ============================================================ */
+
+/* Target ALL possible headings in the sitemap to strip borders/lines */
+.sitemap-page h2,
+.sitemap-page h3,
+.sitemap-content h2,
+.sitemap-content h3,
+.section-title,
+.sitemap-title {
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 15px !important;
+  position: relative !important;
 }
+
+/* Forcefully hide ALL pseudo-element lines (the most common cause) */
+.sitemap-page h2::after,
+.sitemap-page h2::before,
+.sitemap-page h3::after,
+.sitemap-page h3::before,
+.sitemap-content h2::after,
+.sitemap-content h2::before,
+.sitemap-content h3::after,
+.sitemap-content h3::before,
+.section-title::after,
+.section-title::before,
+.sitemap-title::after,
+.sitemap-title::before {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  border: none !important;
+  background: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Force section titles to be green as seen in the user's reference */
+.section-title {
+  color: #16a34a !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+}
+
 
 
 
@@ -409,8 +452,8 @@
   background: #ffffff !important;
   border-radius: 8px !important;
   padding: 6px 0 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-  border: 1px solid #e5e7eb !important;
+  box-shadow: none !important;
+  border: none !important;
   margin: 10px auto !important;
   width: 100% !important;
   max-width: 1200px !important;

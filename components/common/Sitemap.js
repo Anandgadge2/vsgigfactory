@@ -178,7 +178,7 @@ const Sitemap = () => {
             <div className="footer-center">
               <div className="footer-info">
                 <p className="footer-text">
-                  © 2024 Gigfactory. All rights reserved.
+                  © 2026 Gigfactory. All rights reserved.
                 </p>
                 <div className="footer-links">
                   <a href="/privacy" className="footer-link">Privacy Policy</a>

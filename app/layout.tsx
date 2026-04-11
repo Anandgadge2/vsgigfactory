@@ -1,4 +1,5 @@
 import './globals.css'
+import '../sitemap-styles.css'
 import { Inter } from 'next/font/google'
 import Header from '../components/common/Header'
 
