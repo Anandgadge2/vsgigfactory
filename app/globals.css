@@ -54807,3 +54807,134 @@ body {
   transition: margin-top 0.5s ease;
 
 }
+
+/* ==========================================================
+   FINAL MOBILE HEADER FIX - MENU BUTTON TO RIGHT
+   ========================================================== */
+@media (max-width: 768px) {
+  /* Completely hide the test header which might be causing overlaps */
+  .header-test {
+    display: none !important;
+  }
+
+  /* Main Navbar Setup */
+  .navbar {
+    display: block !important;
+    height: 90px !important;
+    background: #ffffff !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    border-bottom: 2px solid #16a34a !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .navbar-container {
+    display: block !important;
+    height: 100% !important;
+  }
+
+  /* Container for Logo and Button */
+  .navbar-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* Logo on the left */
+    height: 100% !important;
+    padding: 0 20px !important;
+    width: 100% !important;
+    position: relative !important; /* Basis for button positioning */
+  }
+
+  /* Logo stays on the left */
+  .logo-container {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    padding-right: 60px !important; /* Space for the button on the right */
+  }
+
+  /* PREMIUM MENU BUTTON - POSITIONED TO THE RIGHT */
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: absolute !important;
+    right: 20px !important; /* FIXED TO RIGHT */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 48px !important;
+    height: 48px !important;
+    background: #ffffff !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    z-index: 10000 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .mobile-menu-btn:active {
+    transform: translateY(-50%) scale(0.9) !important;
+    background: #f9fafb !important;
+  }
+
+  .mobile-menu-btn svg {
+    width: 30px !important;
+    height: 30px !important;
+    color: #16a34a !important; /* Theme green */
+    stroke-width: 2 !important;
+  }
+
+  /* Mobile Dropdown Menu */
+  .mobile-menu {
+    position: fixed !important;
+    top: 90px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    border-top: 4px solid #16a34a !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 0 0 30px 30px !important;
+    z-index: 9998 !important;
+    animation: menuFadeIn 0.3s ease-out !important;
+    max-height: calc(100vh - 90px) !important;
+    overflow-y: auto !important;
+  }
+
+  .mobile-nav-list {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px 0 !important;
+  }
+
+  .mobile-nav-link {
+    padding: 20px 30px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .mobile-nav-link:active, .mobile-nav-link.active {
+    background: #f0fdf4 !important;
+    color: #16a34a !important;
+    padding-left: 40px !important;
+  }
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+

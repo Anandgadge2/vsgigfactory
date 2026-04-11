@@ -12,7 +12,7 @@ const Header = () => {
     { name: 'Case Studies', href: '/case-studies', active: false },
     { name: 'Our Expertise', href: '/expertise', active: false },
     { name: 'Projects', href: '/projects', active: false },
-    { name: 'Login', href: '#login', active: false },
+    { name: 'Login', href: '/login', active: false },
   ]
 
   const toggleMobileMenu = () => {
@@ -96,7 +96,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="logo-tagline">
-                Technology Enabled Platform
+                TECHNOLOGY ENABLED PLATFORM
               </div>
             </div>
           </a>
