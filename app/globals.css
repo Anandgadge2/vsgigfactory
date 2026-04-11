@@ -9976,10 +9976,6 @@ body {
 
 
 
-
-
-
-
 .service-card {
 
 
@@ -28390,21 +28386,15 @@ body {
 
 
   .services-grid {
-
-
-
-    display: grid !important;
-
-
-
-    grid-template-columns: 1fr !important;
-
-
-
-    gap: 16px !important;
-
-
-
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 20px !important;
+    padding: 20px 15px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #16a34a #f1f5f9;
   }
 
 
@@ -28414,17 +28404,14 @@ body {
 
 
   .service-card {
-
-
-
+    min-width: 280px !important;
+    max-width: 280px !important;
+    flex: 0 0 auto !important;
+    scroll-snap-align: start;
+    height: auto !important;
+    margin-bottom: 0 !important;
     padding: 20px !important;
-
-
-
     text-align: center !important;
-
-
-
   }
 
 
@@ -42344,17 +42331,15 @@ body {
 
 
   .services-grid {
-
-
-
-    grid-template-columns: 1fr;
-
-
-
-    gap: 25px;
-
-
-
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 20px !important;
+    padding: 20px 15px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #16a34a #f1f5f9;
   }
 
 
@@ -42363,14 +42348,17 @@ body {
 
 
 
+  .service-card {
+    min-width: 280px !important;
+    max-width: 280px !important;
+    flex: 0 0 auto !important;
+    scroll-snap-align: start;
+    height: auto !important;
+    margin-bottom: 0 !important;
+  }
+
   .service-pillar {
-
-
-
     padding: 30px 20px;
-
-
-
   }
 
 
@@ -49587,25 +49575,15 @@ body {
 
 
   .services-grid {
-
-
-
-    display: grid !important;
-
-
-
-    grid-template-columns: 1fr !important;
-
-
-
-    gap: 25px !important;
-
-
-
-    padding: 0 20px !important;
-
-
-
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 20px !important;
+    padding: 20px 15px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #16a34a #f1f5f9;
   }
 
 
@@ -49615,25 +49593,16 @@ body {
 
 
   .service-card {
-
-
-
+    min-width: 280px !important;
+    max-width: 280px !important;
+    flex: 0 0 auto !important;
+    scroll-snap-align: start;
+    height: auto !important;
+    margin-bottom: 0 !important;
     padding: 30px 25px !important;
-
-
-
     border-radius: 15px !important;
-
-
-
     text-align: center !important;
-
-
-
     transition: all 0.3s ease !important;
-
-
-
   }
 
 
