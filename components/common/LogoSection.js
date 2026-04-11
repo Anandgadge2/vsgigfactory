@@ -51,12 +51,12 @@ const LogoSection = () => {
   };
 
   const logos = [
-    { name: 'microsoft', image: '/assets/microsoft.png'},
+    { name: 'spa', image: '/assets/spa.png' },
+    { name: 'sk', image: '/assets/sk.png' },
+    { name: 'microsoft', image: '/assets/microsoft.png' },
     { name: 'TCS', image: '/assets/tcs.jpg' },
     { name: 'Adani', image: '/assets/adani.png' },
     { name: 'lt1', image: '/assets/lt1.png' },
-    { name: 'sk', image: '/assets/sk.png' },
-    { name: 'spa', image: '/assets/spa.png'},
     { name: 'Emaar', image: '/assets/emaar.png' },
     { name: 'Labindia', image: '/assets/labindia.png' },
     { name: 'Salesforce', image: '/assets/salesforce.png' },
@@ -89,7 +89,7 @@ const LogoSection = () => {
     { name: 'GBArchitect', image: '/assets/GBArchitect.jpg' },
     { name: 'Sanderson', image: '/assets/Sanderson.jpg' },
     { name: 'HOSMAC', image: '/assets/HOSMAC.jpg' },
-    { name: 'Cynosure', image: '/assets/cynosure1.png'},
+    { name: 'Cynosure', image: '/assets/cynosure1.png' },
     { name: 'Aesthetic', image: '/assets/Aesthetic.png' },
     { name: 'ans', image: '/assets/ans.png' },
     { name: 'genesis', image: '/assets/genesis.png' },

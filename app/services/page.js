@@ -11,7 +11,7 @@ const FeatureItem = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <li 
+    <li
       className="feature-item"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -36,7 +36,7 @@ const BenefitItem = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <li 
+    <li
       className="benefit-item"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -126,7 +126,7 @@ const ServicesPageContent = () => {
     },
     {
       id: 'pp-c',
-      title: 'PP&C Services',
+      title: 'Project Planning & Control Services',
       description: 'Project Planning, Programming & Control for comprehensive project management.',
       detailedDescription: 'We support structured planning to enhance coordination and execution clarity. Our PP&C services ensure that every phase of your project is meticulously planned and monitored, providing the transparency and control needed to meet deadlines and budget constraints.',
       features: [
@@ -222,17 +222,17 @@ const ServicesPageContent = () => {
           <div className="services-layout-container">
             <aside className="services-sidebar">
               {/* Back Button Circle */}
-              <button 
-                onClick={handleBackClick} 
+              <button
+                onClick={handleBackClick}
                 className="sidebar-back-button"
                 title="Go back"
               >
                 ←
               </button>
-              
+
               {/* Our Services Heading */}
               <h3 className="sidebar-services-title">Our Services</h3>
-              
+
               {/* Services List */}
               <nav className="services-sidebar-nav">
                 {servicesData.map((service) => (
@@ -249,78 +249,78 @@ const ServicesPageContent = () => {
 
             {/* Main Content Area */}
             <div className="services-main-column">
-              <div className="services-details-header">
-                <h1 className="services-details-title">Our Services</h1>
-              </div>
               <div className="services-content">
-            {servicesData.map((service) => (
-            <section
-              key={service.id}
-              id={`service-${service.id}`}
-              className={`service-section ${activeService === service.id ? 'active' : ''}`}
-            >
-              <div className="service-header">
-                <h2 className="service-title">{service.title}</h2>
-              </div>
-              
-              <div className="service-main-row">
-                <div className="service-image-side">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="service-image-large"
-                  />
+                <div className="services-details-header">
+                  <h1 className="services-details-title">Our Services</h1>
                 </div>
-                <div className="service-text-side">
-                  <p className="service-detailed-description">{service.detailedDescription}</p>
-                </div>
+                {servicesData.map((service) => (
+                  <section
+                    key={service.id}
+                    id={`service-${service.id}`}
+                    className={`service-section ${activeService === service.id ? 'active' : ''}`}
+                  >
+                    <div className="service-header">
+                      <h2 className="service-title">{service.title}</h2>
+                    </div>
+
+                    <div className="service-main-row">
+                      <div className="service-image-side">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="service-image-large"
+                        />
+                      </div>
+                      <div className="service-text-side">
+                        <p className="service-detailed-description">{service.detailedDescription}</p>
+                      </div>
+                    </div>
+
+                    <div className="service-features">
+                      <h3 className="section-subtitle">Our {service.title} Include</h3>
+                      <ul className="feature-list">
+                        {service.features.map((feature, index) => (
+                          <FeatureItem key={index} text={feature} />
+                        ))}
+                      </ul>
+                    </div>
+
+                    {service.id === 'pp-c' && service.valueAdd && (
+                      <div className="service-features" style={{ paddingTop: 0 }}>
+                        <h3 className="section-subtitle">Value Add</h3>
+                        <ul className="feature-list">
+                          {service.valueAdd.map((item, index) => (
+                            <FeatureItem key={index} text={item} />
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <div className="service-benefits">
+                      <h3 className="section-subtitle">Output</h3>
+                      <ul className="benefit-list">
+                        {service.benefits.map((benefit, index) => (
+                          <BenefitItem key={index} text={benefit} />
+                        ))}
+                      </ul>
+                    </div>
+                  </section>
+                ))}
               </div>
 
-              <div className="service-features">
-                <h3 className="section-subtitle">Our {service.title} Include</h3>
-                <ul className="feature-list">
-                  {service.features.map((feature, index) => (
-                    <FeatureItem key={index} text={feature} />
-                  ))}
-                </ul>
+              {/* CTA Section */}
+              <div className="services-details-cta">
+                <h2 className="cta-title">Ready to Get Started?</h2>
+                <p className="cta-description">
+                  Contact us today to discuss how our services can benefit your project
+                </p>
+                <button className="cta-button" onClick={() => router.push('/contact')}>
+                  Get In Touch →
+                </button>
               </div>
-
-              {service.id === 'pp-c' && service.valueAdd && (
-                <div className="service-features" style={{ paddingTop: 0 }}>
-                  <h3 className="section-subtitle">Value Add</h3>
-                  <ul className="feature-list">
-                    {service.valueAdd.map((item, index) => (
-                      <FeatureItem key={index} text={item} />
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              <div className="service-benefits">
-                <h3 className="section-subtitle">Output</h3>
-                <ul className="benefit-list">
-                  {service.benefits.map((benefit, index) => (
-                    <BenefitItem key={index} text={benefit} />
-                  ))}
-                </ul>
-              </div>
-            </section>
-          ))}
-            </div>
-
-            {/* CTA Section */}
-            <div className="services-details-cta">
-              <h2 className="cta-title">Ready to Get Started?</h2>
-              <p className="cta-description">
-                Contact us today to discuss how our services can benefit your project
-              </p>
-              <button className="cta-button" onClick={() => router.push('/contact')}>
-                Get In Touch →
-              </button>
             </div>
           </div>
         </div>
-      </div>
 
         <div className="login-sitemap-section">
           <Sitemap />

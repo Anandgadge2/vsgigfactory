@@ -13,7 +13,8 @@
 
 .services-body-wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
+  /* Increased from 1200px to expand right */
   margin: 0 auto;
 }
 
@@ -47,18 +48,21 @@
 /* Header - Our Services Title */
 .services-details-header {
   width: 100%;
-  max-width: 1000px;
-  /* increase this value */
+  max-width: 1500px;
+  /* Matched to wrapper width */
   margin: 0 auto;
-  padding: 28px 26px;
+  padding: 30px;
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  /* Centered our services text */
 }
 
 .services-details-title {
-  font-size: 2rem;
+  font-size: 2.8rem;
+  /* Enlarged font */
   font-weight: 700;
   color: #16a34a;
   margin: 0;
@@ -73,13 +77,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
   position: sticky;
   top: 0;
   align-self: flex-start;
   height: max-content;
-  margin-left: -162px;
+  margin-left: 0;
+  /* Removed negative margin to make it visible */
+  border-radius: 0 0 20px 0;
 }
 
 /* Circular Back Button */
@@ -185,18 +191,54 @@
   box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
 }
 
-/* Header */
+/* Header - Boxed with Background Support */
 .service-header {
-  background: transparent;
-  padding: 24px 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  /* Slightly taller for better image visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-image:
+    linear-gradient(#16a34a);
+  background-size: cover;
+  background-position: center;
+  background-color: #16a34a;
+  /* Fallback color */
+  text-align: center;
+  margin: 0;
+  border-bottom: none;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  /* Rounds the top of the section header */
 }
 
 .service-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #16a34a;
+  font-size: 3.5rem;
+  /* Large and bold */
+  font-weight: 800;
+  color: #ffffff;
+  /* White text for contrast against background */
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* Glassmorphism texture over background */
+.service-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .service-divider {
@@ -234,8 +276,9 @@
 }
 
 .service-image-side {
-  flex: 0 0 45%;
-  max-width: 45%;
+  flex: 0 0 65%;
+  /* Increased from 45% to enlarge image */
+  max-width: 65%;
 }
 
 .service-text-side {
@@ -256,8 +299,9 @@
 }
 
 .service-detailed-description {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  /* Reduced for better scaling with larger image */
+  line-height: 1.6;
   color: #374151;
   margin: 0;
 }
@@ -399,12 +443,12 @@ h3.section-subtitle::after {
 /* Lists */
 .feature-list,
 .benefit-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 16px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .feature-list li,
@@ -421,40 +465,45 @@ h3.section-subtitle::after {
 /* Items - Premium Point Cards (Not Buttons) */
 .feature-item,
 .benefit-item {
-  display: flex;
-  align-items: center;
-  padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 14px;
-  margin-bottom: 12px;
-  transition: all 0.3s ease;
-  cursor: default;
-  /* Not a button */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  display: flex !important;
+  align-items: center !important;
+  padding: 16px 24px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 18px !important;
+  margin-bottom: 0 !important;
+  /* Managed by grid gap */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  cursor: default !important;
+  /* Purely informational */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
 }
 
 .feature-item:hover,
 .benefit-item:hover {
-  background: rgba(255, 255, 255, 0.7);
-  border-color: rgba(22, 163, 74, 0.4);
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+  transform: translateY(-3px);
 }
 
 /* Bullets - Checkmark Circle with Animation */
 .feature-bullet,
 .benefit-bullet {
-  color: white;
-  background: #16a34a;
-  margin-right: 16px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border: 2px solid #16a34a;
-  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.2);
+  color: white !important;
+  background: #000000 !important;
+  /* Changed from green to black */
+  margin-right: 18px !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Text */
@@ -469,18 +518,18 @@ h3.section-subtitle::after {
 /* Bullets - Checkmark Circle with Animation */
 .feature-bullet,
 .benefit-bullet {
-  color: white;
-  background: #16a34a;
-  margin-right: 16px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border: 2px solid #16a34a;
-  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+  color: white !important;
+  background: #000000 !important;
+  margin-right: 18px !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Visibility */
@@ -495,7 +544,8 @@ h3.section-subtitle::after {
 
 /* CTA */
 .services-details-cta {
-  max-width: 1000px;
+  max-width: 1500px;
+  /* Matched to content width */
   margin: 40px auto;
   padding: 40px;
   background: #16a34a;

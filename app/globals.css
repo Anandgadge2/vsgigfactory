@@ -181,8 +181,7 @@ body {
   backface-visibility: hidden;
 
 
-
-  gap: 40px;
+  /* gap removed here to fix jump */
 
 
 
@@ -247,6 +246,7 @@ body {
 
 
   max-width: 220px;
+  margin-right: 40px; /* fix loop glitch */
 
 
 
@@ -9901,7 +9901,7 @@ body {
 
   margin-bottom: 24px;
 
-margin-top: -20px;
+  margin-top: -20px;
 
 }
 
@@ -11245,7 +11245,7 @@ margin-top: -20px;
 
   margin-bottom: 16px;
 
-  margin-top: -20px ;
+  margin-top: -20px;
 
 }
 
@@ -12480,8 +12480,8 @@ margin-top: -20px;
 
 
   margin-bottom: 16px;
- 
- margin-top: -20px;  
+
+  margin-top: -20px;
 
   line-height: 1.2;
 
@@ -14267,7 +14267,7 @@ margin-top: -20px;
 
     margin-bottom: 16px;
 
-   
+
 
   }
 
@@ -16333,7 +16333,7 @@ margin-top: -20px;
 
   margin-bottom: 16px;
 
-margin-top: -20px;
+  margin-top: -20px;
 
 }
 
@@ -18977,7 +18977,7 @@ margin-top: -20px;
 
   margin-bottom: 24px;
 
- margin-top: -30px;
+  margin-top: -30px;
 
   background: #1a1a1a;
 
@@ -31955,9 +31955,10 @@ body {
   align-items: stretch;
 
 
- margin-top: -50px;
- margin-bottom: 120px;
+  margin-top: -20px;
+  margin-bottom: 80px;
 }
+
 
 
 
@@ -32664,7 +32665,7 @@ body {
   margin-bottom: 15px;
 
 
- margin-top: -100px;
+  margin-top: -80px;
 }
 
 
@@ -42479,7 +42480,7 @@ body {
 
   color: #1f2937;
 
-
+  margin-top: 40px;
 
   margin-bottom: 15px;
 
@@ -42615,7 +42616,8 @@ body {
 
   padding: 0 20px;
 
-  margin-top: -30px;
+  margin-top: -50px;
+  margin-bottom: -20px;
 
 }
 
@@ -54828,8 +54830,8 @@ body {
 
 .login-card {
 
-  margin-top: 40px;
-
+  margin-top: 5px;
+  margin-bottom: -10px;
   /* Base margin when slider is closed */
 
   transition: margin-top 0.5s ease;
