@@ -15,7 +15,18 @@
   background-repeat: no-repeat !important;
   position: relative !important;
   min-height: auto !important;
-  padding: 5px 0 !important;
+  padding: 15px 0 !important; /* Reduced padding for smaller height */
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.login-sitemap-section {
+  width: calc(100% + 40px) !important; /* Expansion to cover parent padding */
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  margin-bottom: -40px !important; /* Cancel bottom padding of login-page */
+  padding: 0 !important;
+  background: transparent !important;
 }
 
 /* Ensure consistent container styling */
@@ -228,11 +239,13 @@
 .sitemap-content {
   display: grid !important;
   grid-template-columns: 1fr 1fr 1fr 1fr !important;
-  gap: 10px !important;
-  margin-bottom: 4px !important;
-  max-width: 1200px !important;
+  gap: 30px !important;
+  margin-bottom: 10px !important; /* Reduced margin for smaller height */
+  width: 100% !important;
+  max-width: 1300px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  padding: 0 20px !important;
 }
 
 
@@ -243,9 +256,12 @@
 .sitemap-right {
   background: transparent !important;
   border-radius: 0 !important;
-  padding: 2px 10px !important;
+  padding: 0 !important; /* Removed side padding to ensure equal gaps from grid */
   box-shadow: none !important;
   border: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
 
@@ -311,130 +327,37 @@
 
 
 
-.sitemap-link {
-  color: #374151 !important;
-  text-decoration: none !important;
-  font-size: 0.85rem !important;
-  font-weight: 400 !important;
-  transition: color 0.2s ease !important;
-  display: block !important;
-  padding: 1px 0 !important;
-  margin: 0 !important;
-  line-height: 1.2 !important;
-}
-
-
-
-.sitemap-link:hover {
-
-  color: #16a34a;
-
-}
-
-
-
-/* Force all sitemap links to have same very light color */
-.service-link {
-  background: none !important;
-  border: none !important;
-  text-align: left !important;
-  cursor: pointer !important;
-  font-family: inherit !important;
-  font-size: 0.85rem !important;
-  font-weight: 300 !important;
-  color: #9ca3af !important;
-  padding: 1px 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  text-decoration: none !important;
-  display: block !important;
-  transition: color 0.2s ease !important;
-  line-height: 1.2 !important;
-}
-
-/* Force consistent service link hover across all pages */
-.service-link:hover {
-  color: #16a34a !important;
-  background: none !important;
-  text-decoration: none !important;
-}
-
-/* Force consistent service link styling - HOME PAGE BOLD/BLACK, OTHERS LIGHT */
+/* FORCE ALL LINKS TO BLACK BY DEFAULT */
+.sitemap-link,
+.service-link,
+.login-sitemap-section .sitemap-link,
 .login-sitemap-section .service-link,
+.homepage .sitemap-link,
+.homepage .service-link,
 .case-studies-page .service-link,
 .expertise-page .service-link,
 .projects-page .service-link,
 .sitemap-page .service-link {
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important; /* Semi-bold for premium look */
+  transition: all 0.2s ease !important;
+  display: block !important;
+  padding: 4px 0 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
   background: none !important;
   border: none !important;
   text-align: left !important;
   cursor: pointer !important;
-  font-family: inherit !important;
-  font-size: 0.85rem !important;
-  font-weight: 300 !important;
-  color: #9ca3af !important;
-  padding: 1px 0 !important;
-  margin: 0 !important;
   width: 100% !important;
-  text-decoration: none !important;
-  display: block !important;
-  transition: color 0.2s ease !important;
-  line-height: 1.2 !important;
 }
 
-
-.login-sitemap-section .service-link:hover,
-.homepage .service-link:hover,
-.case-studies-page .service-link:hover,
-.expertise-page .service-link:hover,
-.projects-page .service-link:hover,
-.sitemap-page .service-link:hover {
+.sitemap-link:hover,
+.service-link:hover {
   color: #16a34a !important;
-  background: none !important;
-  text-decoration: none !important;
-}
-
-/* Also force all regular sitemap links to be very light */
-.sitemap-link {
-  color: #9ca3af !important;
-  text-decoration: none !important;
-  font-size: 0.9rem !important;
-  font-weight: 300 !important;
-  transition: color 0.2s ease !important;
-  display: block !important;
-  padding: 4px 0 !important;
-}
-
-.sitemap-link:hover {
-  color: #16a34a !important;
-}
-
-/* Force consistent sitemap link styling - HOME PAGE BOLD/BLACK, OTHERS LIGHT */
-.login-sitemap-section .sitemap-link,
-.case-studies-page .sitemap-link,
-.expertise-page .sitemap-link,
-.projects-page .sitemap-link,
-.sitemap-page .sitemap-link {
-  color: #9ca3af !important;
-  text-decoration: none !important;
-  font-size: 0.85rem !important;
-  font-weight: 300 !important;
-  transition: color 0.2s ease !important;
-  display: block !important;
-  padding: 1px 0 !important;
-  margin: 0 !important;
-  line-height: 1.2 !important;
-}
-
-/* HOME PAGE - FORCE BOLD/BLACK SITEMAP LINKS */
-.homepage .sitemap-link {
-  color: #000000 !important;
-  text-decoration: none !important;
-  font-size: 0.9rem !important;
-  font-weight: 700 !important;
-  transition: color 0.2s ease !important;
-  display: block !important;
-  padding: 4px 0 !important;
+  transform: translateX(3px); /* Subtle micro-animation */
 }
 
 .login-sitemap-section .sitemap-link:hover,
@@ -451,12 +374,12 @@
 .sitemap-footer {
   background: #ffffff !important;
   border-radius: 8px !important;
-  padding: 6px 0 !important;
-  box-shadow: none !important;
+  padding: 12px 0 !important; /* Reduced padding for smaller height */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
   border: none !important;
-  margin: 10px auto !important;
+  margin: 20px auto 0 !important; /* Reduced top margin for smaller height */
   width: 100% !important;
-  max-width: 1200px !important;
+  max-width: 1300px !important;
 }
 
 
