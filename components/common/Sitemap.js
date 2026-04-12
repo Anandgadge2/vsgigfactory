@@ -31,7 +31,7 @@ const Sitemap = () => {
       links: [
         { name: "About Us", url: "/about" },
         { name: "Projects", url: "/projects" },
-        { name: "Case Studies", url: "/#case-studies" }
+        { name: "Case Studies", url: "/case-studies" }
       ]
     }
   ]
@@ -43,7 +43,7 @@ const Sitemap = () => {
         { name: "2D Services", isService: true },
         { name: "3D Services", isService: true },
         { name: "4D Services", isService: true },
-        { name: "PP&C Services", isService: true },
+        { name: "Project Planning &\nControls Services", isService: true },
         { name: "BOQ Services", isService: true },
         { name: "Audit Services", isService: true }
       ]

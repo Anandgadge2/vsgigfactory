@@ -41,10 +41,26 @@
   padding: 0 20px !important;
 }
 .sitemap-section {
-  padding: 5px 0 !important; background-image: url('/assets/sitemap-bg.png') !important;
-  background-size: cover !important; background-position: center !important;
-  background-repeat: no-repeat !important; position: relative !important;
-  min-height: auto !important;}
+  padding: 5px 0 !important;
+  background-image: url('/assets/sitemap-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative !important;
+  min-height: auto !important;
+}
+
+/* Sitemap Content - Center Align Four Columns */
+.sitemap-content {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 10px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 10px !important;
+  justify-items: center !important;
+  text-align: center !important;
+}
 
 
 
@@ -239,13 +255,15 @@
 .sitemap-content {
   display: grid !important;
   grid-template-columns: 1fr 1fr 1fr 1fr !important;
-  gap: 30px !important;
-  margin-bottom: 10px !important; /* Reduced margin for smaller height */
+  gap: 40px !important;
+  margin-bottom: 10px !important; /* Equal gaps between columns */
   width: 100% !important;
   max-width: 1300px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 0 20px !important;
+  justify-items: stretch !important;
+  align-content: center !important;
 }
 
 
@@ -261,7 +279,8 @@
   border: none !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important;
+  align-items: center !important; /* Center align content within each column */
+  justify-content: flex-start !important;
 }
 
 
@@ -338,11 +357,11 @@
 .expertise-page .service-link,
 .projects-page .service-link,
 .sitemap-page .service-link {
-  color: #000000 !important;
+  color: #374151 !important;
   text-decoration: none !important;
-  font-size: 0.95rem !important;
-  font-weight: 600 !important; /* Semi-bold for premium look */
-  transition: all 0.2s ease !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  transition: color 0.2s ease !important;
   display: block !important;
   padding: 4px 0 !important;
   margin: 0 !important;
@@ -352,6 +371,7 @@
   text-align: left !important;
   cursor: pointer !important;
   width: 100% !important;
+  white-space: pre-wrap !important; /* Allow line breaks */
 }
 
 .sitemap-link:hover,
