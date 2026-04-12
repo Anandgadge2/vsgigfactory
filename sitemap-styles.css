@@ -543,25 +543,21 @@
   
 
   .sitemap-content {
-
-    grid-template-columns: 1fr;
-
-    gap: 20px;
-
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    padding-bottom: 20px !important;
   }
 
-  
-
   .sitemap-left,
-
   .sitemap-middle-left,
-
   .sitemap-middle-right,
-
   .sitemap-right {
-
-    padding: 20px;
-
+    min-width: unset !important;
+    flex: unset !important;
+    padding: 10px !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
   

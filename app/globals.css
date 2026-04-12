@@ -54949,3 +54949,200 @@ body {
 
 
 
+
+
+/* Horizontal Scrolling Enhancements for Mobile Devices */
+@media (max-width: 768px) {
+
+  /* HEADER LOGO FIXES */
+  .navbar {
+    height: 85px !important;
+    min-height: 85px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+  .navbar-container, .navbar-content {
+    height: 100% !important;
+  }
+  .logo-container, .logo-wrapper {
+    height: 100% !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .logo-main, .logo-main-text {
+    gap: 0 !important; /* Completely join Gig and factory */
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  .logo-gig {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    font-size: 1.8rem !important;
+    line-height: 1 !important;
+  }
+  .logo-factory {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    font-size: 1.8rem !important;
+    line-height: 1 !important;
+  }
+  .logo-flags {
+    margin-left: 5px !important; 
+  }
+  .flags-container svg, .logo-flags svg {
+    width: 20px !important;
+    height: 14px !important;
+  }
+  .logo-tagline {
+    font-size: 0.5rem !important;
+    line-height: 1 !important;
+    margin-top: 2px !important;
+  }
+  
+  /* LOGO SECTION SMALL FROM DOWN */
+  .hero-logo-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .hero-logo-slider {
+    min-height: 60px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Break out of container and allow full edge-to-edge scrolling */
+  .case-studies-grid, 
+  .case-studies-page-grid,
+  .bim-cards-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 15px !important;
+    padding-bottom: 20px !important;
+    padding-left: 20px !important; /* Starts scroll nicely from edge padding */
+    padding-right: 20px !important;
+    justify-content: flex-start !important;
+
+    /* Breakout technique */
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+  }
+  
+  .case-study-card, 
+  .case-study-page-card,
+  .bim-card {
+    flex: 0 0 85vw !important;
+    max-width: 85vw !important;
+    min-width: 85vw !important;
+    scroll-snap-align: center !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .service-card {
+    flex: 0 0 85vw !important;
+    max-width: 85vw !important;
+    min-width: 85vw !important;
+  }
+
+  /* Custom scrollbar for grids */
+  .case-studies-grid::-webkit-scrollbar, 
+  .case-studies-page-grid::-webkit-scrollbar,
+  .bim-cards-grid::-webkit-scrollbar,
+  .stages-container::-webkit-scrollbar {
+    height: 6px !important;
+    display: block !important;
+  }
+  .case-studies-grid::-webkit-scrollbar-track, 
+  .case-studies-page-grid::-webkit-scrollbar-track,
+  .bim-cards-grid::-webkit-scrollbar-track,
+  .stages-container::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05) !important;
+    border-radius: 4px !important;
+  }
+  .case-studies-grid::-webkit-scrollbar-thumb, 
+  .case-studies-page-grid::-webkit-scrollbar-thumb,
+  .bim-cards-grid::-webkit-scrollbar-thumb,
+  .stages-container::-webkit-scrollbar-thumb {
+    background: #16a34a !important;
+    border-radius: 4px !important;
+  }
+
+  /* Lifecycle Stages Horizontal Scrolling */
+  .stages-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 15px !important;
+    padding-bottom: 30px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: row !important;
+
+    /* Breakout technique */
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+  }
+  
+  .stages-row {
+    display: contents !important;
+  }
+  
+  .stage-wrapper {
+    flex: 0 0 85vw !important;
+    max-width: 85vw !important;
+    min-width: 85vw !important;
+    scroll-snap-align: center !important;
+  }
+
+  /* Make image larger and eliminate gap tightly */
+  .stage-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  .stage-circle {
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 0 !important; /* Zero gap */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .stage-image {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 320px !important;
+    max-height: 320px !important;
+    object-fit: contain !important;
+    margin-bottom: 0 !important; /* Zero gap */
+  }
+
+  .stage-name {
+    margin-top: 0 !important; /* Zero gap */
+    text-align: center !important;
+  }
+
+  .lifecycle-description {
+     position: relative !important;
+     width: 100% !important;
+     left: 0 !important;
+     top: 0 !important;
+     transform: none !important;
+     margin-top: 15px !important;
+  }
+  
+  .lifecycle-section .container {
+     overflow: visible !important;
+  }
+}
