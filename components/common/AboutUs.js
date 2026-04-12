@@ -68,7 +68,7 @@ const AboutUs = () => {
               {/* Our Mission */}
               <div className="about-section-small">
                 <div className="section-header">
-                  <h2 className="section-title">Our Mission</h2>
+                  <h2 className="section-title-1">Our Mission</h2>
                   <div className="section-divider"></div>
                 </div>
                 <div className="section-content">
@@ -81,7 +81,7 @@ const AboutUs = () => {
               {/* Our Vision */}
               <div className="about-section-small">
                 <div className="section-header">
-                  <h2 className="section-title">Our Vision</h2>
+                  <h2 className="section-title-1">Our Vision</h2>
                   <div className="section-divider"></div>
                 </div>
                 <div className="section-content">
