@@ -221,15 +221,6 @@ const ServicesPageContent = () => {
         <div className="services-body-wrapper">
           <div className="services-layout-container">
             <aside className="services-sidebar">
-              {/* Back Button Circle */}
-              <button
-                onClick={handleBackClick}
-                className="sidebar-back-button"
-                title="Go back"
-              >
-                ←
-              </button>
-
               {/* Our Services Heading */}
               <h3 className="sidebar-services-title">Our Services</h3>
 
@@ -257,7 +248,7 @@ const ServicesPageContent = () => {
                   <section
                     key={service.id}
                     id={`service-${service.id}`}
-                    className={`service-section ${activeService === service.id ? 'active' : ''}`}
+                    className={`services-info-group ${activeService === service.id ? 'active' : ''}`}
                   >
                     <div className="service-header">
                       <h2 className="service-title">{service.title}</h2>

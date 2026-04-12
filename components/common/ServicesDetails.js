@@ -198,9 +198,6 @@ const ServicesDetails = () => {
       <section className="services-details-section">
         {/* Fixed Sidebar */}
         <div className="services-sidebar">
-          <button onClick={handleBackClick} className="sidebar-back-button">
-            ←
-          </button>
           
           <div className="sidebar-services-list">
             {servicesData.map((item) => (
@@ -231,7 +228,7 @@ const ServicesDetails = () => {
             <section
               key={item.id}
               id={item.id}
-              className={`service-section ${activeSection === item.id ? 'active' : ''}`}
+              className={`services-info-group ${activeSection === item.id ? 'active' : ''}`}
             >
               <div className="service-header">
                 <h2 className="service-title">{item.title} Services</h2>

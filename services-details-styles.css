@@ -25,16 +25,13 @@
   gap: 30px;
 }
 
-/* Main Section */
 .services-details-section {
   padding: 0;
-  background:
-    linear-gradient(135deg, rgba(245, 246, 248, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
-    url('/assets/Web.Wallpaper.desktop.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: url('/assets/Web.Wallpaper.desktop.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -45,28 +42,30 @@
   display: none;
 }
 
-/* Header - Our Services Title */
+/* Header - Our Services Title - No Box */
 .services-details-header {
   width: 100%;
   max-width: 1500px;
   /* Matched to wrapper width */
   margin: 0 auto;
   padding: 30px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   text-align: center;
   /* Centered our services text */
 }
 
 .services-details-title {
   font-size: 2.8rem;
-  /* Enlarged font */
-  font-weight: 700;
+  font-weight: 800;
   color: #16a34a;
   margin: 0;
   line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
 /* Sidebar */
@@ -157,7 +156,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Main Content Area */
+/* Main Content Area - Direct on Background */
 .services-content {
   flex: 1;
   padding: 0 40px 40px 40px;
@@ -165,6 +164,12 @@
   flex-direction: column;
   gap: 30px;
   max-width: none;
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Simple Know More Button */
@@ -191,40 +196,35 @@
   box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
 }
 
-/* Header - Boxed with Background Support */
+/* Header - No Background, No Box */
 .service-header {
   position: relative;
   width: 100%;
-  min-height: 220px;
-  /* Slightly taller for better image visibility */
+  min-height: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  background-image:
-    linear-gradient(#16a34a);
-  background-size: cover;
-  background-position: center;
-  background-color: #16a34a;
-  /* Fallback color */
-  text-align: center;
-  margin: 0;
-  border-bottom: none;
-  overflow: hidden;
-  border-radius: 12px 12px 0 0;
-  /* Rounds the top of the section header */
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  text-align: left;
+  margin: 0 0 10px 0;
+  border: none !important;
+  overflow: visible;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .service-title {
-  font-size: 3.5rem;
-  /* Large and bold */
+  font-size: 2.5rem;
   font-weight: 800;
-  color: #ffffff;
-  /* White text for contrast against background */
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #000000;
+  /* Black text as requested */
+  margin: 0 0 10px 0;
+  text-transform: none;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.6);
   position: relative;
   z-index: 2;
 }
@@ -245,44 +245,52 @@
   display: none;
 }
 
-/* Service Card - Glassmorphism */
-.service-section {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  overflow: hidden;
+/* Service Section - No Box/Container */
+.services-info-group {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow: visible !important;
   position: relative;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  margin-bottom: 45px;
+  transition: none;
+  margin-bottom: 60px;
+  padding: 0 !important;
 }
 
-.service-section:hover {
-  transform: translateY(-10px) scale(1.005);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
-  background: rgba(255, 255, 255, 0.6);
-  border-color: rgba(22, 163, 74, 0.3);
+.services-info-group::before {
+  display: none !important;
 }
 
-/* Service Main Row - Transparent */
+.services-info-group:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Service Main Row - New Layout */
 .service-main-row {
   display: flex;
+  flex-direction: column;
   gap: 30px;
-  padding: 30px;
+  padding: 0;
   align-items: flex-start;
-  background: transparent;
+  background: transparent !important;
+  margin-bottom: 40px;
 }
 
 .service-image-side {
-  flex: 0 0 65%;
-  /* Increased from 45% to enlarge image */
-  max-width: 65%;
+  flex: 1;
+  max-width: 100%;
+  width: 100%;
 }
 
 .service-text-side {
   flex: 1;
+  width: 100%;
 }
 
 .service-image-large {
@@ -299,15 +307,18 @@
 }
 
 .service-detailed-description {
-  font-size: 0.95rem;
-  /* Reduced for better scaling with larger image */
+  font-size: 1.05rem;
+  font-weight: 600;
   line-height: 1.6;
-  color: #374151;
+  color: #000000;
   margin: 0;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
-.service-section.active {
-  border-color: #16a34a;
+.services-info-group.active {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 /* Description - Moved into side-by-side row */
@@ -316,10 +327,12 @@
 }
 
 .service-description p {
-  color: #374151;
+  color: #000000;
   line-height: 1.6;
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 /* Service Image Container - Redundant since new layout */
@@ -336,13 +349,18 @@
   max-height: 300px;
 }
 
-/* Sections */
+/* Sections - No Boxes, Direct on Background */
 .service-features,
 .service-benefits,
 .service-image-section,
 .service-difference,
 .service-value-add {
-  padding: 24px 28px;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 20px 0;
 }
 
 /* Image Section - Redundant since new layout */
@@ -368,7 +386,8 @@
 .difference-table td {
   padding: 12px;
   border: 1px solid #e5e7eb;
-  color: #374151;
+  color: #000000;
+  font-weight: 500;
 }
 
 .traditional-cell {
@@ -378,12 +397,12 @@
 
 /* Titles */
 .section-subtitle {
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 20px;
   color: #000000;
-  /* Black font for "Our services include" */
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
 }
 
 /* Remove dots from section headings - Forceful removal */
@@ -462,30 +481,30 @@ h3.section-subtitle::after {
   display: none;
 }
 
-/* Items - Premium Point Cards (Not Buttons) */
+/* Items - No Boxes, Just Animation + Text */
 .feature-item,
 .benefit-item {
   display: flex !important;
   align-items: center !important;
-  padding: 16px 24px !important;
-  background: rgba(255, 255, 255, 0.5) !important;
-  backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 18px !important;
+  padding: 8px 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  border-radius: 0 !important;
   margin-bottom: 0 !important;
   /* Managed by grid gap */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
   cursor: default !important;
   /* Purely informational */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+  box-shadow: none !important;
 }
 
 .feature-item:hover,
 .benefit-item:hover {
-  background: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
-  transform: translateY(-3px);
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  transform: translateX(5px);
 }
 
 /* Bullets - Checkmark Circle with Animation */
@@ -510,9 +529,10 @@ h3.section-subtitle::after {
 .feature-text,
 .benefit-text {
   color: #000000;
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 /* Bullets - Checkmark Circle with Animation */
