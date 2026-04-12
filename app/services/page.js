@@ -219,31 +219,32 @@ const ServicesPageContent = () => {
     <>
       <main className="services-details-section">
         <div className="services-body-wrapper">
-          <div className="services-layout-container">
-            <aside className="services-sidebar">
-              {/* Our Services Heading */}
-              <h3 className="sidebar-services-title">Our Services</h3>
+            <div className="services-details-header">
+              <h1 className="services-details-title">Our Services</h1>
+            </div>
+            <div className="services-layout-container">
+              <aside className="services-sidebar">
+                {/* Our Services Heading */}
+                <h3 className="sidebar-services-title">Our Services</h3>
+  
+                {/* Services List */}
+                <nav className="services-sidebar-nav">
+                  {servicesData.map((service) => (
+                    <button
+                      key={service.id}
+                      className={`sidebar-service-link ${activeService === service.id ? 'active' : ''}`}
+                      onClick={() => handleServiceClick(service.id)}
+                    >
+                      {service.title}
+                    </button>
+                  ))}
+                </nav>
+              </aside>
+  
+              {/* Main Content Area */}
+              <div className="services-main-column">
+                <div className="services-content">
 
-              {/* Services List */}
-              <nav className="services-sidebar-nav">
-                {servicesData.map((service) => (
-                  <button
-                    key={service.id}
-                    className={`sidebar-service-link ${activeService === service.id ? 'active' : ''}`}
-                    onClick={() => handleServiceClick(service.id)}
-                  >
-                    {service.title}
-                  </button>
-                ))}
-              </nav>
-            </aside>
-
-            {/* Main Content Area */}
-            <div className="services-main-column">
-              <div className="services-content">
-                <div className="services-details-header">
-                  <h1 className="services-details-title">Our Services</h1>
-                </div>
                 {servicesData.map((service) => (
                   <section
                     key={service.id}

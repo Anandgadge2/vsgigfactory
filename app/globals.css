@@ -10300,16 +10300,15 @@ body {
 
 
 
-  width: 70px;
+  width: 80px;
 
 
 
-  height: 70px;
+  height: 80px;
 
 
 
-  object-fit: cover;
-
+  object-fit: fill;
 
 
   transition: all 0.4s ease;
@@ -26551,11 +26550,11 @@ body {
 
 
 
-    width: 30px;
+    width: 60px;
 
 
 
-    height: 30px;
+    height: 60px;
 
 
 
@@ -28448,11 +28447,11 @@ body {
 
 
 
-    width: 35px !important;
+    width: 65px !important;
 
 
 
-    height: 35px !important;
+    height: 65px !important;
 
 
 
@@ -31209,28 +31208,16 @@ body {
 
 
 .section-title {
-
-
-
   font-size: 1.4rem;
-
-
-
   font-weight: 600;
-
-
-
   color: #1f2937;
-
-
-
   margin-bottom: 12px;
-
   margin-left: 525px;
+  text-align: center;
 }
 
 
-.section-title-1{
+.section-title-1 {
   margin-right: 20px;
   color: #1f2937;
   font-size: 1.4rem;
@@ -31238,8 +31225,8 @@ body {
 
 }
 
-.section-title-2{
-  align-items: center ;
+.section-title-2 {
+  align-items: center;
   color: #16a34a;
   font-size: 1.4rem;
 }
@@ -47153,11 +47140,11 @@ body {
 
 
 
-    width: 45px;
+    width: 60px;
 
 
 
-    height: 45px;
+    height: 60px;
 
 
 
@@ -48365,11 +48352,11 @@ body {
 
 
 
-    width: 40px;
+    width: 60px;
 
 
 
-    height: 40px;
+    height: 60px;
 
 
 
@@ -49666,11 +49653,11 @@ body {
 
 
 
-    width: 45px !important;
+    width: 65px !important;
 
 
 
-    height: 45px !important;
+    height: 65px !important;
 
 
 
@@ -51472,11 +51459,11 @@ body {
 
 
 
-    width: 40px !important;
+    width: 60px !important;
 
 
 
-    height: 40px !important;
+    height: 60px !important;
 
 
 
@@ -54823,6 +54810,7 @@ body {
    FINAL MOBILE HEADER FIX - MENU BUTTON TO RIGHT
    ========================================================== */
 @media (max-width: 768px) {
+
   /* Completely hide the test header which might be causing overlaps */
   .header-test {
     display: none !important;
@@ -54853,11 +54841,13 @@ body {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    justify-content: flex-start !important; /* Logo on the left */
+    justify-content: flex-start !important;
+    /* Logo on the left */
     height: 100% !important;
     padding: 0 20px !important;
     width: 100% !important;
-    position: relative !important; /* Basis for button positioning */
+    position: relative !important;
+    /* Basis for button positioning */
   }
 
   /* Logo stays on the left */
@@ -54867,7 +54857,8 @@ body {
     align-items: center !important;
     cursor: pointer !important;
     text-decoration: none !important;
-    padding-right: 60px !important; /* Space for the button on the right */
+    padding-right: 60px !important;
+    /* Space for the button on the right */
   }
 
   /* PREMIUM MENU BUTTON - POSITIONED TO THE RIGHT */
@@ -54876,7 +54867,8 @@ body {
     align-items: center !important;
     justify-content: center !important;
     position: absolute !important;
-    right: 20px !important; /* FIXED TO RIGHT */
+    right: 20px !important;
+    /* FIXED TO RIGHT */
     top: 50% !important;
     transform: translateY(-50%) !important;
     width: 48px !important;
@@ -54899,7 +54891,8 @@ body {
   .mobile-menu-btn svg {
     width: 30px !important;
     height: 30px !important;
-    color: #16a34a !important; /* Theme green */
+    color: #16a34a !important;
+    /* Theme green */
     stroke-width: 2 !important;
   }
 
@@ -54935,7 +54928,8 @@ body {
     transition: all 0.2s ease !important;
   }
 
-  .mobile-nav-link:active, .mobile-nav-link.active {
+  .mobile-nav-link:active,
+  .mobile-nav-link.active {
     background: #f0fdf4 !important;
     color: #16a34a !important;
     padding-left: 40px !important;
@@ -54943,8 +54937,15 @@ body {
 }
 
 @keyframes menuFadeIn {
-  from { opacity: 0; transform: translateY(-15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -54961,56 +54962,70 @@ body {
     padding-top: 5px !important;
     padding-bottom: 5px !important;
   }
-  .navbar-container, .navbar-content {
+
+  .navbar-container,
+  .navbar-content {
     height: 100% !important;
   }
-  .logo-container, .logo-wrapper {
+
+  .logo-container,
+  .logo-wrapper {
     height: 100% !important;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
   }
-  .logo-main, .logo-main-text {
-    gap: 0 !important; /* Completely join Gig and factory */
+
+  .logo-main,
+  .logo-main-text {
+    gap: 0 !important;
+    /* Completely join Gig and factory */
     align-items: center !important;
     justify-content: flex-start !important;
   }
+
   .logo-gig {
     margin-right: 0 !important;
     padding-right: 0 !important;
     font-size: 1.8rem !important;
     line-height: 1 !important;
   }
+
   .logo-factory {
     margin-left: 0 !important;
     padding-left: 0 !important;
     font-size: 1.8rem !important;
     line-height: 1 !important;
   }
+
   .logo-flags {
-    margin-left: 5px !important; 
+    margin-left: 5px !important;
   }
-  .flags-container svg, .logo-flags svg {
+
+  .flags-container svg,
+  .logo-flags svg {
     width: 20px !important;
     height: 14px !important;
   }
+
   .logo-tagline {
     font-size: 0.5rem !important;
     line-height: 1 !important;
     margin-top: 2px !important;
   }
-  
+
   /* LOGO SECTION SMALL FROM DOWN */
   .hero-logo-section {
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
+
   .hero-logo-slider {
     min-height: 60px !important;
     padding-bottom: 10px !important;
   }
 
   /* Break out of container and allow full edge-to-edge scrolling */
-  .case-studies-grid, 
+  .case-studies-grid,
   .case-studies-page-grid,
   .bim-cards-grid {
     display: flex !important;
@@ -55020,7 +55035,8 @@ body {
     scroll-snap-type: x mandatory !important;
     gap: 15px !important;
     padding-bottom: 20px !important;
-    padding-left: 20px !important; /* Starts scroll nicely from edge padding */
+    padding-left: 20px !important;
+    /* Starts scroll nicely from edge padding */
     padding-right: 20px !important;
     justify-content: flex-start !important;
 
@@ -55029,8 +55045,8 @@ body {
     margin-left: calc(-50vw + 50%) !important;
     margin-right: calc(-50vw + 50%) !important;
   }
-  
-  .case-study-card, 
+
+  .case-study-card,
   .case-study-page-card,
   .bim-card {
     flex: 0 0 85vw !important;
@@ -55048,21 +55064,23 @@ body {
   }
 
   /* Custom scrollbar for grids */
-  .case-studies-grid::-webkit-scrollbar, 
+  .case-studies-grid::-webkit-scrollbar,
   .case-studies-page-grid::-webkit-scrollbar,
   .bim-cards-grid::-webkit-scrollbar,
   .stages-container::-webkit-scrollbar {
     height: 6px !important;
     display: block !important;
   }
-  .case-studies-grid::-webkit-scrollbar-track, 
+
+  .case-studies-grid::-webkit-scrollbar-track,
   .case-studies-page-grid::-webkit-scrollbar-track,
   .bim-cards-grid::-webkit-scrollbar-track,
   .stages-container::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.05) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
     border-radius: 4px !important;
   }
-  .case-studies-grid::-webkit-scrollbar-thumb, 
+
+  .case-studies-grid::-webkit-scrollbar-thumb,
   .case-studies-page-grid::-webkit-scrollbar-thumb,
   .bim-cards-grid::-webkit-scrollbar-thumb,
   .stages-container::-webkit-scrollbar-thumb {
@@ -55090,11 +55108,11 @@ body {
     margin-left: calc(-50vw + 50%) !important;
     margin-right: calc(-50vw + 50%) !important;
   }
-  
+
   .stages-row {
     display: contents !important;
   }
-  
+
   .stage-wrapper {
     flex: 0 0 85vw !important;
     max-width: 85vw !important;
@@ -55109,11 +55127,12 @@ body {
     align-items: center !important;
     width: 100% !important;
   }
-  
+
   .stage-circle {
     width: auto !important;
     height: auto !important;
-    margin-bottom: 0 !important; /* Zero gap */
+    margin-bottom: 0 !important;
+    /* Zero gap */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -55125,24 +55144,179 @@ body {
     max-width: 320px !important;
     max-height: 320px !important;
     object-fit: contain !important;
-    margin-bottom: 0 !important; /* Zero gap */
+    margin-bottom: 0 !important;
+    /* Zero gap */
   }
 
   .stage-name {
-    margin-top: 0 !important; /* Zero gap */
+    margin-top: 0 !important;
+    /* Zero gap */
     text-align: center !important;
   }
 
   .lifecycle-description {
-     position: relative !important;
-     width: 100% !important;
-     left: 0 !important;
-     top: 0 !important;
-     transform: none !important;
-     margin-top: 15px !important;
+    position: relative !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    margin-top: 15px !important;
+  }
+
+  .lifecycle-section .container {
+    overflow: visible !important;
+  }
+}
+
+
+/* FORCEFUL MOBILE FIX FOR ABOUT US HEADING */
+@media (max-width: 768px) {
+  .about-us-section .section-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    position: relative !important;
+    transform: none !important;
+    color: #1f2937 !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
   }
   
-  .lifecycle-section .container {
-     overflow: visible !important;
+  .about-us-section .section-header {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 25px !important;
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================
+   FORCEFUL MOBILE FIX FOR CASE STUDIES HEADINGS
+   ========================================================== */
+@media (max-width: 768px) {
+  /* Fix for Home Page Case Studies Section */
+  .case-studies-section, 
+  .case-studies-header {
+    overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding-top: 20px !important;
+    clear: both !important;
+  }
+
+  .case-studies-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 0 auto 15px auto !important;
+    text-align: center !important;
+    font-size: 2rem !important;
+    line-height: 1.4 !important;
+    height: auto !important;
+    color: #16a34a !important; /* Force theme green */
+    text-transform: none !important;
+    clip-path: none !important;
+    width: 100% !important;
+  }
+
+  /* Fix for Dedicated Case Studies Page */
+  .case-studies-page,
+  .case-studies-page-header {
+    overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding-top: 100px !important; /* Ensure it's below fixed header */
+  }
+
+  .case-studies-page-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 0 auto 15px auto !important;
+    text-align: center !important;
+    font-size: 2.2rem !important;
+    line-height: 1.4 !important;
+    height: auto !important;
+    color: #16a34a !important; /* Force theme green */
+    text-transform: none !important;
+    clip-path: none !important;
+    position: relative !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+  
+  .case-studies-page-subtitle {
+     display: block !important;
+     visibility: visible !important;
+     text-align: center !important;
+     margin: 0 auto !important;
+     width: 100% !important;
+  }
+}
+
+/* ==========================================================
+   FORCEFUL MOBILE FIX FOR LOGIN APPLY BOX
+   ========================================================== */
+@media (max-width: 768px) {
+  .mobile-only-br {
+    display: block !important;
+  }
+
+  .expert-title {
+    font-size: 1.45rem !important; /* Increased font size */
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .expert-subtitle {
+    font-size: 0.95rem !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+  }
+
+  .expert-card {
+    padding: 35px 20px 15px 20px !important; /* Reduced bottom padding to reduce gap */
+    min-height: auto !important; /* Allow it to shrink */
+    margin: 20px auto !important;
+  }
+  
+  .expert-buttons-container {
+    margin-bottom: 0 !important; /* Remove any bottom margin from buttons container */
+  }
+
+  .expert-btn {
+    margin-bottom: 10px !important; /* Tighter spacing between buttons */
+  }
+}
+
+/* ==========================================================
+   FORCEFUL MOBILE FIX FOR SERVICE SECTION ICONS
+   ========================================================== */
+@media (max-width: 768px) {
+  .services-section .service-icon {
+    width: 80px !important;
+    height: 80px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    border: 2px solid #16a34a !important; /* Theme border */
+  }
+
+  .services-section .service-icon-image {
+    width: 80% !important;
+    height: 80% !important;
+    object-fit: contain !important;
   }
 }

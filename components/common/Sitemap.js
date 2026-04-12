@@ -9,17 +9,20 @@ const Sitemap = () => {
   const [selectedService, setSelectedService] = useState(null)
 
   const handleServiceClick = (serviceName) => {
+    // Normalize serviceName by removing newlines for mapping
+    const normalizedName = serviceName.replace(/\n/g, '');
+    
     // Map service names to service IDs
     const serviceMapping = {
       '2D Services': '2d',
-      '3D Services': '3d', 
+      '3D Services': '3d',
       '4D Services': '4d',
-      'PP&C Services': 'pp-c',
+      'Project Planning & Controls Services': 'pp-c',
       'BOQ Services': 'boq',
       'Audit Services': 'audit'
     }
-    
-    const serviceId = serviceMapping[serviceName]
+
+    const serviceId = serviceMapping[normalizedName]
     if (serviceId) {
       router.push(`/services?service=${serviceId}`)
     }

@@ -198,7 +198,7 @@ const ServicesDetails = () => {
       <section className="services-details-section">
         {/* Fixed Sidebar */}
         <div className="services-sidebar">
-          
+
           <div className="sidebar-services-list">
             {servicesData.map((item) => (
               <button
@@ -224,63 +224,63 @@ const ServicesDetails = () => {
 
             {/* Content Sections */}
             <div className="services-content">
-          {servicesData.map((item) => (
-            <section
-              key={item.id}
-              id={item.id}
-              className={`services-info-group ${activeSection === item.id ? 'active' : ''}`}
-            >
-              <div className="service-header">
-                <h2 className="service-title">{item.title} Services</h2>
-                <div className="service-divider"></div>
-              </div>
-              
-              <div className="service-description">
-                <p>{item.description}</p>
-              </div>
+              {servicesData.map((item) => (
+                <section
+                  key={item.id}
+                  id={item.id}
+                  className={`services-info-group ${activeSection === item.id ? 'active' : ''}`}
+                >
+                  <div className="service-header">
+                    <h2 className="service-title">{item.title} Services</h2>
+                    <div className="service-divider"></div>
+                  </div>
 
-              <div className="service-features">
-                <h3 className="section-subtitle">Key Features</h3>
-                <div className="service-image-container">
-                  <img src={item.image} alt={`${item.title} Services`} className="service-image" />
-                </div>
-                <ul className="feature-list">
-                  {item.features.map((feature, index) => (
-                    <li key={index} className="feature-item">
-                      <span className="feature-bullet">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  <div className="service-description">
+                    <p>{item.description}</p>
+                  </div>
 
-              <div className="service-benefits">
-                <h3 className="section-subtitle">Benefits</h3>
-                <ul className="benefit-list">
-                  {item.benefits.map((benefit, index) => (
-                    <li key={index} className="benefit-item">
-                      <span className="benefit-bullet">→</span>
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          ))}
-        </div>
+                  <div className="service-features">
+                    <h3 className="section-subtitle">Key Features</h3>
+                    <div className="service-image-container">
+                      <img src={item.image} alt={`${item.title} Services`} className="service-image" />
+                    </div>
+                    <ul className="feature-list">
+                      {item.features.map((feature, index) => (
+                        <li key={index} className="feature-item">
+                          <span className="feature-bullet">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-        {/* CTA Section */}
-        <div className="services-details-cta">
-          <div className="cta-content">
-            <h3 className="cta-title">Ready to Transform Your Construction Projects?</h3>
-            <p className="cta-subtitle">
-              Contact us today to learn how our services can benefit your organization
-            </p>
-            <button className="cta-button">
-              Get Started →
-            </button>
-          </div>
-        </div>
+                  <div className="service-benefits">
+                    <h3 className="section-subtitle">Benefits</h3>
+                    <ul className="benefit-list">
+                      {item.benefits.map((benefit, index) => (
+                        <li key={index} className="benefit-item">
+                          <span className="benefit-bullet">→</span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              ))}
+            </div>
+
+            {/* CTA Section */}
+            <div className="services-details-cta">
+              <div className="cta-content">
+                <h3 className="cta-title">Ready to Transform Your Construction Projects?</h3>
+                <p className="cta-subtitle">
+                  Contact us today to learn how our services can benefit your organization
+                </p>
+                <button className="cta-button">
+                  Get Started →
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

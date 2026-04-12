@@ -126,7 +126,7 @@ const Login = () => {
       {/* ===== APPLY CARDS SECTION ===== */}
       <div className="expert-card">
         <p className="expert-title">
-          Interested in becoming a Gigfactory Expert?
+          Interested in becoming a <br className="mobile-only-br" /> Gigfactory Expert?
         </p>
 
         <p className="expert-subtitle">

@@ -1,748 +1,1493 @@
 /* ========================================
+
    SERVICES DETAILS PAGE - PREMIUM FORM UI
+
    ======================================== */
 
+
+
 /* Layout Container - Flex for Sidebar + Content */
+
 .services-layout-container {
+
   display: flex;
+
   gap: 30px;
+
   width: 100%;
+
   min-height: calc(100vh - 200px);
+
   align-items: flex-start;
+
 }
+
+
 
 .services-body-wrapper {
+
   width: 100%;
+
   max-width: 1500px;
+
   /* Increased from 1200px to expand right */
+
   margin: 0 auto;
+
 }
+
+
 
 .services-main-column {
+
   flex: 1;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 30px;
+
 }
+
+
 
 .services-details-section {
+
   padding: 0;
+
   background: url('/assets/Web.Wallpaper.desktop.png') !important;
+
   background-size: cover !important;
+
   background-position: center !important;
+
   background-attachment: fixed !important;
+
   background-repeat: no-repeat !important;
+
   min-height: 100vh;
+
   position: relative;
+
   display: flex;
+
   flex-direction: column;
+
 }
+
+
 
 .services-details-section::before {
+
   display: none;
+
 }
+
+
 
 /* Header - Our Services Title - No Box */
+
 .services-details-header {
+
   width: 100%;
+
   max-width: 1500px;
+
   /* Matched to wrapper width */
+
   margin: 0 auto;
+
   padding: 30px;
+
   background: transparent !important;
+
   background-image: none !important;
+
   background-color: transparent !important;
+
   border: none !important;
+
   border-radius: 0 !important;
+
   box-shadow: none !important;
+
   text-align: center;
+
   /* Centered our services text */
+
 }
+
+
 
 .services-details-title {
+
   font-size: 2.8rem;
+
   font-weight: 800;
+
   color: #16a34a;
+
   margin: 0;
+
   line-height: 1.1;
+
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.6);
+
 }
+
+
 
 /* Sidebar */
+
 .services-sidebar {
+
   width: 250px;
+
   background: #16a34a;
+
   padding: 30px 20px;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 20px;
+
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.15);
+
   flex-shrink: 0;
+
   position: sticky;
+
   top: 0;
+
   align-self: flex-start;
+
   height: max-content;
-  margin-left: 0;
+
+  margin-left: -12px;
+  margin-top: -110px;
   /* Removed negative margin to make it visible */
+
   border-radius: 0 0 20px 0;
+
 }
+
+
 
 /* Circular Back Button */
+
 .sidebar-back-button {
+
   width: 50px;
+
   height: 50px;
+
   border-radius: 50%;
+
   background: rgba(255, 255, 255, 0.2);
+
   border: 2px solid rgba(255, 255, 255, 0.3);
+
   color: white;
+
   font-size: 1.5rem;
+
   cursor: pointer;
+
   transition: 0.3s;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   flex-shrink: 0;
+
   margin: 0 auto;
+
 }
 
+
+
 .sidebar-back-button:hover {
+
   background: rgba(255, 255, 255, 0.3);
+
   border-color: rgba(255, 255, 255, 0.5);
+
   transform: scale(1.1);
+
 }
+
+
+
 
 
 /* Services Navigation List */
+
 .services-sidebar-nav {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
+
 }
+
+
 
 /* Service Link Buttons in Sidebar */
+
 .sidebar-service-link {
+
   padding: 12px 16px;
+
   background: rgba(255, 255, 255, 0.1);
+
   border: none;
+
   color: rgba(255, 255, 255, 0.8);
+
   font-size: 0.95rem;
+
   cursor: pointer;
+
   transition: 0.25s;
+
   border-radius: 8px;
+
   text-align: left;
+
   font-weight: 500;
+
 }
+
+
 
 .sidebar-service-link:hover {
+
   background: rgba(255, 255, 255, 0.2);
+
   color: white;
+
 }
+
+
 
 .sidebar-service-link.active {
+
   background: #16a34a;
+
   color: white;
+
   box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+
   font-weight: 600;
+
 }
+
+
 
 /* Sidebar Services Title */
+
 .sidebar-services-title {
+
   color: #ffffff;
+
   font-size: 1.1rem;
+
   font-weight: 600;
+
   margin: 15px 0;
+
   text-align: center;
+
   padding: 8px 0;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
 }
+
+
 
 /* Main Content Area - Direct on Background */
+
 .services-content {
+
   flex: 1;
+
   padding: 0 40px 40px 40px;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 30px;
+
   max-width: none;
+
   background: transparent !important;
+
   background-image: none !important;
+
   background-color: transparent !important;
+
   border: none !important;
+
   border-radius: 0 !important;
+
   box-shadow: none !important;
+
 }
+
+
 
 /* Simple Know More Button */
+
 .know-more-button {
+
   background: linear-gradient(145deg, #16a34a, #22c55e);
+
   color: #ffffff;
+
   border: 2px solid #000000;
+
   padding: 12px 24px;
+
   border-radius: 50px;
+
   font-size: 0.9rem;
+
   font-weight: 600;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
+
   box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+
   position: relative;
+
   overflow: hidden;
+
   display: inline-flex;
+
   align-items: center;
+
   gap: 8px;
+
 }
+
+
 
 .know-more-button:hover {
+
   transform: translateY(-2px);
+
   box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
+
 }
+
+
 
 /* Header - No Background, No Box */
+
 .service-header {
+
   position: relative;
+
   width: 100%;
+
   min-height: auto;
+
   display: flex;
+
   align-items: flex-start;
+
   justify-content: flex-start;
+
   padding: 0;
+
   background: transparent !important;
+
   background-image: none !important;
+
   background-color: transparent !important;
+
   text-align: left;
+
   margin: 0 0 10px 0;
+
   border: none !important;
+
   overflow: visible;
+
   border-radius: 0 !important;
+
   box-shadow: none !important;
+
 }
+
+
 
 .service-title {
+
   font-size: 2.5rem;
+
   font-weight: 800;
+
   color: #000000;
+
   /* Black text as requested */
+
   margin: 0 0 10px 0;
+
   text-transform: none;
+
   letter-spacing: 1px;
+
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.6);
+
   position: relative;
+
   z-index: 2;
+
 }
+
+
 
 /* Glassmorphism texture over background */
+
 .service-header::after {
+
   content: '';
+
   position: absolute;
+
   top: 0;
+
   left: 0;
+
   right: 0;
+
   bottom: 0;
+
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+
   pointer-events: none;
+
 }
+
+
 
 .service-divider {
+
   display: none;
+
 }
+
+
 
 /* Service Section - No Box/Container */
+
 .services-info-group {
+
   background: transparent !important;
+
   backdrop-filter: none !important;
+
   -webkit-backdrop-filter: none !important;
+
   border-radius: 0 !important;
+
   box-shadow: none !important;
+
   border: none !important;
+
   overflow: visible !important;
+
   position: relative;
+
   transition: none;
+
   margin-bottom: 60px;
+
   padding: 0 !important;
+
 }
+
+
 
 .services-info-group::before {
+
   display: none !important;
+
 }
+
+
 
 .services-info-group:hover {
+
   transform: none !important;
+
   box-shadow: none !important;
+
   background: transparent !important;
+
   border-color: transparent !important;
+
 }
+
+
 
 /* Service Main Row - New Layout */
+
 .service-main-row {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 30px;
+
   padding: 0;
+
   align-items: flex-start;
+
   background: transparent !important;
+
   margin-bottom: 40px;
+
 }
+
+
 
 .service-image-side {
+
   flex: 1;
+
   max-width: 100%;
+
   width: 100%;
+
 }
+
+
 
 .service-text-side {
+
   flex: 1;
+
   width: 100%;
+
 }
+
+
 
 .service-image-large {
+
   width: 100%;
-  height: auto;
+
+  height: 550px;
+
   border-radius: 12px;
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
   object-fit: cover;
+
   transition: transform 0.3s ease;
+
 }
+
+
 
 .service-image-large:hover {
+
   transform: scale(1.02);
+
 }
+
+
 
 .service-detailed-description {
+
   font-size: 1.05rem;
+
   font-weight: 600;
+
   line-height: 1.6;
+
   color: #000000;
+
   margin: 0;
+
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+
 }
+
+
 
 .services-info-group.active {
+
   border-color: transparent !important;
+
   box-shadow: none !important;
+
   transform: none !important;
+
 }
+
+
 
 /* Description - Moved into side-by-side row */
+
 .service-description {
+
   display: none;
+
 }
+
+
 
 .service-description p {
+
   color: #000000;
+
   line-height: 1.6;
+
   margin: 0;
+
   font-size: 1.05rem;
+
   font-weight: 600;
+
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+
 }
+
+
 
 /* Service Image Container - Redundant since new layout */
+
 .service-image-container {
+
   display: none;
+
 }
+
+
 
 .service-image {
+
   max-width: 100%;
+
   height: auto;
+
   border-radius: 12px;
+
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
   object-fit: cover;
+
   max-height: 300px;
+
 }
+
+
 
 /* Sections - No Boxes, Direct on Background */
+
 .service-features,
+
 .service-benefits,
+
 .service-image-section,
+
 .service-difference,
+
 .service-value-add {
+
   padding: 0 !important;
+
   background: transparent !important;
+
   border: none !important;
+
   border-radius: 0 !important;
+
   box-shadow: none !important;
+
   margin: 20px 0;
+
 }
+
+
 
 /* Image Section - Redundant since new layout */
+
 .service-image-section {
+
   display: none;
+
 }
+
+
 
 /* Difference Table */
+
 .difference-table {
+
   width: 100%;
+
   border-collapse: collapse;
+
   margin: 16px 0;
+
 }
+
+
 
 .difference-table th {
+
   background: #065f46;
+
   color: white;
+
   padding: 12px;
+
   text-align: left;
+
   border: 1px solid #e5e7eb;
+
 }
+
+
 
 .difference-table td {
+
   padding: 12px;
+
   border: 1px solid #e5e7eb;
+
   color: #000000;
+
   font-weight: 500;
+
 }
+
+
 
 .traditional-cell {
+
   background: #f0fdf4;
+
   font-weight: 500;
+
 }
+
+
 
 /* Titles */
+
 .section-subtitle {
+
   font-weight: 800;
+
   margin-bottom: 20px;
+
   color: #000000;
+
   font-size: 1.35rem;
+
   letter-spacing: -0.01em;
+
   text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+
 }
+
+
 
 /* Remove dots from section headings - Forceful removal */
+
 .section-subtitle {
+
   list-style: none !important;
+
   padding-left: 0 !important;
+
   margin-left: 0 !important;
+
   text-indent: 0 !important;
+
 }
+
+
 
 .section-subtitle::before,
+
 .section-subtitle::after {
+
   display: none !important;
+
   content: none !important;
+
   width: 0 !important;
+
   height: 0 !important;
+
 }
+
+
 
 /* Also target any potential heading elements */
+
 h3.section-subtitle {
+
   list-style: none !important;
+
   padding-left: 0 !important;
+
   margin-left: 0 !important;
+
   text-indent: 0 !important;
+
 }
+
+
 
 h3.section-subtitle::before,
+
 h3.section-subtitle::after {
+
   display: none !important;
+
   content: none !important;
+
   width: 0 !important;
+
   height: 0 !important;
+
 }
+
+
 
 /* Remove any bullets from all heading elements in service sections */
+
 .service-features h3,
+
 .service-benefits h3,
+
 .service-value-add h3 {
+
   list-style: none !important;
+
   padding-left: 0 !important;
+
   margin-left: 0 !important;
+
   text-indent: 0 !important;
+
 }
+
+
 
 .service-features h3::before,
+
 .service-benefits h3::before,
+
 .service-value-add h3::before,
+
 .service-features h3::after,
+
 .service-benefits h3::after,
+
 .service-value-add h3::after {
+
   display: none !important;
+
   content: none !important;
+
   width: 0 !important;
+
   height: 0 !important;
+
 }
+
+
 
 /* Lists */
+
 .feature-list,
+
 .benefit-list {
+
   display: grid !important;
+
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+
   gap: 16px !important;
+
   list-style: none !important;
+
   padding: 0 !important;
+
   margin: 0 !important;
+
 }
+
+
 
 .feature-list li,
+
 .benefit-list li {
+
   list-style: none;
+
   padding-left: 0;
+
 }
+
+
 
 .feature-list li::before,
+
 .benefit-list li::before {
+
   display: none;
+
 }
+
+
 
 /* Items - No Boxes, Just Animation + Text */
+
 .feature-item,
+
 .benefit-item {
+
   display: flex !important;
+
   align-items: center !important;
+
   padding: 8px 0 !important;
+
   background: transparent !important;
+
   backdrop-filter: none !important;
+
   border: none !important;
+
   border-radius: 0 !important;
+
   margin-bottom: 0 !important;
+
   /* Managed by grid gap */
+
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+
   cursor: default !important;
+
   /* Purely informational */
+
   box-shadow: none !important;
+
 }
+
+
 
 .feature-item:hover,
+
 .benefit-item:hover {
+
   background: transparent !important;
+
   border-color: transparent !important;
+
   box-shadow: none !important;
+
   transform: translateX(5px);
+
 }
 
+
+
 /* Bullets - Checkmark Circle with Animation */
+
 .feature-bullet,
+
 .benefit-bullet {
+
   color: white !important;
+
   background: #000000 !important;
+
   /* Changed from green to black */
+
   margin-right: 18px !important;
+
   width: 34px !important;
+
   height: 34px !important;
+
   border-radius: 50% !important;
+
   display: flex !important;
+
   align-items: center !important;
+
   justify-content: center !important;
+
   flex-shrink: 0 !important;
+
   border: 2px solid #000000 !important;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+
 }
+
+
 
 /* Text */
+
 .feature-text,
+
 .benefit-text {
+
   color: #000000;
+
   font-size: 1.05rem;
+
   line-height: 1.5;
+
   font-weight: 600;
+
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+
 }
+
+
 
 /* Bullets - Checkmark Circle with Animation */
+
 .feature-bullet,
+
 .benefit-bullet {
+
   color: white !important;
+
   background: #000000 !important;
+
   margin-right: 18px !important;
+
   width: 34px !important;
+
   height: 34px !important;
+
   border-radius: 50% !important;
+
   display: flex !important;
+
   align-items: center !important;
+
   justify-content: center !important;
+
   flex-shrink: 0 !important;
+
   border: 2px solid #000000 !important;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+
 }
+
+
 
 /* Visibility */
+
 .feature-list,
+
 .benefit-list {
+
   display: flex;
+
   flex-direction: column;
+
   list-style: none;
+
   padding: 0;
+
   margin: 0;
+
 }
+
+
 
 /* CTA */
+
 .services-details-cta {
+
   max-width: 1500px;
+
   /* Matched to content width */
+
   margin: 40px auto;
+
   padding: 40px;
+
   background: #16a34a;
+
   border-radius: 12px;
+
   text-align: center;
+
   color: white;
+
   box-shadow: 0 12px 32px rgba(22, 163, 74, 0.25);
+
 }
+
+
 
 .cta-title {
+
   font-size: 1.6rem;
+
   font-weight: 700;
+
   margin: 0 0 10px 0;
+
 }
+
+
 
 .cta-subtitle {
+
   margin: 10px 0 20px;
+
   color: #d1fae5;
+
 }
+
+
 
 .cta-button {
+
   background: white !important;
+
   color: #065f46 !important;
+
   padding: 12px 32px;
+
   border-radius: 8px;
+
   border: none;
+
   cursor: pointer;
+
   font-weight: 600;
+
   transition: 0.3s;
+
   font-size: 1rem;
+
 }
+
+
 
 .cta-button:hover {
+
   background: #f0fdf4 !important;
+
   transform: translateY(-2px);
+
 }
 
+
+
 /* Responsive */
+
 @media (max-width: 1024px) {
+
   .services-sidebar {
+
     width: 220px;
+
     padding: 15px;
+
   }
+
+
 
   .sidebar-back-button {
+
     width: 45px;
+
     height: 45px;
+
     font-size: 1.3rem;
+
   }
+
+
 
   .sidebar-service-link {
+
     padding: 10px 14px;
+
     font-size: 0.9rem;
+
   }
 
+
+
   .services-content {
+
     padding: 0 30px 30px 30px;
+
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+  .services-layout-container {
+
+    flex-direction: column;
+
+  }
+
+
+
+  .services-sidebar {
+
+    width: 100%;
+
+    flex-direction: row;
+
+    padding: 15px;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+  }
+
+
+
+  .sidebar-back-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    font-size: 1.3rem;
+
+  }
+
+
+
+  .services-sidebar-nav {
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    flex: 1;
+
+  }
+
+
+
+  .sidebar-service-link {
+
+    padding: 8px 12px;
+
+    font-size: 0.85rem;
+
+    flex: 0 1 auto;
+
+  }
+
+
+
+  .services-content {
+
+    padding: 0 20px 20px 20px;
+
+  }
+
+
+
+  .services-details-header {
+
+    padding: 30px 20px;
+
+    margin-bottom: 20px;
+
+  }
+
+
+
+  .services-details-title {
+
+    font-size: 2rem;
+
+  }
+
+
+
+  .service-main-row {
+
+    flex-direction: column;
+
+    padding: 20px;
+
+  }
+
+
+
+  .service-image-side {
+
+    max-width: 100%;
+
+    flex: 0 0 100%;
+
+  }
+
+
+
+  .service-header,
+
+  .service-description,
+
+  .service-features,
+
+  .service-benefits {
+
+    padding: 16px 20px;
+
+  }
+
+}
+
+
+
+
+/* ========================================
+   MOBILE RESPONSIVE OVERRIDES (FORCEFUL)
+   ======================================== */
+
+@media (max-width: 991px) {
+  .services-layout-container {
+    flex-direction: column !important;
+  }
+
+  .services-sidebar {
+    width: 100% !important;
+    position: relative !important;
+    top: 0 !important;
+    height: auto !important;
+    border-radius: 15px !important;
+    margin-bottom: 30px !important;
+    padding: 20px !important;
   }
 }
 
 @media (max-width: 768px) {
-  .services-layout-container {
-    flex-direction: column;
-  }
-
-  .services-sidebar {
-    width: 100%;
-    flex-direction: row;
-    padding: 15px;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .sidebar-back-button {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
-  }
-
-  .services-sidebar-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    flex: 1;
-  }
-
-  .sidebar-service-link {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    flex: 0 1 auto;
-  }
-
-  .services-content {
-    padding: 0 20px 20px 20px;
-  }
-
   .services-details-header {
-    padding: 30px 20px;
-    margin-bottom: 20px;
+    padding: 20px 10px !important;
+    margin-bottom: 10px !important;
   }
 
   .services-details-title {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 
-  .service-main-row {
-    flex-direction: column;
-    padding: 20px;
+  .services-layout-container {
+    flex-direction: column !important;
+    gap: 15px !important;
   }
 
-  .service-image-side {
-    max-width: 100%;
-    flex: 0 0 100%;
+  .services-sidebar {
+    width: 100% !important;
+    position: relative !important;
+    top: 0 !important;
+    padding: 15px !important;
+    background: #16a34a !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    height: auto !important;
+    z-index: 10 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
-  .service-header,
-  .service-description,
-  .service-features,
-  .service-benefits {
-    padding: 16px 20px;
+  .sidebar-services-title {
+    font-size: 1.1rem !important;
+    margin: 5px 0 12px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .services-sidebar-nav {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .sidebar-service-link {
+    width: 100% !important;
+    padding: 12px 5px !important;
+    font-size: 0.8rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    min-height: 50px !important;
+    line-height: 1.2 !important;
+  }
+
+  .sidebar-service-link.active {
+    background: #ffffff !important;
+    color: #16a34a !important;
+    font-weight: 700 !important;
+  }
+
+  .services-content {
+    padding: 0 10px !important;
+  }
+
+  .service-title {
+    font-size: 1.8rem !important;
+    text-align: center !important;
   }
 }
 
 @media (max-width: 480px) {
-  .services-layout-container {
-    flex-direction: column;
-  }
-
-  .services-sidebar {
-    width: 100%;
-    flex-direction: row;
-    padding: 10px;
-    gap: 8px;
-  }
-
-  .sidebar-back-button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    min-width: 40px;
-  }
-
-  .services-sidebar-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 6px;
-    flex: 1;
+  .services-details-title {
+    font-size: 1.7rem !important;
   }
 
   .sidebar-service-link {
-    padding: 6px 10px;
-    font-size: 0.75rem;
+    font-size: 0.7rem !important;
+    padding: 8px 4px !important;
+    min-height: 45px !important;
   }
 
-  .services-details-header {
-    padding: 20px 15px;
-    margin-bottom: 15px;
-  }
-
-  .services-details-title {
-    font-size: 1.5rem;
-  }
-
-  .services-content {
-    padding: 0 15px 15px 15px;
-  }
-
-  .service-header,
-  .service-description,
-  .service-features,
-  .service-benefits {
-    padding: 14px 12px;
-  }
-
-  .services-details-cta {
-    margin: 20px 15px;
-    padding: 20px 15px;
+  .service-title {
+    font-size: 1.5rem !important;
   }
 }
