@@ -92,7 +92,7 @@ const Sitemap = () => {
           <div className="sitemap-left">
             {leftSections.map((section, index) => (
               <div key={index} className="sitemap-block">
-                <h3 className="section-title">{section.title}</h3>
+                <h3 className="section-title-2">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
                     <a
@@ -113,7 +113,7 @@ const Sitemap = () => {
           <div className="sitemap-middle-left">
             {middleLeftSections.map((section, index) => (
               <div key={index} className="sitemap-block">
-                <h3 className="section-title">{section.title}</h3>
+                <h3 className="section-title-2">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
                     <button
@@ -133,7 +133,7 @@ const Sitemap = () => {
           <div className="sitemap-middle-right">
             {middleRightSections.map((section, index) => (
               <div key={index} className="sitemap-block">
-                <h3 className="section-title">{section.title}</h3>
+                <h3 className="section-title-2">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
                     <a
@@ -154,7 +154,7 @@ const Sitemap = () => {
           <div className="sitemap-right">
             {rightSections.map((section, index) => (
               <div key={index} className="sitemap-block">
-                <h3 className="section-title">{section.title}</h3>
+                <h3 className="section-title-2">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
                     <a
