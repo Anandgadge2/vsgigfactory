@@ -7,6 +7,7 @@ const Services = ({ onContactClick, serviceToOpen }) => {
   const router = useRouter()
   const [selectedServiceId, setSelectedServiceId] = useState(null)
   const modalContentRef = useRef(null)
+  const servicesGridRef = useRef(null)
 
   // Open modal when serviceToOpen is provided
   useEffect(() => {
@@ -14,6 +15,17 @@ const Services = ({ onContactClick, serviceToOpen }) => {
       setSelectedServiceId(serviceToOpen)
     }
   }, [serviceToOpen])
+
+  // Ensure services cards are fully aligned when returning back
+  useEffect(() => {
+    const el = servicesGridRef.current
+    if (!el) return
+
+    // Reset any restored horizontal scroll position (mobile)
+    requestAnimationFrame(() => {
+      el.scrollTo({ left: 0, behavior: 'auto' })
+    })
+  }, [])
 
   const servicesData = [
     {
@@ -203,7 +215,7 @@ const Services = ({ onContactClick, serviceToOpen }) => {
           </p>
         </div>
         
-        <div className="services-grid">
+        <div className="services-grid" ref={servicesGridRef}>
           {servicesData.map((service, index) => (
             <div key={index} className="service-card" onClick={() => handleServiceClick(service)}>
               <div className="service-icon">

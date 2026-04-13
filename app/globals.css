@@ -5301,30 +5301,10 @@ body {
 
 
 
-.service-card:hover .service-icon {
-
-
-
-  /* No transform effects */
-
-
-
-}
-
-
-
-
-
-
-
+.service-card:hover .service-icon,
 .service-card:hover .service-icon-image {
-
-
-
-  /* No transform effects */
-
-
-
+  transform: none;
+  filter: none;
 }
 
 
@@ -6096,6 +6076,59 @@ body {
   .login-sitemap-section {
     margin-top: -34px !important;
   }
+}
+
+/* ==========================================================
+   Mobile: use phone wallpaper everywhere (override desktop)
+   ========================================================== */
+@media (max-width: 768px) {
+  .advantages-details-section,
+  .services-details-section,
+  .case-study-details-section,
+  .services-section,
+  .lifecycle-section,
+  .videos-section,
+  .trust-section,
+  .case-studies-section,
+  .case-studies-page,
+  .about-us-section,
+  .expertise-content-section,
+  .expertise-page,
+  .projects-page,
+  .our-expertise-section,
+  .login-page {
+    background-image:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.7) 100%),
+      url('/assets/Web.Wallpaper.phone.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
+}
+
+/* ==========================================================
+   Projects/Expertise pages: reduce gap before sitemap (desktop)
+   ========================================================== */
+@media (min-width: 769px) {
+  .projects-page,
+  .expertise-page {
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+  }
+
+  .projects-page + .login-sitemap-section,
+  .expertise-page + .login-sitemap-section {
+    margin-top: -40px !important;
+  }
+}
+
+/* Services section: always show full card text after navigation */
+.services-section .service-card .service-description {
+  display: block !important;
+  color: #475569 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* ==========================================================
@@ -10368,22 +10401,6 @@ body {
 
 
 
-.service-card:hover .service-icon-image {
-
-
-
-  /* No transform or filter effects */
-
-
-
-}
-
-
-
-
-
-
-
 /* Removed mix-blend-mode for static icons */
 
 
@@ -10477,13 +10494,8 @@ body {
 
 
 .service-icon:hover .service-icon-image {
-
-
-
-  /* No transform effects */
-
-
-
+  transform: none;
+  filter: none;
 }
 
 
@@ -12167,6 +12179,7 @@ body {
 
 
   -webkit-line-clamp: 2;
+  line-clamp: 2;
 
 
 
@@ -19569,6 +19582,7 @@ body {
 
 
   -webkit-line-clamp: 2;
+  line-clamp: 2;
 
 
 
@@ -19613,6 +19627,7 @@ body {
 
 
   -webkit-line-clamp: 3;
+  line-clamp: 3;
 
 
 
@@ -32244,6 +32259,42 @@ body {
 
 }
 
+/* Projects card: in-card sliding images (3) */
+.project-image-slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.project-image-track {
+  height: 100%;
+  display: flex;
+  width: 300%;
+  animation: project-image-slide 12s infinite;
+}
+
+.project-image-slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.project-image-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes project-image-slide {
+  0% { transform: translateX(0); }
+  28% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  61% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  94% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
 
 
 
@@ -33061,6 +33112,32 @@ body {
 
 
 
+}
+
+.project-scope-box {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 14px 0 16px 0;
+  text-align: left;
+}
+
+.project-scope-box .scope-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.project-scope-box .scope-value {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: #111827;
 }
 
 
@@ -54827,11 +54904,10 @@ body {
 
   width: 100%;
 
-  background: transparent;
-
-  backdrop-filter: none;
-
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(229, 231, 235, 0.9);
 
 }
 
@@ -55079,10 +55155,32 @@ body {
     padding-bottom: 10px !important;
   }
 
+  /* Mobile: make logo strip smaller but keep logos fully visible */
+  .hero-logo-item {
+    min-width: 120px !important;
+    max-width: 160px !important;
+    margin-right: 18px !important;
+    padding: 4px 0 !important;
+  }
+
+  .hero-logo-container {
+    height: 60px !important;
+    padding: 6px !important;
+  }
+
+  .hero-logo-image {
+    max-height: 52px !important;
+    max-width: 140px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
   /* Break out of container and allow full edge-to-edge scrolling */
   .case-studies-grid,
   .case-studies-page-grid,
-  .bim-cards-grid {
+  .bim-cards-grid,
+  .services-grid {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -55094,6 +55192,8 @@ body {
     /* Starts scroll nicely from edge padding */
     padding-right: 20px !important;
     justify-content: flex-start !important;
+    scroll-padding-left: 20px !important;
+    scroll-padding-right: 20px !important;
 
     /* Breakout technique */
     width: 100vw !important;
@@ -55108,14 +55208,17 @@ body {
     max-width: 85vw !important;
     min-width: 85vw !important;
     scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
     height: auto !important;
     margin-bottom: 0 !important;
   }
 
-  .service-card {
+  .services-grid .service-card {
     flex: 0 0 85vw !important;
     max-width: 85vw !important;
     min-width: 85vw !important;
+    scroll-snap-align: center !important;
+    scroll-snap-stop: always !important;
   }
 
   /* Custom scrollbar for grids */
@@ -55437,8 +55540,7 @@ body {
     font-size: 2.2rem !important;
     line-height: 1.4 !important;
     height: auto !important;
-    color: #16a34a !important;
-    /* Force theme green */
+    color: #1f2937 !important;
     text-transform: none !important;
     clip-path: none !important;
     position: relative !important;

@@ -279,6 +279,14 @@
 
 }
 
+/* Desktop: center title in main column (right of sidebar) */
+@media (min-width: 769px) {
+  .services-details-title {
+    /* Sidebar width (250px) + layout gap (~30px) => shift center to main content */
+    transform: translateX(calc((250px + 30px) / 2));
+  }
+}
+
 
 
 
@@ -2842,6 +2850,11 @@ h3.section-subtitle::after {
 
   }
 
+  /* Keep "Our Services" title visible below fixed navbar */
+  .services-details-section {
+    padding-top: 90px !important;
+  }
+
 
 
   .services-details-title {
@@ -2866,9 +2879,9 @@ h3.section-subtitle::after {
 
     width: 100% !important;
 
-    position: relative !important;
-
-    top: 0 !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
 
     padding: 15px !important;
 
@@ -2886,6 +2899,15 @@ h3.section-subtitle::after {
 
     flex-direction: column !important;
 
+    /* Critical: don't overlap the title on mobile */
+    margin: 0 10px 12px 10px !important;
+  }
+
+  /* Override desktop sidebar offsets/sticky behavior on mobile */
+  .services-sidebar {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    position: static !important;
   }
 
 
@@ -2905,14 +2927,12 @@ h3.section-subtitle::after {
   .services-sidebar-nav {
 
     display: grid !important;
-
     grid-template-columns: repeat(3, 1fr) !important;
-
-    grid-template-rows: repeat(2, auto) !important;
-
+    grid-auto-rows: auto !important;
     gap: 10px !important;
-
     width: 100% !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
 
   }
 
@@ -2921,17 +2941,13 @@ h3.section-subtitle::after {
   .sidebar-service-link {
 
     width: 100% !important;
-
-    padding: 12px 5px !important;
-
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 12px 6px !important;
     font-size: 0.8rem !important;
-
     text-align: center !important;
-
     justify-content: center !important;
-
     display: flex !important;
-
     align-items: center !important;
 
     border-radius: 8px !important;
@@ -2941,6 +2957,7 @@ h3.section-subtitle::after {
     min-height: 50px !important;
 
     line-height: 1.2 !important;
+    white-space: normal !important;
 
   }
 
@@ -3010,7 +3027,7 @@ h3.section-subtitle::after {
 
 @media (max-width: 768px) {
   .services-details-section {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%), url('/assets/Web.Wallpaper.Phone.png') !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%), url('/assets/Web.Wallpaper.phone.png') !important;
     background-attachment: scroll !important;
     background-size: cover !important;
     background-position: center !important;

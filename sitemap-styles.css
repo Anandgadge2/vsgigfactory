@@ -512,103 +512,75 @@
 
 }
 
-
-
-/* ========================================
-
-   RESPONSIVE DESIGN FOR SITEMAP
-
-   ======================================== */
-
-
-
-/* Mobile Responsive Design */
-
+/* Mobile: ensure 2×2 sitemap columns with headings */
 @media (max-width: 768px) {
-
-  .sitemap-page,
-  .sitemap-section {
-    padding: 10px 15px 6px 15px !important;
-    background-size: cover !important;
-    background-position: top center !important;
-    background-attachment: scroll !important;
-  }
-
-  
-
-  .sitemap-title {
-
-    font-size: 2rem;
-
-  }
-
-  
-
   .sitemap-content {
-    display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    column-gap: 16px !important;
-    row-gap: 10px !important;
-    padding-bottom: 6px !important;
+    column-gap: 14px !important;
+    row-gap: 0px !important; /* reduce gap between top and bottom rows */
   }
 
   .sitemap-left,
   .sitemap-middle-left,
   .sitemap-middle-right,
   .sitemap-right {
-    min-width: unset !important;
-    flex: unset !important;
-    padding: 4px 0 !important;
-    align-items: center !important;
-    text-align: center !important;
+    padding: 2px 0 !important;
+  }
+}
+
+/* Mobile: reduce extra sitemap gaps + keep background nice */
+@media (max-width: 768px) {
+  .sitemap-page,
+  .login-sitemap-section .sitemap-page {
+    padding: 6px 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
   }
 
-  
-
-  .section-title {
-
-    font-size: 1.125rem;
-
+  .login-sitemap-section .sitemap-header {
+    margin: 0 !important;
+    padding: 0 12px !important;
   }
 
-  
-
-  .sitemap-link {
-
-    font-size: 0.875rem;
-
+  .login-sitemap-section .sitemap-title-section {
+    padding: 0 !important;
   }
 
-  
-
-  .footer-links {
-
-    gap: 16px;
-
-    flex-direction: column;
-
-    align-items: center;
-
+  .login-sitemap-section .sitemap-title {
+    margin: 0 0 4px 0 !important;
+    line-height: 1.1 !important;
   }
 
-  /* Footer closer + let background show through */
-  .sitemap-footer {
-    margin: 6px auto 0 !important;
-    padding: 8px 0 !important;
-    background: rgba(255, 255, 255, 0.7) !important;
-    box-shadow: none !important;
+  .login-sitemap-section .sitemap-content {
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 12px !important;
+    row-gap: 0px !important; /* reduce gap between top and bottom rows */
+    margin: 0 auto !important;
+    padding: 0 12px !important;
   }
 
-  
-
-  .logo-gig,
-
-  .logo-factory {
-
-    font-size: 2rem;
-
+  .login-sitemap-section .section-title {
+    margin: 0 0 4px 0 !important;
+    font-size: 1.15rem !important;
   }
 
+  .login-sitemap-section .section-links {
+    gap: 0 !important;
+  }
+
+  .login-sitemap-section .sitemap-link,
+  .login-sitemap-section .service-link {
+    padding: 1px 0 !important;
+    line-height: 1.25 !important;
+  }
+
+  .login-sitemap-section .sitemap-footer {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    margin: 0 !important;
+  }
 }
 
 

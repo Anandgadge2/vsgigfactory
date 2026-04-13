@@ -9,17 +9,20 @@ const Sitemap = () => {
   const [selectedService, setSelectedService] = useState(null)
 
   const handleServiceClick = (serviceName) => {
-    // Normalize serviceName by removing newlines for mapping
-    const normalizedName = serviceName.replace(/\n/g, '');
+    // Normalize serviceName for robust mapping (newlines/extra spaces/case)
+    const normalizedName = String(serviceName)
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase()
     
     // Map service names to service IDs
     const serviceMapping = {
-      '2D Services': '2d',
-      '3D Services': '3d',
-      '4D Services': '4d',
-      'Project Planning & Controls Services': 'pp-c',
-      'BOQ Services': 'boq',
-      'Audit Services': 'audit'
+      '2d services': '2d',
+      '3d services': '3d',
+      '4d services': '4d',
+      'project planning & controls services': 'pp-c',
+      'boq services': 'boq',
+      'audit services': 'audit'
     }
 
     const serviceId = serviceMapping[normalizedName]
@@ -58,11 +61,11 @@ const Sitemap = () => {
       title: "Our Expertise",
       links: [
         { name: "Construction Management", url: "/expertise" },
-        { name: "Project Planning", url: "/planning" },
-        { name: "BIM Integration", url: "/bim" },
-        { name: "Quality Assurance", url: "/quality" },
-        { name: "Risk Management", url: "/risk" },
-        { name: "Cost Control", url: "/cost" }
+        { name: "Project Planning", url: "/expertise" },
+        { name: "BIM Integration", url: "/expertise" },
+        { name: "Quality Assurance", url: "/expertise" },
+        { name: "Risk Management", url: "/expertise" },
+        { name: "Cost Control", url: "/expertise" }
       ]
     }
   ]

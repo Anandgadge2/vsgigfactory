@@ -14,27 +14,30 @@ const Projects = () => {
     {
       title: "Tech Park Development",
       description: "Modern technology park with sustainable design and advanced infrastructure for tech companies and startups",
-      image: "/images/project1.jpg",
+      images: ["/images/project1.jpg", "/images/project1.jpg", "/images/project1.jpg"],
       area: "50,000 sq ft",
-      duration: "18 months",
+      location: "Mumbai, India",
+      scope: "BIM modeling, coordination, clash detection",
       status: "completed",
       type: "Commercial"
     },
     {
       title: "Green Hospital Complex",
       description: "Eco-friendly healthcare facility with advanced medical infrastructure and patient-centered design",
-      image: "/images/project2.jpg",
+      images: ["/images/project2.jpg", "/images/project2.jpg", "/images/project2.jpg"],
       area: "75,000 sq ft",
-      duration: "24 months",
+      location: "Pune, India",
+      scope: "MEP design support, BIM coordination, as-builts",
       status: "in-progress",
       type: "Healthcare"
     },
     {
       title: "Luxury Residential Tower",
       description: "Premium residential complex with modern amenities and sustainable living spaces",
-      image: "/images/project3.jpg",
+      images: ["/images/project3.jpg", "/images/project3.jpg", "/images/project3.jpg"],
       area: "120,000 sq ft",
-      duration: "30 months",
+      location: "Delhi, India",
+      scope: "Facade coordination, 4D sequencing, quantity takeoff",
       status: "completed",
       type: "Residential"
     }
@@ -55,7 +58,15 @@ const Projects = () => {
             <div key={index} className="bim-card">
               {/* Image with Status and Type Badges */}
               <div className="bim-card-image">
-                <img src={service.image} alt={service.title} />
+                <div className="project-image-slider" aria-label={`${service.title} images`}>
+                  <div className="project-image-track">
+                    {(service.images ?? []).slice(0, 3).map((src, imgIndex) => (
+                      <div key={imgIndex} className="project-image-slide">
+                        <img src={src} alt={`${service.title} image ${imgIndex + 1}`} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 <div className={`project-status ${service.status}`}>
                   {service.status === 'completed' ? '✓ Completed' : 'In Progress'}
                 </div>
@@ -69,6 +80,12 @@ const Projects = () => {
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
 
+                {/* Scope */}
+                <div className="project-scope-box">
+                  <span className="scope-label">Scope</span>
+                  <span className="scope-value">{service.scope}</span>
+                </div>
+
                 {/* Project Details */}
                 <div className="project-details">
                   <div className="project-detail-box">
@@ -80,18 +97,13 @@ const Projects = () => {
                   </div>
                   
                   <div className="project-detail-box">
-                    <div className="detail-icon">⏱️</div>
+                    <div className="detail-icon">📍</div>
                     <div className="detail-info">
-                      <span className="detail-label">Duration</span>
-                      <span className="detail-value">{service.duration}</span>
+                      <span className="detail-label">Location</span>
+                      <span className="detail-value">{service.location}</span>
                     </div>
                   </div>
                 </div>
-
-                {/* Button */}
-                <button className="learn-btn">
-                  VIEW PROJECT →
-                </button>
               </div>
             </div>
           ))}

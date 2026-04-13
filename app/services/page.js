@@ -212,18 +212,25 @@ const ServicesPageContent = () => {
     const serviceId = searchParams.get('service')
     if (serviceId) {
       setActiveService(serviceId)
-      // Scroll to the specific service section
+      // Keep page header ("Our Services") visible on mobile/back navigation.
+      // Users can still jump via the sidebar.
       setTimeout(() => {
-        const element = document.getElementById(`service-${serviceId}`)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-      }, 100)
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      }, 0)
     }
   }, [searchParams])
 
   const handleServiceClick = (serviceId) => {
-    router.push(`/services?service=${serviceId}`)
+    setActiveService(serviceId)
+    router.push(`/services?service=${serviceId}`, { scroll: false })
+
+    // Scroll to the selected service section (works on mobile + desktop)
+    setTimeout(() => {
+      const element = document.getElementById(`service-${serviceId}`)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 0)
   }
 
   const handleBackClick = () => {
