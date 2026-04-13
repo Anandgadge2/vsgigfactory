@@ -114,7 +114,7 @@
 
 
 
-background:
+  background:
 
 
 
@@ -253,7 +253,7 @@ background:
 
 
 
-  font-size: 2.8rem;
+  font-size: 54px;
 
 
 
@@ -341,9 +341,9 @@ background:
 
 
 
-  margin-left: -12px;
+  margin-left: -62px;
 
-  margin-top: -110px;
+  margin-top: -145px;
 
   /* Removed negative margin to make it visible */
 
@@ -881,7 +881,7 @@ background:
 
 
 
-  font-size: 2.5rem;
+  font-size: 32px;
 
 
 
@@ -1193,22 +1193,17 @@ background:
 
 
 
-  height: 550px;
-
-
-
+  height: auto;
+  max-height: 500px;
   border-radius: 12px;
-
-
-
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.05);
+  /* Light background to show full image if aspect ratio differs */
 
 
 
-  object-fit: cover;
-
-
-
+  max-width: 100%;
   transition: transform 0.3s ease;
 
 
@@ -1241,7 +1236,7 @@ background:
 
 
 
-  font-size: 1.3rem;
+  font-size: 20px;
 
 
 
@@ -1333,7 +1328,7 @@ background:
 
 
 
-  font-size: 1.05rem;
+  font-size: 20px;
 
 
 
@@ -1455,7 +1450,7 @@ background:
 
   margin: 20px 0;
 
-  font-size: 1.5rem !important;
+  font-size: 20px !important;
 
 
 
@@ -1615,7 +1610,7 @@ background:
 
 
 
-  font-size: 1.7rem;
+  font-size: 24px;
 
 
 
@@ -1885,7 +1880,7 @@ h3.section-subtitle::after {
 
   margin: 0 !important;
 
-  font-size: 1.5rem !important;
+  font-size: 20px !important;
 
 }
 
@@ -1909,7 +1904,7 @@ h3.section-subtitle::after {
 
   padding-left: 0;
 
-  font-size: 1.5rem !important;
+  font-size: 20px !important;
 
 
 
@@ -1931,7 +1926,7 @@ h3.section-subtitle::after {
 
   display: none;
 
-  font-size: 1.5rem !important;
+  font-size: 20px !important;
 
 
 
@@ -2005,7 +2000,7 @@ h3.section-subtitle::after {
 
   box-shadow: none !important;
 
-  font-size: 1.5rem !important;
+  font-size: 20px !important;
 
 
 
@@ -2139,7 +2134,7 @@ h3.section-subtitle::after {
 
 
 
-  font-size: 1.05rem;
+  font-size: 20px;
 
 
 
@@ -2313,7 +2308,7 @@ h3.section-subtitle::after {
 
   box-shadow: 0 12px 32px rgba(22, 163, 74, 0.25);
 
-
+  margin-top: -20px;
 
 }
 
@@ -2438,6 +2433,16 @@ h3.section-subtitle::after {
 /* Responsive */
 
 
+
+@media (min-width: 1440px) {
+  .services-body-wrapper {
+    max-width: 1400px;
+  }
+
+  .services-sidebar {
+    width: 280px;
+  }
+}
 
 @media (max-width: 1024px) {
 
@@ -2769,7 +2774,7 @@ h3.section-subtitle::after {
 
     padding: 16px 20px;
 
-    font-size: 1.5rem !important;
+    font-size: 20px !important;
 
 
 
@@ -3001,4 +3006,13 @@ h3.section-subtitle::after {
 
   }
 
+}
+
+@media (max-width: 768px) {
+  .services-details-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%), url('/assets/Web.Wallpaper.Phone.png') !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
 }

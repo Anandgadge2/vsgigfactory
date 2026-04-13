@@ -526,10 +526,11 @@
 
 @media (max-width: 768px) {
 
+  .sitemap-page,
   .sitemap-section {
-
-    padding: 40px 15px;
-
+    padding: 10px 15px !important;
+    background-size: 100% 100% !important;
+    background-attachment: scroll !important;
   }
 
   
@@ -545,7 +546,7 @@
   .sitemap-content {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15px !important;
+    gap: 5px !important;
     padding-bottom: 20px !important;
   }
 

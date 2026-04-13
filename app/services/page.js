@@ -27,7 +27,7 @@ const FeatureItem = ({ text }) => {
       >
         <CheckCircle size={18} strokeWidth={3} />
       </motion.div>
-      <span className="feature-text">{text}</span>
+      <span className="feature-text" style={{ fontSize: '18px' }}>{text}</span>
     </li>
   )
 }
@@ -52,7 +52,7 @@ const BenefitItem = ({ text }) => {
       >
         <CheckCircle size={18} strokeWidth={3} />
       </motion.div>
-      <span className="benefit-text">{text}</span>
+      <span className="benefit-text" style={{ fontSize: '18px' }}>{text}</span>
     </li>
   )
 }
@@ -61,6 +61,21 @@ const ServicesPageContent = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [activeService, setActiveService] = useState(null)
+
+  // Force font size for points using a style tag to bypass CSS specificity issues
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .feature-text, .benefit-text { 
+        font-size: 18px !important; 
+      }
+      .service-detailed-description {
+        font-size: 18px !important;
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
 
   const servicesData = [
     {
@@ -219,31 +234,31 @@ const ServicesPageContent = () => {
     <>
       <main className="services-details-section">
         <div className="services-body-wrapper">
-            <div className="services-details-header">
-              <h1 className="services-details-title">Our Services</h1>
-            </div>
-            <div className="services-layout-container">
-              <aside className="services-sidebar">
-                {/* Our Services Heading */}
-                <h3 className="sidebar-services-title">Our Services</h3>
-  
-                {/* Services List */}
-                <nav className="services-sidebar-nav">
-                  {servicesData.map((service) => (
-                    <button
-                      key={service.id}
-                      className={`sidebar-service-link ${activeService === service.id ? 'active' : ''}`}
-                      onClick={() => handleServiceClick(service.id)}
-                    >
-                      {service.title}
-                    </button>
-                  ))}
-                </nav>
-              </aside>
-  
-              {/* Main Content Area */}
-              <div className="services-main-column">
-                <div className="services-content">
+          <div className="services-details-header">
+            <h1 className="services-details-title" style={{ fontSize: '48px' }}>Our Services</h1>
+          </div>
+          <div className="services-layout-container">
+            <aside className="services-sidebar">
+              {/* Our Services Heading */}
+              <h3 className="sidebar-services-title">Our Services</h3>
+
+              {/* Services List */}
+              <nav className="services-sidebar-nav">
+                {servicesData.map((service) => (
+                  <button
+                    key={service.id}
+                    className={`sidebar-service-link ${activeService === service.id ? 'active' : ''}`}
+                    onClick={() => handleServiceClick(service.id)}
+                  >
+                    {service.title}
+                  </button>
+                ))}
+              </nav>
+            </aside>
+
+            {/* Main Content Area */}
+            <div className="services-main-column">
+              <div className="services-content">
 
                 {servicesData.map((service) => (
                   <section
@@ -252,7 +267,7 @@ const ServicesPageContent = () => {
                     className={`services-info-group ${activeService === service.id ? 'active' : ''}`}
                   >
                     <div className="service-header">
-                      <h2 className="service-title">{service.title}</h2>
+                      <h2 className="service-title" style={{ fontSize: '30px' }}>{service.title}</h2>
                     </div>
 
                     <div className="service-main-row">
@@ -269,7 +284,7 @@ const ServicesPageContent = () => {
                     </div>
 
                     <div className="service-features">
-                      <h3 className="section-subtitle">Our {service.title} Include</h3>
+                      <h3 className="section-subtitle" style={{ fontSize: '24px' }}>Our {service.title} Include</h3>
                       <ul className="feature-list">
                         {service.features.map((feature, index) => (
                           <FeatureItem key={index} text={feature} />
@@ -289,7 +304,7 @@ const ServicesPageContent = () => {
                     )}
 
                     <div className="service-benefits">
-                      <h3 className="section-subtitle">Output</h3>
+                      <h3 className="section-subtitle" style={{ fontSize: '24px' }}>Output</h3>
                       <ul className="benefit-list">
                         {service.benefits.map((benefit, index) => (
                           <BenefitItem key={index} text={benefit} />
