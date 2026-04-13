@@ -374,7 +374,7 @@ const CaseStudiesPage = () => {
 
             <button
 
-              onClick={() => window.location.href = '/contact'}
+              onClick={() => router.push('/?contact=1')}
 
               className="case-studies-page-cta-btn"
 

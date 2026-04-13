@@ -3,6 +3,7 @@
 
 
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 import Button from '../components/ui/Button'
 
@@ -33,6 +34,8 @@ const Home = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const [serviceToOpen, setServiceToOpen] = useState(null)
+
+  const searchParams = useSearchParams()
 
 
 
@@ -73,6 +76,15 @@ const Home = () => {
     }
 
   }, [])
+
+  // Open the same contact form when navigated from other pages
+  useEffect(() => {
+    const shouldOpen = searchParams?.get('contact') === '1'
+    if (shouldOpen) {
+      openContactModal()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams])
 
   
 

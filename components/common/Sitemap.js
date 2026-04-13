@@ -74,7 +74,7 @@ const Sitemap = () => {
     {
       title: "Contact Us",
       links: [
-        { name: "Get In Touch", url: "/contact" },
+        { name: "Get In Touch", url: "/?contact=1" },
         { name: "Email Us", url: "mailto:info@gigfactory.com" },
         { name: "Call Us", url: "tel:+1234567890" },
         { name: "Linkedin", url: "https://www.linkedin.com" }
@@ -190,7 +190,7 @@ const Sitemap = () => {
                 <div className="footer-links">
                   <a href="/privacy" className="footer-link">Privacy Policy</a>
                   <a href="/terms" className="footer-link">Terms of Service</a>
-                  <a href="/cookies" className="footer-link">Cookie Policy</a>
+                  <a href="/FAQs" className="footer-link">FAQ's</a>
                 </div>
               </div>
             </div>

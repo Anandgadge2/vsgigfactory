@@ -154,6 +154,12 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .privacy-page {
+    padding-top: 90px;
+    background-attachment: scroll;
+    min-height: auto;
+  }
+
   .privacy-page .container {
     margin: 20px auto;
   }
@@ -164,6 +170,9 @@
 
   .privacy-header h1 {
     font-size: 1.8rem;
+    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   .privacy-content {
