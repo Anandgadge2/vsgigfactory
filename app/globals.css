@@ -6080,6 +6080,45 @@ body {
 
 }
 
+/* ==========================================================
+   Projects/Expertise pages: reduce gap before sitemap (mobile)
+   ========================================================== */
+@media (max-width: 768px) {
+  .projects-page,
+  .expertise-page {
+    min-height: auto !important;
+    padding-bottom: 4px !important;
+  }
+
+  /* Pull sitemap closer to the cards */
+  .projects-page + .login-sitemap-section,
+  .expertise-page + .login-sitemap-section,
+  .login-sitemap-section {
+    margin-top: -34px !important;
+  }
+}
+
+/* ==========================================================
+   About page: ensure title is visible (mobile)
+   ========================================================== */
+@media (max-width: 768px) {
+  .about-us-section {
+    padding-top: 90px !important; /* keep below fixed header */
+    min-height: auto !important;
+  }
+
+  .about-header-simple {
+    margin-bottom: 10px !important;
+  }
+
+  .about-title {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #1f2937 !important;
+  }
+}
+
 
 
 
@@ -6126,11 +6165,13 @@ body {
 
 
 
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
 
 
-    gap: 20px;
+    column-gap: 16px;
+    row-gap: 10px;
+    padding-bottom: 6px;
 
 
 
@@ -23692,7 +23733,7 @@ body {
 
 
 
-    padding: 0;
+    padding: 4px 0;
 
 
 
@@ -32159,7 +32200,8 @@ body {
 
 .bim-card-image {
   height: 200px;
-  background: #f9fafb; /* Lighter background for contain */
+  background: #f9fafb;
+  /* Lighter background for contain */
   position: relative;
 
 
@@ -40660,7 +40702,7 @@ body {
 
 
     padding: 60px 0;
-
+    margin-bottom: -100px;
 
 
   }
@@ -52885,7 +52927,7 @@ body {
 
 
 
-    padding: 40px 15px;
+    padding: 14px 15px 8px 15px;
 
 
 
@@ -52925,7 +52967,7 @@ body {
 
 
 
-    gap: 20px;
+    gap: 8px;
 
 
 
@@ -53053,6 +53095,12 @@ body {
 
 
 
+  }
+
+  .sitemap-footer {
+    margin-top: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
 
@@ -55084,7 +55132,7 @@ body {
   .bim-cards-grid::-webkit-scrollbar-track,
   .stages-container::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.05) !important;
-    border-radius: 4px !important;
+    border-radius: 10px !important;
   }
 
   .case-studies-grid::-webkit-scrollbar-thumb,
@@ -55092,10 +55140,57 @@ body {
   .bim-cards-grid::-webkit-scrollbar-thumb,
   .stages-container::-webkit-scrollbar-thumb {
     background: #16a34a !important;
-    border-radius: 4px !important;
+    border-radius: 10px !important;
+    min-width: 40px !important;
   }
 
-  /* Lifecycle Stages Horizontal Scrolling */
+  /* Lifecycle Stages Horizontal Scrolling - Mobile Optimized */
+  .lifecycle-section {
+    transition: padding 0.4s ease !important;
+    padding: 14px 0 0 0 !important;
+  }
+
+  /* Optimized (Smaller) State when NO stage is active */
+  .lifecycle-section:not(.is-stage-active) {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  /* Mobile: keep bottom of section tight in both states */
+  .lifecycle-section.is-stage-active {
+    padding-bottom: 0 !important;
+  }
+
+  /* Reduce any remaining bottom whitespace below CTA */
+  .lifecycle-cta {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .lifecycle-section:not(.is-stage-active) .lifecycle-header {
+    margin-bottom: 10px !important;
+  }
+
+  .lifecycle-section:not(.is-stage-active) .lifecycle-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 5px !important;
+  }
+
+  .lifecycle-section:not(.is-stage-active) .lifecycle-subtitle {
+    font-size: 0.9rem !important;
+    margin-top: 0 !important;
+  }
+
+  .lifecycle-section:not(.is-stage-active) .stage-image {
+    max-width: 220px !important;
+    max-height: 220px !important;
+  }
+
+  /* Tighten overall stack so scrollbar/CTA sit right below stage name */
+  .lifecycle-stages {
+    margin-bottom: 0 !important;
+  }
+
   .stages-container {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -55103,17 +55198,26 @@ body {
     -webkit-overflow-scrolling: touch !important;
     scroll-snap-type: x mandatory !important;
     gap: 15px !important;
-    padding-bottom: 30px !important;
+    /* Keep scrollbar directly under stage name */
+    padding-bottom: 0 !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
     flex-direction: row !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #16a34a rgba(0, 0, 0, 0.05) !important;
 
     /* Breakout technique */
     width: 100vw !important;
     margin-left: calc(-50vw + 50%) !important;
     margin-right: calc(-50vw + 50%) !important;
+    transition: all 0.4s ease !important;
+  }
+
+  .stages-container::-webkit-scrollbar {
+    height: 1px !important;
+    display: block !important;
   }
 
   .stages-row {
@@ -55125,9 +55229,9 @@ body {
     max-width: 85vw !important;
     min-width: 85vw !important;
     scroll-snap-align: center !important;
+    transition: all 0.4s ease !important;
   }
 
-  /* Make image larger and eliminate gap tightly */
   .stage-content {
     display: flex !important;
     flex-direction: column !important;
@@ -55136,48 +55240,117 @@ body {
   }
 
   .stage-circle {
-    width: auto !important;
-    height: auto !important;
+    width: 220px !important;
+    height: 220px !important;
+    border-radius: 50% !important;
     margin-bottom: 0 !important;
-    /* Zero gap */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    overflow: hidden !important;
   }
 
   .stage-image {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 320px !important;
-    max-height: 320px !important;
-    object-fit: contain !important;
+    width: 220px !important;
+    height: 220px !important;
+    max-width: 220px !important;
+    max-height: 220px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
     margin-bottom: 0 !important;
-    /* Zero gap */
+    transition: all 0.4s ease !important;
   }
 
   .stage-name {
     margin-top: 0 !important;
-    /* Zero gap */
+    margin-bottom: 0 !important;
     text-align: center !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    font-size: 1rem !important;
   }
 
+  /* Mobile: keep description box styling like desktop */
   .lifecycle-description {
     position: relative !important;
-    width: 100% !important;
-    left: 0 !important;
-    top: 0 !important;
+    width: 300px !important;
+    max-width: 90vw !important;
+    left: auto !important;
+    top: auto !important;
     transform: none !important;
+    margin-top: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease !important;
+  }
+
+  .lifecycle-description.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Fixed CTA Button positioning */
+  .lifecycle-cta {
     margin-top: 15px !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 10 !important;
+    transition: transform 0.4s ease !important;
+  }
+
+  /* Mobile: CTA should sit right after the stages (scrollbar). */
+  .lifecycle-cta,
+  .lifecycle-section.is-stage-active .lifecycle-cta,
+  .lifecycle-cta.cta-shifted {
+    margin-top: -42px !important;
+    transform: none !important;
+  }
+
+  /* Make CTA visually compact on mobile */
+  .lifecycle-button {
+    padding: 10px 18px !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* Mobile: keep stage card compact; let description decide height. */
+  .stage-wrapper {
+    min-height: 0 !important;
+  }
+
+  /* Keep description body identical to desktop (no special mobile scrolling) */
+
+  /* Keep CTA glued to scrollbar/description */
+  .lifecycle-section.is-stage-active .lifecycle-cta {
+    margin-top: -42px !important;
+  }
+
+  .lifecycle-button {
+    width: 90% !important;
+    max-width: 400px !important;
+    padding: 4px 10px !important;
+    font-size: 0.86rem !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    display: flex !important;
   }
 
   .lifecycle-section .container {
     overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
-}
 
-
-/* FORCEFUL MOBILE FIX FOR ABOUT US HEADING */
-@media (max-width: 768px) {
   .about-us-section .section-title {
     display: block !important;
     visibility: visible !important;
@@ -55192,7 +55365,7 @@ body {
     font-size: 1.8rem !important;
     font-weight: 700 !important;
   }
-  
+
   .about-us-section .section-header {
     display: block !important;
     text-align: center !important;
@@ -55205,15 +55378,27 @@ body {
    FORCEFUL MOBILE FIX FOR CASE STUDIES HEADINGS
    ========================================================== */
 @media (max-width: 768px) {
+
   /* Fix for Home Page Case Studies Section */
-  .case-studies-section, 
+  .case-studies-section,
   .case-studies-header {
     overflow: visible !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    padding-top: 20px !important;
+    padding-top: 10px !important;
     clear: both !important;
+  }
+
+  /* Reduce large gap above Case Studies (Home, mobile only) */
+  .videos-section {
+    min-height: auto !important;
+    padding-bottom: 10px !important;
+  }
+
+  .videos-description {
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
   }
 
   .case-studies-title {
@@ -55225,7 +55410,8 @@ body {
     font-size: 2rem !important;
     line-height: 1.4 !important;
     height: auto !important;
-    color: #16a34a !important; /* Force theme green */
+    color: #16a34a !important;
+    /* Force theme green */
     text-transform: none !important;
     clip-path: none !important;
     width: 100% !important;
@@ -55238,7 +55424,8 @@ body {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    padding-top: 100px !important; /* Ensure it's below fixed header */
+    padding-top: 100px !important;
+    /* Ensure it's below fixed header */
   }
 
   .case-studies-page-title {
@@ -55250,20 +55437,21 @@ body {
     font-size: 2.2rem !important;
     line-height: 1.4 !important;
     height: auto !important;
-    color: #16a34a !important; /* Force theme green */
+    color: #16a34a !important;
+    /* Force theme green */
     text-transform: none !important;
     clip-path: none !important;
     position: relative !important;
     top: 0 !important;
     width: 100% !important;
   }
-  
+
   .case-studies-page-subtitle {
-     display: block !important;
-     visibility: visible !important;
-     text-align: center !important;
-     margin: 0 auto !important;
-     width: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
   }
 }
 
@@ -55276,7 +55464,8 @@ body {
   }
 
   .expert-title {
-    font-size: 1.45rem !important; /* Increased font size */
+    font-size: 1.45rem !important;
+    /* Increased font size */
     line-height: 1.3 !important;
     font-weight: 700 !important;
     margin-bottom: 12px !important;
@@ -55291,17 +55480,21 @@ body {
   }
 
   .expert-card {
-    padding: 35px 20px 15px 20px !important; /* Reduced bottom padding to reduce gap */
-    min-height: auto !important; /* Allow it to shrink */
+    padding: 35px 20px 15px 20px !important;
+    /* Reduced bottom padding to reduce gap */
+    min-height: auto !important;
+    /* Allow it to shrink */
     margin: 20px auto !important;
   }
-  
+
   .expert-buttons-container {
-    margin-bottom: 0 !important; /* Remove any bottom margin from buttons container */
+    margin-bottom: 0 !important;
+    /* Remove any bottom margin from buttons container */
   }
 
   .expert-btn {
-    margin-bottom: 10px !important; /* Tighter spacing between buttons */
+    margin-bottom: 10px !important;
+    /* Tighter spacing between buttons */
   }
 }
 
@@ -55318,7 +55511,8 @@ body {
     justify-content: center !important;
     border-radius: 50% !important;
     overflow: hidden !important;
-    border: 2px solid #16a34a !important; /* Theme border */
+    border: 2px solid #16a34a !important;
+    /* Theme border */
   }
 
   .services-section .service-icon-image {
@@ -55329,6 +55523,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
   .advantages-details-section,
   .services-section,
   .lifecycle-section,
@@ -55350,11 +55545,10 @@ body {
 
 /* Mobile Force Fit for Login and Apply Cards */
 @media (max-width: 768px) {
+
   .login-card,
   .expert-card {
     background-size: 100% 100% !important;
     background-attachment: scroll !important;
   }
 }
-
-

@@ -67,8 +67,7 @@ const Lifecycle = ({ onContactClick }) => {
   ]
 
   const handleStageClick = (stageId) => {
-    console.log('Clicked stage:', stageId, 'Current active:', activeStage);
-    setActiveStage(activeStage === stageId ? null : stageId);
+    setActiveStage(activeStage === stageId ? null : stageId)
   }
 
   const handleStageHover = (stageId) => {
@@ -80,13 +79,11 @@ const Lifecycle = ({ onContactClick }) => {
   }
 
   const shouldShowDescription = (stageId) => {
-    const shouldShow = activeStage === stageId || hoveredStage === stageId;
-    console.log('Should show description for stage', stageId, ':', shouldShow, 'Active stage:', activeStage, 'Hovered stage:', hoveredStage);
-    return shouldShow;
+    return activeStage === stageId || hoveredStage === stageId
   }
 
   return (
-    <section className="lifecycle-section" ref={lifecycleRef}>
+    <section className={`lifecycle-section ${activeStage ? 'is-stage-active' : ''}`} ref={lifecycleRef}>
       <div className="container">
         <div className="lifecycle-header">
           <h2 className="lifecycle-title">End-to-End Construction Lifecycle Framework</h2>
