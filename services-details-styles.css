@@ -3027,8 +3027,8 @@ h3.section-subtitle::after {
 
 @media (max-width: 768px) {
   .services-details-section {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%), url('/assets/Web.Wallpaper.phone.png') !important;
-    background-attachment: scroll !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%), url('/assets/Web.Wallpaper.Phone.png') !important;
+    background-attachment: fixed !important;
     background-size: cover !important;
     background-position: center !important;
   }

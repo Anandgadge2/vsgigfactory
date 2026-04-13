@@ -156,7 +156,14 @@
 @media (max-width: 768px) {
   .privacy-page {
     padding-top: 90px;
-    background-attachment: scroll;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(248, 250, 252, 0.45) 100%),
+      url('/assets/Web.Wallpaper.Phone.png') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-color: #f8fafc !important;
     min-height: auto;
   }
 
