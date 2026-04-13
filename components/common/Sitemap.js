@@ -73,7 +73,8 @@ const Sitemap = () => {
       links: [
         { name: "Get In Touch", url: "/contact" },
         { name: "Email Us", url: "mailto:info@gigfactory.com" },
-        { name: "Call Us", url: "tel:+1234567890" }
+        { name: "Call Us", url: "tel:+1234567890" },
+        { name: "Linkedin", url: "https://www.linkedin.com" }
       ]
     }
   ]
@@ -116,7 +117,7 @@ const Sitemap = () => {
           <div className="sitemap-middle-left">
             {middleLeftSections.map((section, index) => (
               <div key={index} className="sitemap-block">
-                <h3 className="section-title-2">{section.title}</h3>
+                <h3 className="section-title-3">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
                     <button
@@ -136,7 +137,7 @@ const Sitemap = () => {
           <div className="sitemap-middle-right">
             {middleRightSections.map((section, index) => (
               <div key={index} className="sitemap-block">
-                <h3 className="section-title-2">{section.title}</h3>
+                <h3 className="section-title-4">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
                     <a
@@ -157,7 +158,7 @@ const Sitemap = () => {
           <div className="sitemap-right">
             {rightSections.map((section, index) => (
               <div key={index} className="sitemap-block">
-                <h3 className="section-title-2">{section.title}</h3>
+                <h3 className="section-title-5">{section.title}</h3>
                 <div className="section-links">
                   {section.links.map((link, linkIndex) => (
                     <a

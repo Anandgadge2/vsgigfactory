@@ -63,7 +63,7 @@ const Videos = () => {
         </div>
 
         {/* Description */}
-        <div className="videos-description" style={{ marginTop: '-40px' }}>
+        <div className="videos-description" style={{ marginTop: '-30px', marginBottom: '-40px' }}>
           <p>
             At Gigfactory, we pride ourselves on delivering exceptional BIM and construction solutions.
             Our video testimonials showcase real projects and client experiences across various sectors.
