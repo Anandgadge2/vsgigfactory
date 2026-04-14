@@ -56287,6 +56287,48 @@ video {
   }
 }
 
+/* Projects page: keep all card content aligned uniformly */
+.projects-page .bim-card {
+  height: 100%;
+}
+
+.projects-page .bim-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.projects-page .bim-card-content h3 {
+  min-height: 68px;
+}
+
+.projects-page .bim-card-content p {
+  min-height: 82px;
+}
+
+.projects-page .project-scope-box {
+  min-height: 86px;
+}
+
+.projects-page .project-details {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .projects-page .bim-card-content h3 {
+    min-height: 56px;
+  }
+
+  .projects-page .bim-card-content p {
+    min-height: 74px;
+  }
+
+  .projects-page .project-scope-box {
+    min-height: 78px;
+  }
+}
+
 /* Projects cards: tighter layout and better visual balance */
 .projects-page .bim-card-image {
   height: 250px;
