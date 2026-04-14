@@ -33069,6 +33069,11 @@ body {
 
 }
 
+.project-status.ongoing {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
 
 
 
@@ -55893,3 +55898,484 @@ body {
     font-size: 15px;
   }
 }
+
+/* Mobile: click-outline cards + remove section white gaps */
+@media (max-width: 768px) {
+  /* Services + Case Studies cards: no hover effect on mobile */
+  .services-grid .service-card:hover,
+  .case-studies-grid .case-study-card:hover {
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    border-color: rgba(22, 163, 74, 0.1) !important;
+  }
+
+  .services-grid .service-card:hover::after,
+  .case-studies-grid .case-study-card:hover::before {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+
+  /* Show outline while card is tapped/clicked */
+  .services-grid .service-card:active,
+  .services-grid .service-card:focus-within,
+  .case-studies-grid .case-study-card:active,
+  .case-studies-grid .case-study-card:focus-within {
+    transform: translateY(-4px) !important;
+    border-color: #16a34a !important;
+    box-shadow:
+      0 16px 28px rgba(22, 163, 74, 0.18),
+      0 0 0 3px rgba(22, 163, 74, 0.35) !important;
+    outline: none !important;
+  }
+
+  .services-grid .service-card:active::after,
+  .services-grid .service-card:focus-within::after {
+    opacity: 1 !important;
+  }
+
+  .case-studies-grid .case-study-card:active::before,
+  .case-studies-grid .case-study-card:focus-within::before {
+    transform: scaleX(1) !important;
+  }
+
+  /* Remove white gap: Services -> Lifecycle */
+  .services-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  .lifecycle-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: 0 !important;
+  }
+
+  /* Remove white gap: Videos -> Case Studies */
+  .videos-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  .case-studies-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: 0 !important;
+  }
+}
+
+/* Mobile card hover visibility and heading centering fixes */
+@media (max-width: 768px) {
+  .services-grid,
+  .case-studies-grid,
+  .bim-cards-grid,
+  .case-studies-page-grid {
+    overflow-y: visible !important;
+    padding-top: 14px !important;
+    padding-bottom: 26px !important;
+  }
+
+  .services-grid .service-card,
+  .case-study-card,
+  .case-study-page-card,
+  .bim-card {
+    overflow: visible !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .services-grid .service-card:hover,
+  .services-grid .service-card:focus-within,
+  .case-study-card:hover,
+  .case-study-card:focus-within,
+  .case-study-page-card:hover,
+  .case-study-page-card:focus-within,
+  .bim-card:hover,
+  .bim-card:focus-within {
+    transform: translateY(-8px) !important;
+  }
+
+  .expertise-header-simple,
+  .case-studies-header,
+  .case-studies-page-header {
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .expertise-title,
+  .case-studies-title,
+  .case-studies-page-title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+}
+
+/* Final mobile polish fixes */
+@media (max-width: 768px) {
+  /* Keep a tiny visual gap before Lifecycle and Case Studies headings */
+  .lifecycle-section {
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+  }
+
+  .case-studies-section {
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+  }
+
+  /* Ensure lifecycle scrollbar is visible above CTA */
+  .lifecycle-stages {
+    margin-bottom: 8px !important;
+  }
+
+  .stages-container {
+    padding-bottom: 8px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .stages-container::-webkit-scrollbar {
+    height: 6px !important;
+  }
+
+  .lifecycle-cta,
+  .lifecycle-section.is-stage-active .lifecycle-cta,
+  .lifecycle-cta.cta-shifted {
+    margin-top: 10px !important;
+  }
+
+  /* Keep card content fitting cleanly inside card outline on page grids */
+  .bim-card,
+  .case-study-page-card {
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .bim-cards-grid .bim-card,
+  .case-studies-page-grid .case-study-page-card {
+    flex: 0 0 84vw !important;
+    min-width: 84vw !important;
+    max-width: 84vw !important;
+  }
+
+  /* Mobile header: keep menu button clickable but visually hidden */
+  .mobile-menu-btn {
+    right: 16px !important;
+    width: 42px !important;
+    height: 42px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .mobile-menu-btn svg {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Final mobile corrections: visible menu icon, clean logo, section spacing */
+@media (max-width: 768px) {
+  /* Show mobile menu button icon again */
+  .mobile-menu-btn {
+    right: 16px !important;
+    width: 42px !important;
+    height: 42px !important;
+    background: #ffffff !important;
+    border: 1.5px solid #e5e7eb !important;
+    border-radius: 10px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .mobile-menu-btn svg {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    color: #16a34a !important;
+  }
+
+  /* Remove button-like look from logo, keep it clickable */
+  .navbar .logo-container,
+  .navbar .logo-wrapper {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Add more space between Services CTA and Lifecycle heading */
+  .services-section {
+    padding-bottom: 12px !important;
+  }
+
+  .services-cta {
+    margin-bottom: 20px !important;
+  }
+
+  .lifecycle-section {
+    margin-top: 16px !important;
+    padding-top: 14px !important;
+  }
+}
+
+/* Login apply box mobile visibility fix */
+@media (max-width: 768px) {
+  .login-header-apply {
+    margin-top: 12px !important;
+    padding-top: 4px !important;
+    position: relative !important;
+    z-index: 25 !important;
+  }
+
+  .apply-slider-container .expert-card {
+    margin-top: 24px !important;
+  }
+}
+
+/* Login page mobile spacing: keep apply box fully visible */
+@media (max-width: 768px) {
+  .login-page {
+    padding-top: 108px !important;
+    overflow: visible !important;
+  }
+
+  .login-page .expert-card {
+    margin-top: 14px !important;
+    margin-bottom: 18px !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .login-page .expert-title {
+    margin-top: 8px !important;
+    line-height: 1.25 !important;
+  }
+}
+
+/* Mobile menu: remove gap under header when opened */
+@media (max-width: 768px) {
+  .mobile-menu {
+    top: 85px !important; /* match mobile navbar height */
+    max-height: calc(100vh - 85px) !important;
+    border-top: 0 !important;
+    margin-top: 0 !important;
+    border-radius: 0 0 22px 22px !important;
+  }
+
+  .mobile-nav-list {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .mobile-nav-link:first-child {
+    margin-top: 0 !important;
+  }
+}
+
+/* Final mobile spacing: Services CTA -> Lifecycle heading */
+@media (max-width: 768px) {
+  .services-section .services-cta {
+    margin-bottom: 48px !important;
+  }
+
+  .lifecycle-section {
+    padding-top: 34px !important;
+  }
+
+  .lifecycle-section .lifecycle-header {
+    margin-top: 0 !important;
+  }
+}
+
+/* Mobile: reduce top gap above logo strip */
+@media (max-width: 768px) {
+  .hero-logo-section {
+    margin-top: -12px !important;
+    padding-top: 0 !important;
+  }
+
+  .hero-logo-slider {
+    padding-top: 0 !important;
+  }
+}
+
+/* Cross-device smoothness guardrails (layout-safe) */
+html,
+body {
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+@media (hover: none) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* iOS-only stability + responsiveness polish (no desktop changes) */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 1024px) {
+    html,
+    body {
+      -webkit-text-size-adjust: 100%;
+      -webkit-overflow-scrolling: touch;
+      overflow-x: hidden;
+    }
+
+    /* Respect iPhone notch/safe area while keeping current layout style */
+    .navbar {
+      padding-top: max(5px, env(safe-area-inset-top)) !important;
+      height: calc(85px + env(safe-area-inset-top)) !important;
+      min-height: calc(85px + env(safe-area-inset-top)) !important;
+    }
+
+    .mobile-menu {
+      top: calc(85px + env(safe-area-inset-top)) !important;
+      max-height: calc(100vh - (85px + env(safe-area-inset-top))) !important;
+    }
+
+    /* Avoid iOS repaint lag from fixed backgrounds */
+    .advantages-details-section,
+    .services-section,
+    .lifecycle-section,
+    .case-studies-section,
+    .about-section,
+    .expertise-section,
+    .projects-section,
+    .videos-section,
+    .expertise-content-section,
+    .our-expertise-section,
+    .login-services-section {
+      background-attachment: scroll !important;
+    }
+
+    /* Reduce occasional blur jank on iOS GPU compositing */
+    .mobile-menu,
+    .apply-slider-container {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+    }
+  }
+}
+
+/* iOS touch devices: stabilize background images across all pages/sections */
+@supports (-webkit-touch-callout: none) {
+  @media (hover: none) and (pointer: coarse) {
+    [class*="section"],
+    [class*="page"] {
+      background-attachment: scroll !important;
+      background-size: cover !important;
+      background-position: center top !important;
+      background-repeat: no-repeat !important;
+    }
+  }
+}
+
+/* Projects cards: tighter layout and better visual balance */
+.projects-page .bim-card-image {
+  height: 250px;
+}
+
+.projects-page .bim-card-content {
+  padding: 16px 20px 14px;
+}
+
+.projects-page .bim-card-content h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.projects-page .bim-card-content p {
+  margin-bottom: 10px;
+}
+
+.projects-page .project-scope-box {
+  margin: 8px 0 10px 0;
+}
+
+.projects-page .project-details {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .projects-page .bim-card-image {
+    height: 230px;
+  }
+
+  .projects-page .bim-card-content {
+    padding: 14px 14px 12px;
+  }
+
+  .projects-page .bim-card-content h3 {
+    margin-bottom: 4px;
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .projects-page .bim-card-content p {
+    margin-bottom: 8px;
+    line-height: 1.45;
+  }
+
+  .projects-page .project-scope-box {
+    margin: 6px 0 8px 0;
+  }
+
+  .projects-page .project-detail-box {
+    padding: 10px;
+  }
+}
+
+/* Mobile spacing tune: continuous lifecycle background + tighter sitemap rows */
+@media (max-width: 768px) {
+  /* Remove visible white gap between Services CTA and Lifecycle heading */
+  .services-section {
+    padding-bottom: 2px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .services-cta {
+    margin-bottom: 14px !important;
+  }
+
+  .lifecycle-section {
+    margin-top: 0 !important;
+    padding-top: 18px !important;
+    border-top: 0 !important;
+  }
+
+  /* Keep background transition continuous between both sections */
+  .services-section,
+  .lifecycle-section {
+    background-position: center top !important;
+  }
+
+  /* Reduce vertical spacing between top and bottom sitemap rows */
+  .login-sitemap-section .sitemap-content {
+    row-gap: 12px !important;
+    column-gap: 18px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .login-sitemap-section .sitemap-block {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}
+

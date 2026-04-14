@@ -411,56 +411,34 @@
 }
 
 @media (max-width: 768px) {
-  /* Mobile: pyramid layout (1, then 2, then 3, then mostly 3, ending 3-2-1) */
+  /* Mobile: manual positioning mode (same approach as desktop) */
   .word-cloud-container {
-    position: static !important;
-    height: auto !important;
-    max-width: 100% !important;
+    position: relative !important;
+    height: 520px !important;
+    max-width: 360px !important;
     margin: 18px auto 12px auto !important;
-    padding: 0 6px !important;
-    display: grid !important;
-    grid-template-columns: repeat(12, 1fr) !important;
-    column-gap: 10px !important;
-    row-gap: 10px !important;
-    align-content: start !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
   }
 
   .word-cloud-container span {
-    position: static !important;
+    position: absolute !important;
     transform: none !important;
-    white-space: normal !important;
+    white-space: nowrap !important;
     cursor: default;
-    font-size: 12px !important;
+    font-size: 11px !important;
     line-height: 1.2 !important;
     padding: 0 !important;
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
     text-align: center !important;
-    justify-self: center !important;
-    grid-column: span 3; /* default: 4 words per row */
+    justify-self: auto !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
     color: #6b7280 !important;
   }
-
-  /* Start: 1 word, then 2, then 3, then 4 */
-  .word-cloud-container span:nth-child(1) { grid-column: 1 / -1; }
-  .word-cloud-container span:nth-child(2),
-  .word-cloud-container span:nth-child(3) { grid-column: span 6; }
-  .word-cloud-container span:nth-child(4),
-  .word-cloud-container span:nth-child(5),
-  .word-cloud-container span:nth-child(6) { grid-column: span 4; }
-  .word-cloud-container span:nth-child(7),
-  .word-cloud-container span:nth-child(8),
-  .word-cloud-container span:nth-child(9),
-  .word-cloud-container span:nth-child(10) { grid-column: span 3; }
-
-  /* End: 3, then 2, then 1 */
-  .word-cloud-container span:nth-last-child(6),
-  .word-cloud-container span:nth-last-child(5),
-  .word-cloud-container span:nth-last-child(4) { grid-column: span 4; } /* 3 per row */
-  .word-cloud-container span:nth-last-child(3),
-  .word-cloud-container span:nth-last-child(2) { grid-column: span 6; } /* 2 per row */
-  .word-cloud-container span:nth-last-child(1) { grid-column: 1 / -1; } /* 1 */
 
   /* Keep highlighted words visually distinct (no "button" look) */
   .word-cloud-container span.highlight {
@@ -469,44 +447,93 @@
     font-weight: 700 !important;
   }
 
-  /*
-    Place highlighted words in the middle area (not all at start/end).
-    We position them on different rows/columns so they look "random"
-    but still stay inside the word layout.
-  */
-  .word-cloud-container span.word-construction-smart {
-    grid-row: 5;
-    grid-column: 5 / span 4;
+  /* Mobile highlight anchors - edit these freely for manual arrangement */
+  .word-construction-smart {
+    top: 82px !important;
+    left: 35% !important;
+    transform: translateX(-50%) !important;
+    font-size: 16px !important;
   }
 
-  .word-cloud-container span.word-intelligence {
-    grid-row: 6;
-    grid-column: 2 / span 4;
+  .word-intelligence {
+    top: 170px !important;
+    left: 77% !important;
+    transform: translateX(-50%) !important;
+    font-size: 16px !important;
   }
 
-  .word-cloud-container span.word-optimize-cost {
-    grid-row: 7;
-    grid-column: 8 / span 4;
+  .word-optimize-cost {
+    top: 242px !important;
+    left: 3% !important;
+    transform: translateX(-50%) !important;
+    font-size: 16px !important;
   }
 
-  .word-cloud-container span.word-accelerate-delivery {
-    grid-row: 8;
-    grid-column: 3 / span 4;
+  .word-accelerate-delivery {
+    top: 320px !important;
+    left: 64% !important;
+    transform: translateX(-50%) !important;
+    font-size: 16px !important;
   }
 
-  .word-cloud-container span.word-reduce-rework {
-    grid-row: 9;
-    grid-column: 7 / span 4;
+  .word-reduce-rework {
+    top: 434px !important;
+    left: 35% !important;
+    transform: translateX(-50%) !important;
+    font-size: 16px !important;
   }
+
+  /* ==========================================================
+     MOBILE MANUAL WORD MAP (EDIT FREELY)
+     You can adjust top/left/right/font-size for each word here.
+     ========================================================== */
+  .word-improved-accuracy { top: 15px !important; left: 40% !important; font-size: 18px !important; }
+  .word-enhanced-coordination { top: 45px !important; left: 15% !important; font-size: 15px !important; }
+  .word-clarity-documentation { top: 45px !important; left: 57% !important; font-size: 15px !important; }
+  .word-standardized-outputs { top: 82px !important; left: 2% !important; font-size: 10px !important; }
+  .word-reduced-errors { top: 112px !important; left: 35% !important; font-size: 18px !important; }
+  .word-faster-reviews { top: 1652px !important; left: 77% !important; font-size: 12px !important; }
+  .word-better-quality { top: 112px !important; left: 0% !important; font-size: 15px !important; }
+  .word-streamlined-workflows { top: 82px !important; left: 66% !important; font-size: 10px !important; }
+  .word-clear-communication { top: 112px !important; left: 64% !important; font-size: 15px !important; }
+  .word-improved-collaboration { top: 170px !important; left:4% !important; font-size: 13px !important; }
+  .word-error-reduction { top: 140px !important; left: 2% !important; font-size: 12px !important; }
+  .word-better-decision { top: 140px !important; left: 66% !important; font-size: 10px !important; }
+  .word-enhanced-understanding { top: 140px !important; left: 27% !important; font-size: 9px !important; }
+  .word-sequence-planning { top: 170px !important; left: 43% !important; font-size: 13px !important; }
+  .word-clash-free { top: 205px !important; left: 1% !important; font-size: 10px !important; }
+  .word-integrated-coordination { top: 205px !important; left: 34% !important; font-size: 10px !important; }
+  .word-smart-collaboration { top: 205px !important; left: 71% !important; font-size: 10px !important; }
+  .word-realtime-monitoring { top: 242px !important; left: 67% !important; font-size: 10px !important; }
+  .word-structured-workflows { top: 280px !important; left: 1% !important; font-size: 10px !important; }
+  .word-clear-construction { top: 242px !important; left: 27% !important; font-size: 10px !important; }
+  .word-reduced-conflicts { top: 280px !important; left: 35% !important; font-size: 10px !important; }
+  .word-interdisciplinary-coordination { top: 320px !important; left: 6% !important; font-size: 12px !important; }
+  .word-reduced-bottlenecks { top: 354px !important; left: 69% !important; font-size: 9px !important; }
+  .word-improved-compliance { top: 354px !important; left: 0% !important; font-size: 9px !important; }
+  .word-risk-mitigation { top: 395px !important; left: 0% !important; font-size: 10px !important; }
+  .word-data-driven { top: 395px !important; left: 65% !important; font-size: 10px !important; }
+  .word-cost-savings { top: 354px !important; left: 33% !important; font-size: 9px !important; }
+  .word-asset-tracking { top: 434px !important; left: 60% !important; font-size: 10px !important; }
+  .word-lifecycle-optimization { top: 434px !important; left: -47% !important; font-size: 10px !important; }
+  .word-digital-continuity { top: 470px !important; left: -15% !important; font-size: 10px !important; }
+  .word-strategic-planning { top: 470px !important; left: 5% !important; font-size: 10px !important; }
+  .word-timeline-optimization { top: 468px !important; left: 64% !important; font-size: 10px !important; }
+  .word-quality-assurance { top: 504px !important; left: 1% !important; font-size: 12px !important; }
+  .word-cost-overruns { top: 504px !important; left: 31% !important; font-size: 12px !important; }
+  .word-quantity-validation { top: 504px !important; left: 69% !important; font-size: 12px !important; }
+  .word-procurement-optimization { top: 544px !important; left: 22% !important; font-size: 18px !important; }
+  .word-waste-reduction { top: 395px !important; left: 38% !important; font-size: 10px !important; }
+  .word-cost-forecasting { top: 280px !important; left: 74% !important; font-size: 10px !important; }
 }
 
 @media (max-width: 480px) {
   .word-cloud-container {
-    row-gap: 8px !important;
-    column-gap: 8px !important;
+    max-width: 340px !important;
+    height: 560px !important;
   }
 
   .word-cloud-container span {
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
 }

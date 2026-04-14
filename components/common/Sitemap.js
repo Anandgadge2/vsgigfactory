@@ -33,11 +33,14 @@ const Sitemap = () => {
 
   const leftSections = [
     {
-      title: "Quick Links",
+      title: "Our Expertise",
       links: [
-        { name: "About Us", url: "/about" },
-        { name: "Projects", url: "/projects" },
-        { name: "Case Studies", url: "/case-studies" }
+        { name: "Construction Management", url: "/expertise" },
+        { name: "Project Planning", url: "/expertise" },
+        { name: "BIM Integration", url: "/expertise" },
+        { name: "Quality Assurance", url: "/expertise" },
+        { name: "Risk Management", url: "/expertise" },
+        { name: "Cost Control", url: "/expertise" }
       ]
     }
   ]
@@ -58,14 +61,11 @@ const Sitemap = () => {
 
   const middleRightSections = [
     {
-      title: "Our Expertise",
+      title: "Quick Links",
       links: [
-        { name: "Construction Management", url: "/expertise" },
-        { name: "Project Planning", url: "/expertise" },
-        { name: "BIM Integration", url: "/expertise" },
-        { name: "Quality Assurance", url: "/expertise" },
-        { name: "Risk Management", url: "/expertise" },
-        { name: "Cost Control", url: "/expertise" }
+        { name: "About Us", url: "/about" },
+        { name: "Projects", url: "/projects" },
+        { name: "Case Studies", url: "/case-studies" }
       ]
     }
   ]

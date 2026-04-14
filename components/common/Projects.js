@@ -12,34 +12,34 @@ const Projects = () => {
 
   const services = [
     {
-      title: "Tech Park Development",
-      description: "Modern technology park with sustainable design and advanced infrastructure for tech companies and startups",
+      title: "Microsoft B3 Building",
+      description: "End to End BIM Support for Brownfield Commercial building project for Mmoser",
       images: ["/images/project1.jpg", "/images/project1.jpg", "/images/project1.jpg"],
-      area: "50,000 sq ft",
-      location: "Mumbai, India",
-      scope: "BIM modeling, coordination, clash detection",
-      status: "completed",
+      area: "6,00,000 sqft",
+      location: "Hyderabad, India",
+      scope: "BIM - LOD 350, LOD 500, Clash Detection + Clash Resolutionl, Support + Documentation, LOD 500 ( Yet to reach the stage), BEP Preparation and Control ",
+      status: "Ongoing",
       type: "Commercial"
     },
     {
-      title: "Green Hospital Complex",
-      description: "Eco-friendly healthcare facility with advanced medical infrastructure and patient-centered design",
+      title: "Ryan International School",
+      description: "End to End BIM support for school project for architecture trade, focusing on sheet production ",
       images: ["/images/project2.jpg", "/images/project2.jpg", "/images/project2.jpg"],
-      area: "75,000 sq ft",
+      area: "95000 sqft",
       location: "Pune, India",
-      scope: "MEP design support, BIM coordination, as-builts",
-      status: "in-progress",
-      type: "Healthcare"
+      scope: "BIM - LOD 350, Modeling + Documentation",
+      status: "Ongoing",
+      type: "Institutional "
     },
     {
-      title: "Luxury Residential Tower",
-      description: "Premium residential complex with modern amenities and sustainable living spaces",
+      title: "Bluestar Interior Fitout project",
+      description: "End-to-End BIM Support for Bluestar Interior Fitout Project for AMS Project Consultants, aimed at driving project management through BIM.",
       images: ["/images/project3.jpg", "/images/project3.jpg", "/images/project3.jpg"],
-      area: "120,000 sq ft",
-      location: "Delhi, India",
-      scope: "Facade coordination, 4D sequencing, quantity takeoff",
+      area: "35000 sqft",
+      location: "Pune, India",
+      scope: "BIM - LOD 350, Modeling + Documentation, 4D Monitoring and Controls",
       status: "completed",
-      type: "Residential"
+      type: "Commercial"
     }
   ]
 
@@ -67,8 +67,8 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-                <div className={`project-status ${service.status}`}>
-                  {service.status === 'completed' ? '✓ Completed' : 'In Progress'}
+                <div className={`project-status ${String(service.status).toLowerCase().replace(/\s+/g, '-')}`}>
+                  {service.status.toLowerCase() === 'completed' ? '✓ Completed' : 'Ongoing'}
                 </div>
                 <div className="project-type-badge">
                   {service.type}
@@ -91,7 +91,6 @@ const Projects = () => {
                   <div className="project-detail-box">
                     <div className="detail-icon">📐</div>
                     <div className="detail-info">
-                      <span className="detail-label">Area</span>
                       <span className="detail-value">{service.area}</span>
                     </div>
                   </div>
@@ -99,7 +98,6 @@ const Projects = () => {
                   <div className="project-detail-box">
                     <div className="detail-icon">📍</div>
                     <div className="detail-info">
-                      <span className="detail-label">Location</span>
                       <span className="detail-value">{service.location}</span>
                     </div>
                   </div>
